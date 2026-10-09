@@ -190,7 +190,7 @@ export function CategoryLayout({
             <span aria-hidden className="text-[#cdb89a] text-[22px] leading-none">
               ✦
             </span>
-            <p className="font-serif text-[20px] md:text-[22px] xl:text-[21px] 2xl:text-[22px] leading-[1.35] text-ivory-light flex-1 xl:whitespace-nowrap">
+            <p className="font-serif text-[20px] md:text-[22px] xl:text-[21px] 2xl:text-[22px] leading-[1.35] text-ivory-light flex-1 min-w-0">
               {copy.catalog.advice}
             </p>
             <Link

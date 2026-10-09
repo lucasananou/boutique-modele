@@ -20,7 +20,13 @@ export async function Footer() {
       <Newsletter locale={locale} />
       <footer className="bg-ink-deep text-warm-300 pt-[72px] pb-10">
         <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-12 pb-14 border-b border-ink-soft/10">
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 ${
+            seoGuidesNav.length > 0
+              ? "lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr_1fr_1fr]"
+              : "lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr_1fr]"
+          } gap-12 pb-14 border-b border-ink-soft/10`}
+        >
           <div>
             <Link
               href={localizedPath("/", locale)}
@@ -43,10 +49,13 @@ export async function Footer() {
               </span>
             </Link>
             <p className="font-sans text-[13.5px] leading-[1.8] text-warm-300/80 mb-6 max-w-[300px]">
-              {copy.footer.about} {brand.contact.address.street}, {brand.contact.address.zip}{" "}
-              {brand.contact.address.city}.
+              {copy.footer.about}
+              {brand.contact.address.street
+                ? ` ${brand.contact.address.street}, ${brand.contact.address.zip} ${brand.contact.address.city}.`
+                : null}
             </p>
             <div className="flex gap-3">
+              {brand.social.instagram ? (
               <a
                 href={brand.social.instagram}
                 aria-label="Instagram"
@@ -56,6 +65,8 @@ export async function Footer() {
               >
                 <InstagramIcon />
               </a>
+              ) : null}
+              {brand.social.pinterest ? (
               <a
                 href={brand.social.pinterest}
                 aria-label="Pinterest"
@@ -65,6 +76,7 @@ export async function Footer() {
               >
                 <PinterestIcon />
               </a>
+              ) : null}
             </div>
           </div>
 
@@ -102,6 +114,7 @@ export async function Footer() {
             </div>
           </div>
 
+          {seoGuidesNav.length > 0 ? (
           <div>
             <div className="font-sans text-[10px] tracking-[0.22em] uppercase text-champagne-light mb-5">
               {copy.footer.guides}
@@ -118,6 +131,7 @@ export async function Footer() {
               ))}
             </div>
           </div>
+          ) : null}
 
           {[footerNav.maison, footerNav.services].map((col) => (
             <div key={col.title}>
@@ -143,15 +157,17 @@ export async function Footer() {
               {copy.footer.contact}
             </div>
             <div className="flex flex-col gap-[13px] font-sans text-[13.5px] text-warm-300">
-              <span>{brand.contact.phone}</span>
+              {brand.contact.phone ? <span>{brand.contact.phone}</span> : null}
               <a href={`mailto:${brand.contact.email}`} className="hover:text-ivory transition-colors">
                 {brand.contact.email}
               </a>
-              <span className="leading-[1.6]">
-                {brand.contact.address.street}
-                <br />
-                {brand.contact.address.zip} {brand.contact.address.city}
-              </span>
+              {brand.contact.address.street ? (
+                <span className="leading-[1.6]">
+                  {brand.contact.address.street}
+                  <br />
+                  {brand.contact.address.zip} {brand.contact.address.city}
+                </span>
+              ) : null}
             </div>
           </div>
         </div>

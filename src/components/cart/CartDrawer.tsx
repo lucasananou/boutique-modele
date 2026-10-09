@@ -45,8 +45,10 @@ export function CartDrawer() {
       <aside
         className={[
           "fixed top-0 right-0 bottom-0 z-50 w-full max-w-[420px] bg-ivory-light flex flex-col",
-          "shadow-[-30px_0_60px_-30px_rgba(28,23,18,0.4)] transition-transform duration-500",
-          open ? "translate-x-0" : "translate-x-full",
+          "transition-transform duration-500",
+          // Ombre seulement à l'ouverture : panneau fermé, elle débordait en
+          // bande grisée sur le bord droit de toutes les pages.
+          open ? "translate-x-0 shadow-[-30px_0_60px_-30px_rgba(28,23,18,0.4)]" : "translate-x-full",
         ].join(" ")}
         style={{ transitionTimingFunction: "var(--ease-lux)" }}
         role="dialog"
