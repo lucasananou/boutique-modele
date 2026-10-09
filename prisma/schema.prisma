@@ -1,0 +1,561 @@
+// Schéma Prisma — comptes clients & commandes.
+// PostgreSQL. Évolutions du schéma : `npm run db:migrate -- --name <nom>` (dev),
+// appliquées au démarrage par `prisma migrate deploy`.
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  /// Hash bcrypt — null pour les comptes OAuth.
+  passwordHash  String?
+  image         String?
+  phone         String?
+  /// Droits : CUSTOMER (cliente), STAFF / OWNER (accès admin). Seule source
+  /// de vérité pour l'admin (voir src/lib/roles.ts).
+  role          UserRole  @default(CUSTOMER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts  Account[]
+  sessions  Session[]
+  orders    Order[]
+  addresses Address[]
+}
+
+enum UserRole {
+  CUSTOMER
+  STAFF
+  OWNER
+}
+
+model Address {
+  id         String  @id @default(cuid())
+  userId     String
+  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fullName   String
+  line1      String
+  line2      String?
+  zip        String
+  city       String
+  country    String  @default("France")
+  phone      String?
+  isDefault  Boolean @default(false)
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  /// Numéro lisible affiché au client (ex. CMD-2026-0001).
+  reference       String      @unique
+  userId          String?
+  user            User?       @relation(fields: [userId], references: [id])
+  email           String
+  status          OrderStatus @default(PENDING)
+  /// Montant total en centimes.
+  amountTotal     Int
+  currency        String      @default("eur")
+  /// Locale storefront utilisée à la création (fr | en | he) pour emails et liens.
+  locale          String      @default("fr")
+  giftWrap        Boolean     @default(false)
+  /// Code promo appliqué + remise en centimes (0 si aucun).
+  discountCode    String?
+  discountAmount  Int         @default(0)
+  stripeSessionId String?     @unique
+  /// Identifiant Stripe du paiement (pour remboursements).
+  stripePaymentIntent String?
+  /// Garde-fou idempotence : dernier event Stripe traité.
+  lastStripeEvent String?
+  /// Jeton opaque d'accès à la page de confirmation (anti-énumération).
+  confirmToken    String?     @unique
+  /// Stock décrémenté ? (évite le double décrément à l'idempotence).
+  stockApplied    Boolean     @default(false)
+  /// Relances panier abandonné envoyées (0–3) + date du dernier envoi.
+  reminderCount   Int         @default(0)
+  lastReminderAt  DateTime?
+  /// Origine : "checkout" (tunnel classique) ou "cart_lead" (e-mail capturé au panier).
+  source          String      @default("checkout")
+  shippingName    String?
+  shippingLine1   String?
+  shippingZip     String?
+  shippingCity    String?
+  shippingCountry String?
+  /// Expédition : transporteur (clé de src/lib/carriers.ts), n° de suivi,
+  /// lien de suivi éventuel (transporteur « autre ») et date d'expédition.
+  trackingCarrier String?
+  trackingNumber  String?
+  trackingUrl     String?
+  shippedAt       DateTime?
+  /// Montant remboursé en centimes (Stripe `charge.refunded`, total ou partiel).
+  refundedAmount  Int         @default(0)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  items OrderItem[]
+}
+
+model OrderItem {
+  id           String  @id @default(cuid())
+  orderId      String
+  order        Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId    String
+  slug         String
+  name         String
+  variantId    String?
+  variantLabel String?
+  engraving    String?
+  /// Prix unitaire en centimes au moment de l'achat.
+  unitPrice    Int
+  quantity     Int
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+/* ---- Catalogue ---- */
+
+model Collection {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  name         String
+  season       String?
+  tagline      String
+  description  String
+  heroImageSrc String    @default("")
+  heroImageAlt String
+  sortOrder    Int       @default(0)
+  products     Product[]
+  translations CollectionTranslation[]
+}
+
+model CollectionTranslation {
+  id String @id @default(cuid())
+  collectionId String
+  collection Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  locale String
+  name String
+  tagline String
+  description String
+  @@unique([collectionId, locale])
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  description String
+  imageSrc    String    @default("")
+  imageAlt    String
+  sortOrder   Int       @default(0)
+  /// Visuel affiché (cartes catégorie, menu). Prioritaire sur imageSrc, qui
+  /// est conservé tel quel (valeurs historiques non affichées).
+  image       String?
+  /// Segment d'URL public à la racine (ex. « robes » → /robes).
+  /// Null = /<slug>. Unicité vérifiée par l'admin (pas de contrainte UNIQUE en
+  /// base, héritage du schéma d'origine ; ajoutable par une migration).
+  urlSlug     String?
+  /// Titre H1 / meta (repli : nom).
+  seoTitle    String?
+  /// Titre du bloc de texte SEO sous la grille.
+  seoHeading  String?
+  /// Texte SEO sous la grille.
+  seoText     String?
+  /// FAQ de la catégorie : [{ q, a }] (accordéon + JSON-LD FAQPage).
+  faqs        Json?
+  products    Product[]
+  translations CategoryTranslation[]
+
+  @@index([urlSlug])
+}
+
+model CategoryTranslation {
+  id String @id @default(cuid())
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  locale String
+  name String
+  description String
+  seoTitle String?
+  seoHeading String?
+  seoText String?
+  faqs Json?
+  imageAlt String?
+  @@unique([categoryId, locale])
+}
+
+model Material {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  description String
+  sortOrder   Int       @default(0)
+  products    Product[] @relation("ProductMaterials")
+}
+
+model Product {
+  id               String           @id @default(cuid())
+  slug             String           @unique
+  name             String
+  /// Prix courant en centimes (TTC) — réellement facturé.
+  price            Int
+  /// Prix barré (référence) en centimes — affiche une remise. Null = pas de remise.
+  compareAtPrice   Int?
+  sku              String           @unique
+  categoryId       String
+  category         Category         @relation(fields: [categoryId], references: [id])
+  collectionId     String
+  collection       Collection       @relation(fields: [collectionId], references: [id])
+  materials        Material[]       @relation("ProductMaterials")
+  materialLabel    String
+  shortDescription String
+  description      String
+  seoTitle         String?
+  seoDescription   String?
+  badge            String?
+  iconic           Boolean          @default(false)
+  limited          Boolean          @default(false)
+  /// Stock total réel (décrémenté au paiement).
+  stock            Int              @default(0)
+  status           String           @default("active") // active | draft | archived
+  /// Visible dans les listings/catalogue. Une page produit active reste accessible si false.
+  catalogVisible   Boolean          @default(true)
+  sortOrder        Int              @default(0)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  variants ProductVariant[]
+  images   ProductImage[]
+  details  ProductDetail[]
+  translations ProductTranslation[]
+}
+
+model ProductTranslation {
+  id               String   @id @default(cuid())
+  productId        String
+  product          Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  locale           String
+  name             String
+  shortDescription String
+  description      String
+  seoTitle         String?
+  seoDescription   String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([productId, locale])
+  @@index([locale])
+}
+
+model ProductVariant {
+  id         String  @id @default(cuid())
+  productId  String
+  product    Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  /// Clé stable de la variante (ex. "t52", "l45").
+  key        String
+  label      String
+  /// SKU vendable propre à la variante (couleur/taille fournisseur).
+  sku        String? @unique
+  /// Type d'option principal affiché (Couleur, Taille, Couleur / Taille).
+  optionName String @default("Taille")
+  optionValue String?
+  colorName  String?
+  colorHex   String?
+  sizeLabel  String?
+  /// Stock réel de cette variante. Si aucune variante n'a de stock dédié,
+  /// l'ancien stock produit reste le repli.
+  stock      Int     @default(0)
+  /// Surcoût en centimes par rapport au prix de base.
+  priceDelta Int     @default(0)
+  available  Boolean @default(true)
+  sortOrder  Int     @default(0)
+
+  images ProductImage[]
+
+  @@index([productId, colorName])
+  @@index([productId, sizeLabel])
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  variantId String?
+  variant   ProductVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+  src       String  @default("")
+  alt       String
+  sortOrder Int     @default(0)
+
+  @@index([productId, variantId])
+}
+
+model ProductDetail {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  label     String
+  value     String
+  sortOrder Int     @default(0)
+}
+
+/* ---- Contenus éditoriaux (articles du journal, landings SEO) ---- */
+
+/// Page de contenu servie à la racine (/<slug>) : article du journal
+/// (kind = "article", corps HTML) ou landing SEO (kind = "landing", `data`).
+/// Remplace les page.tsx codés en dur : chaque boutique a ses contenus en base.
+model Page {
+  id               String   @id @default(cuid())
+  slug             String   @unique
+  kind             String   @default("article") // article | landing
+  status           String   @default("published") // published | draft
+  title            String
+  excerpt          String   @default("")
+  /// Rubrique affichée (« Guide », « Conseils »…).
+  category         String   @default("")
+  image            String   @default("")
+  author           String?
+  /// Dates éditoriales affichées (ISO AAAA-MM-JJ).
+  publishedAt      String?
+  contentUpdatedAt String?
+  readingMinutes   Int?
+  faqs             Json?
+  /// Catégories catalogue des pièces mises en avant (slugs).
+  outfitCategories String[] @default([])
+  outfitTitle      String?
+  /// Slugs d'articles liés (« poursuivre la lecture »).
+  related          String[] @default([])
+  canonical        String?
+  /// Corps HTML (articles). Produit cité : <cited-product data-props='{...}'></cited-product>.
+  body             String   @default("")
+  /// Données structurées (landings : sections, FAQ, liens, catégorie produits…).
+  data             Json?
+  sortOrder        Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  translations     PageTranslation[]
+
+  @@index([kind, status, sortOrder])
+}
+
+model PageTranslation {
+  id          String  @id @default(cuid())
+  pageId      String
+  page        Page    @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  locale      String
+  /// Null = page non traduite (message « traduction en cours »).
+  title       String?
+  excerpt     String?
+  category    String?
+  outfitTitle String?
+  faqs        Json?
+  body        String?
+  data        Json?
+  /// Carte du journal traduite ({ title, excerpt, category }).
+  card        Json?
+
+  @@unique([pageId, locale])
+}
+
+/// Réglages de la boutique modifiables en ligne (clé → JSON).
+model Setting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+/* ---- Promotions ---- */
+
+model Promotion {
+  id        String   @id @default(cuid())
+  code      String   @unique
+  /// "percent" (valeur = %) ou "fixed" (valeur = centimes).
+  kind      String   @default("percent")
+  value     Int
+  /// Montant minimum de commande en centimes (0 = sans minimum).
+  minSubtotal Int    @default(0)
+  detail    String
+  active    Boolean  @default(true)
+  expiresAt DateTime?
+  createdAt DateTime @default(now())
+}
+
+/* ---- Vente flash (countdown pilotable) ---- */
+
+model FlashSale {
+  id        String   @id @default(cuid())
+  /// Libellé affiché (ex. « Black Friday », « Ventes flash »).
+  label     String   @default("Ventes flash")
+  /// Remise mise en avant (en %, à titre indicatif/marketing).
+  percent   Int      @default(30)
+  /// Fin du compte à rebours.
+  endsAt    DateTime
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/* ---- Compteur atomique (références de commande) ---- */
+
+model Counter {
+  id    String @id
+  value Int    @default(0)
+}
+
+/* ---- Live Commerce ---- */
+
+enum LiveStatus {
+  BROWSING
+  CART
+  CHECKOUT
+  CONVERTED
+  INACTIVE
+}
+
+enum LiveEventType {
+  PAGE_VIEW
+  PRODUCT_VIEW
+  ADD_TO_CART
+  REMOVE_FROM_CART
+  CART_UPDATE
+  BEGIN_CHECKOUT
+  PURCHASE
+  HEARTBEAT
+}
+
+model LiveSession {
+  id             String      @id @default(cuid())
+  anonymousId    String      @unique
+  status         LiveStatus  @default(BROWSING)
+  lastSeenAt     DateTime    @default(now())
+  createdAt      DateTime    @default(now())
+  currentPage    String?
+  country        String?
+  city           String?
+  latitude       Float?
+  longitude      Float?
+  timezone       String?
+  cartItemsCount Int         @default(0)
+  cartValue      Int         @default(0)
+  orderValue     Int?
+  browser        String?
+  referrer       String?
+  events         LiveEvent[]
+
+  @@index([status])
+  @@index([lastSeenAt])
+}
+
+model LiveEvent {
+  id             String        @id @default(cuid())
+  sessionId      String
+  session        LiveSession   @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  eventType      LiveEventType
+  productId      String?
+  productName    String?
+  productSlug    String?
+  cartItemsCount Int?
+  cartValue      Int?
+  orderValue     Int?
+  orderRef       String?
+  page           String?
+  createdAt      DateTime      @default(now())
+
+  @@index([sessionId])
+  @@index([eventType])
+  @@index([createdAt])
+}
+
+/* ---- Chat / Messagerie live ---- */
+
+enum ChatSender {
+  VISITOR
+  ADMIN
+}
+
+model ChatConversation {
+  id             String        @id @default(cuid())
+  /// Jeton opaque partagé avec la visiteuse (localStorage) pour ré-accéder à sa conversation.
+  token          String        @unique @default(cuid())
+  /// E-mail laissé pour une réponse différée (optionnel) + nom éventuel.
+  email          String?
+  name           String?
+  status         String        @default("open") // open | closed
+  /// Non-lus côté admin / côté visiteuse.
+  adminUnread    Int           @default(0)
+  visitorUnread  Int           @default(0)
+  /// Dernière fois que la visiteuse a « vu » la conversation (poll) → présence.
+  visitorSeenAt  DateTime      @default(now())
+  /// Dernier e-mail de notification envoyé à la visiteuse (anti-doublon).
+  lastNotifiedAt DateTime?
+  page           String?
+  userAgent      String?
+  lastMessageAt  DateTime      @default(now())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  messages       ChatMessage[]
+
+  @@index([status, lastMessageAt])
+}
+
+model ChatMessage {
+  id             String           @id @default(cuid())
+  conversationId String
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         ChatSender
+  body           String
+  createdAt      DateTime         @default(now())
+
+  @@index([conversationId, createdAt])
+}
+
+/// Inscriptions à la newsletter (formulaire du site). La date d'inscription
+/// sert de preuve de consentement.
+model NewsletterSubscriber {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  locale         String    @default("fr")
+  createdAt      DateTime  @default(now())
+  unsubscribedAt DateTime?
+}
+
+/* ---- Auth.js (Prisma adapter) ---- */
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

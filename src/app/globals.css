@@ -1,0 +1,353 @@
+@import "tailwindcss";
+
+/*
+  ============================================================
+  DESIGN SYSTEM — valeurs par défaut du modèle
+  Polices : définies par boutique (src/stores/<id>/fonts.ts)
+  Couleurs : surchargées par boutique (theme.colors de src/stores/<id>/config.ts,
+  injectées sur :root). Les NOMS de tokens sont historiques (ivory, sand,
+  champagne…) ; seules les VALEURS changent d'une boutique à l'autre.
+  ============================================================
+*/
+
+@theme {
+  /* Couleurs — fonds clairs */
+  --color-ivory: #ffffff; /* fond principal (blanc) */
+  --color-ivory-light: #faf8f4; /* surfaces crème claires */
+  --color-mineral: #faf8f4; /* alternance de sections (crème) */
+  --color-sand: #f3efe8; /* fond visuel / placeholder image */
+  --color-sand-soft: #ece8e1; /* filets & bordures */
+
+  /* Accent brun chaud (ex-« champagne ») */
+  --color-champagne: #6f5b46; /* accent / liens / filets */
+  --color-champagne-light: #cdb89a; /* accent clair sur fond sombre */
+  --color-champagne-pale: #a59c8c; /* sur-titres sur fond sombre */
+
+  /* Gris chauds (taupes) */
+  --color-warm-700: #5b554c; /* texte courant (paragraphes) */
+  --color-warm-500: #6f6a60; /* texte secondaire / sur-titres (contraste AA sur clair) */
+  --color-warm-400: #9b9488; /* taupe clair — décoratif / grand texte uniquement */
+  --color-warm-300: #a59c8c; /* texte sur fond sombre */
+
+  --color-ink: #16130f; /* encre brun-noir — texte & fonds sombres */
+  --color-ink-deep: #16130f; /* footer */
+  --color-ink-soft: #f3efe8; /* texte clair sur fond sombre */
+
+  /* Typographie */
+  --font-serif: var(--font-serif-src), "Cormorant Garamond", serif;
+  --font-sans: var(--font-sans-src), "Jost", sans-serif;
+  --font-hebrew: var(--font-hebrew-src), var(--font-sans);
+
+  /* Rayons */
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 5px;
+
+  /* Transitions */
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --background: var(--color-ivory);
+  --foreground: var(--color-ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-hebrew);
+}
+
+html[dir="rtl"] .font-serif {
+  font-family: var(--font-hebrew);
+  font-weight: 400;
+}
+
+/* Utilitaires typographiques récurrents de la charte */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem; /* 11px */
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+}
+
+@utility display-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+/* Animations */
+@keyframes vFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-fade {
+  animation: vFade 0.3s var(--ease-lux);
+}
+
+/* Respecte la préférence système « mouvement réduit » (a11y, WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Corps d'article éditorial (journal) */
+.article-prose {
+  font-family: var(--font-sans);
+  color: var(--color-warm-700);
+  font-size: 16px;
+  line-height: 1.9;
+}
+.article-prose h2 {
+  font-family: var(--font-serif);
+  color: var(--color-ink);
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 2.4rem 0 1rem;
+}
+.article-prose h3 {
+  font-family: var(--font-serif);
+  color: var(--color-ink);
+  font-size: 21px;
+  margin: 1.8rem 0 0.6rem;
+}
+.article-prose p {
+  margin: 0 0 1.15rem;
+}
+/* Chapô : le premier paragraphe donne le ton (serif, plus grand). */
+.article-prose > p:first-child {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  margin-bottom: 2rem;
+}
+.article-prose ul,
+.article-prose ol {
+  margin: 0 0 1.15rem 1.2rem;
+  list-style: disc;
+}
+.article-prose ol {
+  list-style: decimal;
+}
+.article-prose li {
+  margin: 0 0 0.5rem;
+}
+.article-prose a {
+  color: var(--color-champagne);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.article-prose strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+/* Tableau de synthèse (repères en un coup d'œil) — format aimé des extraits enrichis. */
+.article-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid var(--color-ink);
+  margin: 0 0 1.6rem;
+  font-size: 15.5px;
+}
+.article-prose th,
+.article-prose td {
+  text-align: left;
+  vertical-align: top;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(26, 24, 21, 0.12);
+}
+.article-prose th {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  color: var(--color-ink);
+  width: 34%;
+  padding-right: 18px;
+}
+.article-prose td {
+  color: var(--color-warm-700);
+}
+/* Figures légendées (trafic Google Images + temps de lecture). */
+.article-prose figure {
+  margin: 0 0 1.9rem;
+}
+.article-prose figcaption {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--color-warm-500, #9c9485);
+  margin-top: 0.6rem;
+}
+/* Citation mise en avant. */
+.article-prose blockquote {
+  margin: 0.4rem 0 1.9rem;
+  padding-left: 1.4rem;
+  border-left: 2px solid var(--color-champagne);
+}
+.article-prose blockquote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 25px;
+  line-height: 1.45;
+  color: var(--color-ink);
+  margin: 0;
+}
+/* Ancrage : le sommaire saute juste au-dessus du titre (header non collant). */
+.article-prose h2 {
+  scroll-margin-top: 96px;
+}
+/* Blocs produits/embeds insérés dans la prose : gardent leur propre style de lien. */
+.article-prose .article-embed a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Focus accessible, discret et luxe */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-champagne);
+  outline-offset: 2px;
+}
+
+/* Scrollbar sobre */
+::selection {
+  background: var(--color-champagne);
+  color: var(--color-ivory-light);
+}
+
+/*
+  ============================================================
+  PANNEAU ADMIN — thème par variables CSS
+  Scellé à `.admin-root`. Les primitives partagées (ui.tsx), le shell
+  (layout / AdminShell) et la nav consomment ces variables au lieu de
+  couleurs en dur, ce qui permet le mode sombre + les modes d'affichage.
+  Triplet « ink » exposé en composantes (R G B) pour reproduire les
+  rgba(20,21,26,α) historiques via rgb(var(--ad-ink-rgb) / α).
+  ============================================================
+*/
+.admin-root {
+  /* Clair (défaut) */
+  --ad-bg: #fbfaf8;
+  --ad-surface: #ffffff;
+  --ad-surface-2: #fbfaf8; /* champs, fonds légers */
+  --ad-border-rgb: 20 21 26; /* bordures via alpha */
+  --ad-border: rgb(var(--ad-border-rgb) / 0.08);
+  --ad-ink-rgb: 20 21 26; /* texte principal */
+  --ad-accent: #1a5bff; /* liens « tout voir » */
+
+  background-color: var(--ad-bg);
+  color: rgb(var(--ad-ink-rgb));
+
+  /* Layout piloté par `data-menu` (défaut = menu en haut → colonne). */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Menu latéral (sidebar) : nav + contenu côte à côte. */
+.admin-root[data-menu="side"] {
+  flex-direction: row;
+}
+
+/* Conteneur de contenu : centré / max 1080px par défaut, pleine largeur si demandé. */
+.admin-root [data-ad-content] {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1080px;
+}
+.admin-root[data-fullwidth] [data-ad-content] {
+  max-width: none;
+}
+
+/* Sombre */
+.admin-root[data-theme="dark"] {
+  --ad-bg: #141518;
+  --ad-surface: #1c1e22;
+  --ad-surface-2: #232529;
+  --ad-border-rgb: 232 233 238;
+  --ad-border: rgb(var(--ad-border-rgb) / 0.12);
+  --ad-ink-rgb: 232 233 238;
+  --ad-accent: #6f95ff;
+
+  /* Fond/texte du shell en littéral (spécificité > `.admin-root`), pour un
+     basculement déterministe sans dépendre de la substitution de var dans le
+     même bloc de règle. */
+  background-color: #141518;
+  color: #e8e9ee;
+}
+
+/*
+  NB : pas de transition CSS sur les couleurs pilotées par variables ici.
+  Chromium n'interpole pas de façon fiable une propriété dont la valeur provient
+  d'une custom property non enregistrée (`@property`) : la couleur resterait
+  « bloquée » sur l'ancienne valeur. Le basculement de thème est donc instantané
+  (correct), ce qui est parfaitement acceptable.
+*/
+
+/*
+  Mode compact : resserre les paddings du contenu et des cartes.
+  Le shell pose `data-compact` sur `.admin-root`. On cible :
+   - le conteneur de contenu (padding vertical du main)
+   - les surfaces balisées `data-ad-surface` (cartes primitives)
+*/
+.admin-root[data-compact] [data-ad-content] {
+  padding-top: 1.4rem;
+  padding-bottom: 3rem;
+}
+.admin-root[data-compact] [data-ad-surface] {
+  padding-top: 0.72rem;
+  padding-bottom: 0.72rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+}
+
+/* Scrollbar discrète des zones de nav défilables (top & side) */
+.admin-nav-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.admin-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Lignes du menu de préférences (survol) */
+.admin-menu-row:hover {
+  background: rgb(var(--ad-ink-rgb) / 0.05);
+}
