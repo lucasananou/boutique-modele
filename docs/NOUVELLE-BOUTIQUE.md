@@ -122,3 +122,27 @@ légales (vendeur, médiateur) complètes, plus aucun « À REMPLIR » à l'écr
 grep -rn "À REMPLIR" src/stores/<id>/
 curl -s https://<domaine>/ | grep -io "à remplir"
 ```
+
+## 5. Options de vente (facultatives, `config.ts`)
+
+| Clé | Effet |
+|---|---|
+| `catalogCurrency: "USD"` | prix du catalogue saisis et facturés en dollars (défaut : euros) |
+| `commerce.shipsTo: ["US"]` | le checkout refuse toute autre destination ; « US » impose État (50 + DC) et ZIP, refuse PO box / APO |
+| `commerce.shipping` | frais de port fixes + seuil de gratuité (unités mineures) ; absent = livraison offerte |
+| `subscriptions` | abonnements Stripe Billing : remise %, fréquences en jours, port offert. Une ligne `intervalDays` dans `/api/checkout` → Checkout en mode `subscription`. Gestion : sauter / décaler (`trial_end`) / résilier (`cancel_at_period_end`) via `src/lib/subscriptions.ts`, portail client Stripe pour la carte. Admin > Abonnements |
+| `fulfillment` | expédition par un fournisseur (ex. Supliful) : admin > **Expéditions** liste les commandes payées à transmettre, champs prêts à copier, « transmise », puis suivi → e-mail d'expédition. `ProductVariant.units` = unités physiques par variante (pack de 2 = 2) |
+| `emailTheme` | couleurs et police des e-mails |
+| `front` | **vitrine sur mesure** (voir ci-dessous) |
+
+Webhook Stripe : ajouter les événements `invoice.paid` (renouvellements → nouvelle commande), `invoice.upcoming` (rappel avant renouvellement), `customer.subscription.updated` et `customer.subscription.deleted`.
+
+Mode démo (sans `STRIPE_SECRET_KEY`) : la commande est validée sans paiement, l'abonnement créé en base. `EMAIL_LOG_DIR=/chemin` écrit chaque e-mail non envoyé en fichier HTML.
+
+Produits initiaux : `content/<id>/products.json` (produit, variantes avec `units` et `priceDelta`, images, détails), créés au démarrage s'ils n'existent pas.
+
+### Vitrine sur mesure (`src/stores/<id>/front/index.tsx`)
+
+Pour une marque dont le design ne suit pas les pages du modèle (ex. FIRST DRAW) : le dossier `front/` exporte un `StoreFront` (`src/stores/front.ts`) : layout, pages par chemin (`resolve`), 404, métadonnées, classes du `<html>` (polices). `scripts/select-store.mjs` génère `src/stores/current-front.ts`. Le proxy réécrit alors toutes les URL publiques vers `/vitrine/<chemin>` (URL affichée inchangée) ; `/admin`, `/api`, `/_next` restent au modèle. Le layout racine rend un document nu : ni Tailwind ni composants du modèle sur la vitrine (ses propres styles, importés par `front/index.tsx`). Config : `front.locale` (langue des commandes et e-mails), `front.paths` (connexion, compte, checkout, confirmation, gestion d'abonnement). La vitrine appelle `/api/checkout` et lit la base comme le modèle.
+
+⚠️ Next 16.3 : lancer `next start -H localhost` (ou sans `-H`), **pas** `-H 127.0.0.1` : sinon toute réécriture du proxy devient un proxy HTTP externe (erreurs 500 « Failed to proxy »). En local, ouvrir `http://localhost:<port>` (le dev refuse l'origine 127.0.0.1 : pas d'hydratation).
