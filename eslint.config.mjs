@@ -23,6 +23,17 @@ const eslintConfig = defineConfig([
     files: ["**/*.cjs"],
     rules: { "@typescript-eslint/no-require-imports": "off" },
   },
+  // Vitrines sur mesure (src/stores/<id>/front) : portage fidèle d'une
+  // maquette HTML. Liens <a> = navigations pleine page voulues (les
+  // interactions sont branchées par délégation sur le document) ; <img> =
+  // images locales déjà dimensionnées, sans loader Cloudinary.
+  {
+    files: ["src/stores/*/front/**"],
+    rules: {
+      "@next/next/no-html-link-for-pages": "off",
+      "@next/next/no-img-element": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;

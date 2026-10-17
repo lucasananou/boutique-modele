@@ -11,6 +11,15 @@ import { usd } from "../packs";
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? "";
 const DAY = 86_400_000;
 const iso = (d: Date) => d.toISOString().slice(0, 10);
+/** Bornes du sélecteur de date (rendu serveur, à chaque requête). */
+function dateWindow(next: Date | null) {
+  const now = Date.now();
+  return {
+    nextDate: iso(next ?? new Date(now + DAY)),
+    minDate: iso(new Date(now + DAY)),
+    maxDate: iso(new Date(now + 180 * DAY)),
+  };
+}
 const longDate = (d: Date | null) =>
   d ? d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) : "—";
 
@@ -57,7 +66,6 @@ function SubscriptionCard({
 }: {
   sub: NonNullable<Awaited<ReturnType<typeof prisma.subscription.findUnique>>>;
 }) {
-  const now = Date.now();
   const ended = sub.status === "canceled";
   return (
     <div className="shop-card">
@@ -91,9 +99,7 @@ function SubscriptionCard({
         <ManageSubscription
           token={sub.manageToken}
           cancelAtPeriodEnd={sub.cancelAtPeriodEnd}
-          nextDate={iso(sub.nextChargeAt ?? new Date(now + DAY))}
-          minDate={iso(new Date(now + DAY))}
-          maxDate={iso(new Date(now + 180 * DAY))}
+          {...dateWindow(sub.nextChargeAt)}
           intervalDays={sub.intervalDays}
           portal={isStripeLive && Boolean(sub.stripeCustomerId)}
         />

@@ -43,7 +43,7 @@ function isProductionHost(host: string | null): boolean {
 
 /** Vitrine sur mesure (config `front`) : préfixes laissés aux pages du modèle. */
 const FRONT_PASSTHROUGH = store.front
-  ? ["/admin", "/icon", "/opengraph-image", ...store.front.passthrough]
+  ? ["/admin", "/_next", "/icon", "/opengraph-image", ...store.front.passthrough]
   : [];
 
 /**
