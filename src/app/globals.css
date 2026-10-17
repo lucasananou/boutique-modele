@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* Vitrines sur mesure : leurs classes (« hidden », « grid »…) ne doivent pas
+   générer d'utilitaires Tailwind (elles ont leur propre feuille de style). */
+@source not "../stores/*/front";
 
 /*
   ============================================================

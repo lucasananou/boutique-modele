@@ -164,6 +164,86 @@ export interface StoreConfig {
     transitDays: [number, number];
     returnDays: number;
     freeReturns: boolean;
+    /**
+     * Pays livrés (codes ISO 3166-1 alpha-2, ex. ["US"]). Absent : saisie libre
+     * du pays (comportement historique). Renseigné : le checkout refuse toute
+     * autre destination ; "US" impose un État et un ZIP valides.
+     */
+    shipsTo?: readonly string[];
+    /**
+     * Frais de port, en unités mineures de la devise du catalogue. Absent :
+     * livraison toujours offerte. `freeOver` : seuil de gratuité (null = jamais).
+     */
+    shipping?: { flatRate: number; freeOver: number | null; label: string };
+  };
+
+  /**
+   * Devise dans laquelle les prix du catalogue sont saisis et stockés.
+   * Défaut "EUR" (les autres devises en sont dérivées à taux figé, voir
+   * src/lib/currency.ts). Une boutique américaine met "USD" : ses prix sont
+   * alors facturés tels quels en dollars.
+   */
+  catalogCurrency?: "EUR" | "USD";
+
+  /**
+   * Abonnements (Stripe Billing, Checkout en mode subscription). Absent :
+   * aucune ligne d'abonnement acceptée par le checkout.
+   */
+  subscriptions?: {
+    /** Remise appliquée à chaque livraison (en %). */
+    discountPercent: number;
+    /** Fréquences proposées, en jours (ex. [30, 60, 90]). */
+    intervals: readonly number[];
+    /** Livraison offerte sur toute commande contenant un abonnement. */
+    freeShipping: boolean;
+  };
+
+  /**
+   * Fournisseur qui expédie à la place de la boutique (fabrication à la
+   * demande, ex. Supliful). Active l'écran admin « Expéditions » : commandes
+   * payées à lui transmettre, prêtes à copier, puis suivi colis.
+   */
+  fulfillment?: {
+    partner: string;
+    dashboardUrl: string;
+    /** Rappel affiché en tête de l'écran (produit à choisir chez le fournisseur…). */
+    note: string;
+    /** Nom des unités physiques (« pot », « flacon ») : 1 pack de 2 = 2 pots. */
+    unitLabel: { one: string; many: string };
+  };
+
+  /** Couleurs et police des e-mails transactionnels (défaut : gabarit du modèle). */
+  emailTheme?: {
+    outer: string;
+    card: string;
+    header: string;
+    headerText: string;
+    ink: string;
+    text: string;
+    muted: string;
+    accent: string;
+    headingFont: string;
+  };
+
+  /**
+   * Vitrine sur mesure (src/stores/<id>/front) : remplace les pages publiques
+   * du modèle par celles de la boutique, servies via /vitrine/[[...path]]
+   * (réécriture dans src/proxy.ts). Back-office, API, comptes et commandes
+   * restent ceux du modèle. Absent : vitrine standard du modèle.
+   */
+  front?: {
+    /** Langue des commandes, e-mails et montants de la vitrine. */
+    locale: Locale;
+    /** Chemins publics utilisés par le back-end (redirections, e-mails). */
+    paths: {
+      signIn: string;
+      account: string;
+      checkout: string;
+      confirmation: string;
+      manageSubscription: string;
+    };
+    /** Préfixes servis par le modèle et non par la vitrine (en plus de /admin). */
+    passthrough: readonly string[];
   };
 
   promos: {

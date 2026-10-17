@@ -26,12 +26,16 @@ interface SendArgs {
 }
 
 /**
- * Envoi bas niveau. Sans clé Resend → no-op loggé (clé-ready : le code marche,
- * il suffit de fournir RESEND_API_KEY + EMAIL_FROM pour activer l'envoi réel).
+ * Envoi bas niveau. Sans clé Resend → no-op journalisé (clé-ready : le code
+ * marche, il suffit de fournir RESEND_API_KEY + EMAIL_FROM pour activer
+ * l'envoi réel). Avec EMAIL_LOG_DIR, l'e-mail complet est aussi écrit en
+ * fichier HTML (relecture des gabarits en préproduction, rien n'est envoyé).
  */
 async function send({ to, subject, html }: SendArgs): Promise<boolean> {
   if (!resend) {
-    console.info(`[email:démo] « ${subject} » → ${Array.isArray(to) ? to.join(", ") : to}`);
+    const dest = Array.isArray(to) ? to.join(", ") : to;
+    console.info(`[email:démo] « ${subject} » → ${dest}`);
+    await logToFile(dest, subject, html);
     return false;
   }
   try {
@@ -56,7 +60,43 @@ async function send({ to, subject, html }: SendArgs): Promise<boolean> {
   }
 }
 
+/** Journal des e-mails non envoyés (mode démo) : un fichier HTML par e-mail. */
+async function logToFile(to: string, subject: string, html: string): Promise<void> {
+  const dir = process.env.EMAIL_LOG_DIR;
+  if (!dir) return;
+  try {
+    const { mkdir, writeFile } = await import("node:fs/promises");
+    const path = await import("node:path");
+    await mkdir(dir, { recursive: true });
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const slug = subject
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "")
+      .replace(/[^a-zA-Z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "")
+      .slice(0, 60)
+      .toLowerCase();
+    const header = `<!-- From: ${FROM}\n     To: ${to}\n     Subject: ${subject}\n     Date: ${new Date().toISOString()} (non envoyé : mode démo) -->\n`;
+    await writeFile(path.join(dir, `${stamp}-${slug}.html`), header + html, "utf8");
+  } catch (e) {
+    console.error("[email:démo] journal impossible:", e);
+  }
+}
+
 /* ---------- Gabarit ---------- */
+
+/** Couleurs des e-mails : config `emailTheme` de la boutique, sinon gabarit du modèle. */
+const C = store.emailTheme ?? {
+  outer: "#efe8dc",
+  card: "#f7f3eb",
+  header: "#211c17",
+  headerText: "#f7f3eb",
+  ink: "#211c17",
+  text: "#534b40",
+  muted: "#8a8175",
+  accent: "#a98a55",
+  headingFont: "Georgia,'Times New Roman',serif",
+};
 
 function layout(title: string, body: string, preheader?: string, locale: Locale = "fr"): string {
   const config = localeConfig[locale];
@@ -64,39 +104,44 @@ function layout(title: string, body: string, preheader?: string, locale: Locale 
   const pre = preheader
     ? `<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">${preheader}</div>`
     : "";
-  return `<!doctype html><html lang="${config.htmlLang}" dir="${config.dir}"><body style="margin:0;background:#efe8dc;padding:32px 0;font-family:Georgia,'Times New Roman',serif;color:#211c17;">${pre}
+  const seller = store.seller;
+  // Pied : adresse de contact de la boutique ; à défaut, le vendeur légal.
+  const footer = !brand.contact.address.street && seller
+    ? `${seller.name} — ${seller.address}<br>${brand.contact.email}`
+    : `${brand.legalName} — ${brand.contact.address.street}, ${brand.contact.address.zip} ${brand.contact.address.city}<br>
+      ${brand.contact.phone} · ${brand.contact.email}`;
+  return `<!doctype html><html lang="${config.htmlLang}" dir="${config.dir}"><body style="margin:0;background:${C.outer};padding:32px 0;font-family:${C.headingFont};color:${C.ink};">${pre}
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">
-  <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="background:#f7f3eb;border-radius:6px;overflow:hidden;">
-    <tr><td style="background:#211c17;padding:26px 36px;">
-      <span style="font-size:20px;letter-spacing:0.34em;color:#f7f3eb;">${brand.name}</span>
+  <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="background:${C.card};border-radius:6px;overflow:hidden;">
+    <tr><td style="background:${C.header};padding:26px 36px;">
+      <span style="font-size:20px;letter-spacing:0.34em;color:${C.headerText};">${brand.name}</span>
     </td></tr>
     <tr><td style="padding:36px;">
-      <h1 style="font-size:24px;font-weight:normal;margin:0 0 18px;color:#211c17;">${title}</h1>
+      <h1 style="font-size:24px;font-weight:normal;margin:0 0 18px;color:${C.ink};">${title}</h1>
       ${body}
     </td></tr>
-    <tr><td style="padding:24px 36px;border-top:1px solid rgba(33,28,23,0.1);font-family:Arial,sans-serif;font-size:12px;color:#8a8175;">
-      ${brand.legalName} — ${brand.contact.address.street}, ${brand.contact.address.zip} ${brand.contact.address.city}<br>
-      ${brand.contact.phone} · ${brand.contact.email}
+    <tr><td style="padding:24px 36px;border-top:1px solid rgba(0,0,0,0.08);font-family:Arial,sans-serif;font-size:12px;color:${C.muted};">
+      ${footer}
     </td></tr>
   </table>
   </td></tr></table></body></html>`;
 }
 
 const p = (t: string) =>
-  `<p style="font-family:Arial,sans-serif;font-size:14px;line-height:1.7;color:#534b40;margin:0 0 14px;">${t}</p>`;
+  `<p style="font-family:Arial,sans-serif;font-size:14px;line-height:1.7;color:${C.text};margin:0 0 14px;">${t}</p>`;
 
 /** Gros bouton d'action (table-based pour la compat clients mail). */
 const cta = (href: string, label: string) =>
   `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:22px 0 8px;"><tr>
-    <td style="border-radius:4px;background:#211c17;">
-      <a href="${href}" style="display:inline-block;padding:14px 30px;font-family:Arial,sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#f7f3eb;text-decoration:none;">${label}</a>
+    <td style="border-radius:4px;background:${C.header};">
+      <a href="${href}" style="display:inline-block;padding:14px 30px;font-family:Arial,sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:${C.headerText};text-decoration:none;">${label}</a>
     </td>
   </tr></table>`;
 
 /** Bandeau de réassurance discret (livraison / retours / paiement). */
 const reassurance = (locale: Locale = "fr") =>
-  `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:22px 0 2px;border-top:1px solid rgba(33,28,23,0.1);">
-    <tr><td align="center" style="padding:15px 4px 0;font-family:Arial,sans-serif;font-size:11.5px;color:#8a8175;line-height:1.6;">
+  `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:22px 0 2px;border-top:1px solid rgba(0,0,0,0.08);">
+    <tr><td align="center" style="padding:15px 4px 0;font-family:Arial,sans-serif;font-size:11.5px;color:${C.muted};line-height:1.6;">
       ${t(locale).email.reassurance}
     </td></tr>
   </table>`;
@@ -104,9 +149,9 @@ const reassurance = (locale: Locale = "fr") =>
 /** Encart mettant en valeur le code promo. */
 const promoBox = (code: string, locale: Locale = "fr") =>
   `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:4px 0;"><tr>
-    <td style="border:1.5px dashed #a98a55;border-radius:8px;padding:13px 30px;text-align:center;">
-      <div style="font-family:Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8175;margin-bottom:5px;">${t(locale).email.promoLabel}</div>
-      <div style="font-family:Arial,sans-serif;font-size:23px;letter-spacing:0.16em;color:#211c17;font-weight:bold;">${code}</div>
+    <td style="border:1.5px dashed ${C.accent};border-radius:8px;padding:13px 30px;text-align:center;">
+      <div style="font-family:Arial,sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:${C.muted};margin-bottom:5px;">${t(locale).email.promoLabel}</div>
+      <div style="font-family:Arial,sans-serif;font-size:23px;letter-spacing:0.16em;color:${C.ink};font-weight:bold;">${code}</div>
     </td>
   </tr></table>`;
 
@@ -117,9 +162,15 @@ interface OrderForEmail {
   /** Devise reellement facturee : les montants sont dans ses unites mineures. */
   currency?: string;
   discountAmount?: number;
+  /** Frais de port facturés (inclus dans amountTotal). */
+  shippingAmount?: number;
   giftWrap?: boolean;
   shippingName?: string | null;
   locale?: Locale;
+  /** one_time | subscription_start | subscription_renewal */
+  kind?: string;
+  /** Jeton du lien « gérer mon abonnement ». */
+  manageToken?: string | null;
   /** Suivi colis (e-mail d'expédition). */
   tracking?: { carrier: string; number: string; url?: string | null };
   items: {
@@ -128,34 +179,71 @@ interface OrderForEmail {
     engraving?: string | null;
     unitPrice: number;
     quantity: number;
+    intervalDays?: number | null;
   }[];
+}
+
+/** Libellés propres aux abonnements et aux frais de port (hors schéma de traductions). */
+function extraCopy(locale: Locale) {
+  if (locale === "fr") {
+    return {
+      every: (d: number) => `Abonnement, livré tous les ${d} jours`,
+      shipping: "Livraison",
+      free: "Offerte",
+      subNote: "Votre abonnement est actif. Vous recevez un e-mail avant chaque renouvellement et vous pouvez sauter, décaler ou résilier en un clic.",
+      renewalTitle: "Votre livraison d'abonnement est confirmée",
+      renewalIntro: (first: string, ref: string) => `Bonjour${first}, votre renouvellement <strong>${ref}</strong> est payé et part en préparation.`,
+      manage: "Gérer mon abonnement",
+    };
+  }
+  return {
+    every: (d: number) => `Subscription, delivered every ${d} days`,
+    shipping: "Shipping",
+    free: "Free",
+    subNote: "Your subscription is active. We email you before every renewal, and you can skip, reschedule or cancel in one click.",
+    renewalTitle: "Your subscription delivery is confirmed",
+    renewalIntro: (first: string, ref: string) => `Hi${first}, your renewal <strong>${ref}</strong> is paid and being prepared.`,
+    manage: "Manage my subscription",
+  };
+}
+
+/** Lien sans compte vers la gestion d'un abonnement. */
+function manageUrl(token: string, locale: Locale): string {
+  const path = store.front?.paths.manageSubscription ?? localizedPath("/compte", locale);
+  return `${originForLocale(locale)}${path}?token=${encodeURIComponent(token)}`;
 }
 
 function itemsTable(o: OrderForEmail, locale: Locale = o.locale ?? "fr"): string {
   const copy = t(locale).email;
-  const bb = "border-bottom:1px solid rgba(33,28,23,0.08);";
+  const extra = extraCopy(locale);
+  const bb = "border-bottom:1px solid rgba(0,0,0,0.07);";
   const rows = o.items
     .map(
       (it) =>
         `<tr>
         <td style="padding:12px 0;${bb}vertical-align:top;">
-          <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;color:#211c17;margin-bottom:3px;">${it.name}</div>
-          <div style="font-family:Arial,sans-serif;font-size:12px;color:#8a8175;">${it.variantLabel ? `${it.variantLabel} · ` : ""}${copy.quantity} ${it.quantity}</div>
+          <div style="font-family:${C.headingFont};font-size:15px;color:${C.ink};margin-bottom:3px;">${it.name}</div>
+          <div style="font-family:Arial,sans-serif;font-size:12px;color:${C.muted};">${it.variantLabel ? `${it.variantLabel} · ` : ""}${copy.quantity} ${it.quantity}${it.intervalDays ? `<br>${extra.every(it.intervalDays)}` : ""}</div>
         </td>
-        <td align="right" style="padding:12px 0;${bb}font-family:Arial,sans-serif;font-size:13.5px;color:#211c17;white-space:nowrap;vertical-align:top;">
+        <td align="right" style="padding:12px 0;${bb}font-family:Arial,sans-serif;font-size:13.5px;color:${C.ink};white-space:nowrap;vertical-align:top;">
           ${formatMoney(it.unitPrice * it.quantity, o.currency ?? "eur", locale)}
         </td></tr>`,
     )
     .join("");
   const discount =
     o.discountAmount && o.discountAmount > 0
-      ? `<tr><td style="padding:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:#a98a55;">${copy.discount}</td><td align="right" style="padding:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:#a98a55;">−${formatMoney(o.discountAmount, o.currency ?? "eur", locale)}</td></tr>`
+      ? `<tr><td style="padding:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:${C.accent};">${copy.discount}</td><td align="right" style="padding:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:${C.accent};">−${formatMoney(o.discountAmount, o.currency ?? "eur", locale)}</td></tr>`
+      : "";
+  const shipping =
+    o.shippingAmount !== undefined && store.commerce.shipping
+      ? `<tr><td style="padding:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:${C.text};">${extra.shipping}</td><td align="right" style="padding:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:${C.text};">${o.shippingAmount > 0 ? formatMoney(o.shippingAmount, o.currency ?? "eur", locale) : extra.free}</td></tr>`
       : "";
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:8px 0 18px;">
     ${rows}
     ${discount}
-    <tr><td style="padding:14px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:15px;color:#211c17;">${copy.total}</td>
-    <td align="right" style="padding:14px 0 0;font-size:16px;color:#211c17;">${formatMoney(o.amountTotal, o.currency ?? "eur", locale)}</td></tr>
+    ${shipping}
+    <tr><td style="padding:14px 0 0;font-family:${C.headingFont};font-size:15px;color:${C.ink};">${copy.total}</td>
+    <td align="right" style="padding:14px 0 0;font-size:16px;color:${C.ink};">${formatMoney(o.amountTotal, o.currency ?? "eur", locale)}</td></tr>
   </table>`;
 }
 
@@ -164,16 +252,62 @@ function itemsTable(o: OrderForEmail, locale: Locale = o.locale ?? "fr"): string
 export async function sendOrderConfirmation(o: OrderForEmail) {
   const locale = o.locale ?? "fr";
   const copy = t(locale).email;
+  const extra = extraCopy(locale);
   const first = o.shippingName ? ` ${o.shippingName.split(" ")[0]}` : "";
+  const renewal = o.kind === "subscription_renewal";
+  const subscription = o.kind === "subscription_start" || renewal;
   await send({
     to: o.email,
     subject: interpolate(copy.orderSubject, { reference: o.reference }),
     html: layout(
-      copy.orderTitle,
-      p(interpolate(copy.orderIntro, { first, reference: o.reference })) +
+      renewal ? extra.renewalTitle : copy.orderTitle,
+      p(renewal ? extra.renewalIntro(first, o.reference) : interpolate(copy.orderIntro, { first, reference: o.reference })) +
         itemsTable(o, locale) +
         (o.giftWrap ? p(copy.gift) : "") +
-        p(copy.orderOutro),
+        p(copy.orderOutro) +
+        (subscription ? p(extra.subNote) + (o.manageToken ? cta(manageUrl(o.manageToken, locale), extra.manage) : "") : ""),
+      undefined,
+      locale,
+    ),
+  });
+}
+
+/** Rappel avant renouvellement d'un abonnement (promis sur le site). */
+export async function sendRenewalReminder(data: {
+  email: string;
+  name?: string | null;
+  productName: string;
+  variantLabel?: string | null;
+  amount: number;
+  currency: string;
+  date?: Date | null;
+  manageToken: string;
+  locale?: Locale;
+}) {
+  const locale = data.locale ?? "en";
+  const first = data.name ? ` ${data.name.split(" ")[0]}` : "";
+  const when = data.date
+    ? data.date.toLocaleDateString(localeConfig[locale].intlLocale, { month: "long", day: "numeric", year: "numeric" })
+    : "";
+  const amount = formatMoney(data.amount, data.currency, locale);
+  const product = `${data.productName}${data.variantLabel ? `, ${data.variantLabel}` : ""}`;
+  const fr = locale === "fr";
+  await send({
+    to: data.email,
+    subject: fr ? `Votre prochaine livraison ${brand.name}` : `Your next ${brand.name} delivery`,
+    html: layout(
+      fr ? "Votre prochaine livraison approche" : "Your next delivery is coming up",
+      p(
+        fr
+          ? `Bonjour${first}, votre abonnement (${product}) sera renouvelé${when ? ` le ${when}` : ""} pour ${amount}.`
+          : `Hi${first}, your subscription (${product}) renews${when ? ` on ${when}` : ""} for ${amount}.`,
+      ) +
+        p(
+          fr
+            ? "Rien à faire si tout vous convient. Sinon, vous pouvez sauter cette livraison, la décaler ou résilier en un clic."
+            : "Nothing to do if you're all set. Otherwise you can skip this delivery, move it, or cancel in one click.",
+        ) +
+        cta(manageUrl(data.manageToken, locale), extraCopy(locale).manage),
       undefined,
       locale,
     ),

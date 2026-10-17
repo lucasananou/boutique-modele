@@ -23,6 +23,8 @@ export interface ProductVariant {
   stock?: number;
   /** Surcoût éventuel en centimes par rapport au prix de base. */
   priceDelta?: number;
+  /** Unités physiques contenues (pack de 2 pots = 2). */
+  units?: number;
   available: boolean;
 }
 

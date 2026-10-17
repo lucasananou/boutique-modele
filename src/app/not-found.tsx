@@ -1,3 +1,4 @@
+import "./globals.css";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { brand } from "@/lib/brand";

@@ -3,6 +3,18 @@ import type Stripe from "stripe";
 import { prisma } from "@/lib/db";
 import { stripe } from "@/lib/stripe";
 import { markOrderPaid } from "@/lib/orders";
+import { createRenewalOrder, stripeNextCharge, syncFromStripe } from "@/lib/subscriptions";
+import { sendRenewalReminder } from "@/lib/email";
+import type { Locale } from "@/lib/i18n";
+
+/** Abonnement d'une facture (API ≥ 2025 « basil » : `parent.subscription_details`). */
+function invoiceSubscriptionId(inv: Stripe.Invoice): string | null {
+  const fromParent = inv.parent?.subscription_details?.subscription;
+  const legacy = (inv as unknown as { subscription?: string | { id: string } | null }).subscription;
+  const ref = fromParent ?? legacy;
+  if (!ref) return null;
+  return typeof ref === "string" ? ref : ref.id;
+}
 
 export async function POST(req: Request) {
   const secret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -41,10 +53,21 @@ export async function POST(req: Request) {
         );
         break;
       }
+      // Abonnement créé par la session (mode subscription).
+      const subscriptionId =
+        typeof s.subscription === "string" ? s.subscription : s.subscription?.id;
+      let nextChargeAt: Date | undefined;
+      if (subscriptionId) {
+        const sub = await stripe.subscriptions.retrieve(subscriptionId);
+        nextChargeAt = stripeNextCharge(sub) ?? undefined;
+      }
       await markOrderPaid(order.id, {
         eventId: event.id,
         paymentIntent:
           typeof s.payment_intent === "string" ? s.payment_intent : undefined,
+        stripeSubscriptionId: subscriptionId,
+        stripeCustomerId: typeof s.customer === "string" ? s.customer : s.customer?.id,
+        nextChargeAt,
       });
       break;
     }
@@ -74,6 +97,53 @@ export async function POST(req: Request) {
         where: { stripeSessionId: s.id, status: "PENDING" },
         data: { status: "CANCELLED" },
       });
+      break;
+    }
+
+    // Renouvellement d'abonnement payé → nouvelle commande à expédier. La
+    // première facture (subscription_create) est couverte par la session.
+    case "invoice.paid": {
+      const inv = event.data.object as Stripe.Invoice;
+      if (inv.billing_reason !== "subscription_cycle") break;
+      const subId = invoiceSubscriptionId(inv);
+      if (!subId || !inv.id) break;
+      const sub = await prisma.subscription.findUnique({ where: { stripeSubscriptionId: subId } });
+      if (!sub) break;
+      const stripeSub = await stripe.subscriptions.retrieve(subId);
+      await createRenewalOrder(sub, {
+        invoiceId: inv.id,
+        amountPaid: inv.amount_paid,
+        eventId: event.id,
+        nextChargeAt: stripeNextCharge(stripeSub),
+      });
+      break;
+    }
+
+    // Rappel avant renouvellement (envoyé par Stripe X jours avant, réglage
+    // Billing → Subscriptions → « Upcoming renewal events »).
+    case "invoice.upcoming": {
+      const inv = event.data.object as Stripe.Invoice;
+      const subId = invoiceSubscriptionId(inv);
+      if (!subId) break;
+      const sub = await prisma.subscription.findUnique({ where: { stripeSubscriptionId: subId } });
+      if (!sub || sub.cancelAtPeriodEnd || sub.status === "canceled") break;
+      await sendRenewalReminder({
+        email: sub.email,
+        name: sub.shippingName,
+        productName: sub.name,
+        variantLabel: sub.variantLabel,
+        amount: inv.amount_due,
+        currency: sub.currency,
+        date: inv.next_payment_attempt ? new Date(inv.next_payment_attempt * 1000) : sub.nextChargeAt,
+        manageToken: sub.manageToken,
+        locale: sub.locale as Locale,
+      });
+      break;
+    }
+
+    case "customer.subscription.updated":
+    case "customer.subscription.deleted": {
+      await syncFromStripe(event.data.object as Stripe.Subscription);
       break;
     }
 

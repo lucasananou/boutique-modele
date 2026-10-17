@@ -1,4 +1,5 @@
 import { localeConfig, type Locale } from "./i18n";
+import { store } from "@/stores";
 
 /**
  * Prix par marché.
@@ -38,18 +39,25 @@ export function currencyFor(locale: Locale): Currency {
  * le marché historique.
  */
 export function convertFromEur(eurCents: number, currency: Currency): number {
+  // La devise du catalogue (config `catalogCurrency`, euro par défaut) n'est
+  // jamais convertie : une boutique en dollars facture ses prix tels quels.
+  if (currency === catalogCurrency) return eurCents;
+  const base = catalogCurrency === "EUR" ? eurCents : eurCents / RULES[catalogCurrency].rate;
   const rule = RULES[currency];
-  if (currency === "EUR" || rule.rate === 1) return eurCents;
-  const raw = eurCents * rule.rate;
+  if (currency === "EUR" || rule.rate === 1) return Math.round(base);
+  const raw = base * rule.rate;
   return Math.max(rule.step, Math.round(raw / rule.step) * rule.step);
 }
 
-/** Inverse de `convertFromEur`, pour ramener un encaissement en base euro. */
+/** Inverse de `convertFromEur`, pour ramener un encaissement dans la devise du catalogue. */
 export function convertToEur(minorUnits: number, currency: Currency): number {
-  const rule = RULES[currency];
-  if (currency === "EUR" || rule.rate === 1) return minorUnits;
-  return Math.round(minorUnits / rule.rate);
+  if (currency === catalogCurrency) return minorUnits;
+  const eur = currency === "EUR" ? minorUnits : minorUnits / RULES[currency].rate;
+  return Math.round(catalogCurrency === "EUR" ? eur : eur * RULES[catalogCurrency].rate);
 }
+
+/** Devise de saisie du catalogue (config `catalogCurrency`, défaut EUR). */
+export const catalogCurrency: Currency = store.catalogCurrency ?? "EUR";
 
 /**
  * Formate un montant DÉJÀ exprimé dans sa devise (commande enregistrée,

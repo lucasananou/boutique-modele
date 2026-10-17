@@ -4,6 +4,7 @@ import { compare } from "bcryptjs";
 import { prisma } from "@/lib/db";
 import { multiDomain } from "@/lib/domains";
 import { getClientIp, rateLimit } from "@/lib/rateLimit";
+import { store } from "@/stores";
 
 // Auth.js self-hosted derrière un proxy (Coolify) : sans AUTH_URL, la base des
 // redirections/callbacks retombe sur localhost:3000. On la dérive de
@@ -23,7 +24,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
   session: { strategy: "jwt" },
   pages: {
-    signIn: "/compte/connexion",
+    signIn: store.front?.paths.signIn ?? "/compte/connexion",
   },
   providers: [
     Credentials({

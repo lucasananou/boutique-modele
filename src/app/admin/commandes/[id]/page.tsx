@@ -8,6 +8,7 @@ import { StatusUpdater } from "@/components/admin/StatusUpdater";
 import { OrderItemThumb } from "@/components/admin/OrderItemThumb";
 import { TrackingForm } from "@/components/admin/TrackingForm";
 import { carrierLabel, trackingLink } from "@/lib/carriers";
+import { store } from "@/stores";
 
 export const metadata = { title: "Commande" };
 
@@ -85,7 +86,7 @@ export default async function AdminOrderDetail({
                     className="text-[12px] mt-0.5"
                     style={{ color: "rgba(20,21,26,0.45)" }}
                   >
-                    {it.variantLabel ?? "Taille unique"}
+                    {it.variantLabel ?? "Taille unique"}{it.intervalDays ? ` · abonnement tous les ${it.intervalDays} j` : ""}
                   </div>
                 </div>
                 <Mono className="text-[12.5px]" style={{ color: "rgba(20,21,26,0.5)" }}>
@@ -187,6 +188,31 @@ export default async function AdminOrderDetail({
             <StatusUpdater orderId={o.id} current={o.status} />
           </Card>
 
+          {store.fulfillment && (
+            <Card className="px-[22px] py-5">
+              <div className="mb-2">
+                <SectionHeading>{store.fulfillment.partner}</SectionHeading>
+              </div>
+              <div className="text-[12.5px] mb-2" style={{ color: "rgba(20,21,26,0.6)" }}>
+                {o.forwardedAt
+                  ? `Transmise le ${o.forwardedAt.toLocaleDateString("fr-FR")}${o.fulfillmentRef ? ` · réf. ${o.fulfillmentRef}` : ""}`
+                  : o.status === "PAID"
+                    ? "Pas encore transmise."
+                    : "—"}
+              </div>
+              {o.status === "PAID" && (
+                <Link href="/admin/expeditions" className="text-[12.5px]" style={{ color: "#1a5bff" }}>
+                  Ouvrir la vue Expéditions (adresse prête à copier)
+                </Link>
+              )}
+              {o.kind !== "one_time" && (
+                <div className="text-[11.5px] mt-2" style={{ color: "#1a5bff" }}>
+                  {o.kind === "subscription_renewal" ? "Renouvellement d'abonnement" : "Démarre un abonnement"}
+                </div>
+              )}
+            </Card>
+          )}
+
           <Card className="px-[22px] py-5">
             <div className="mb-3.5">
               <SectionHeading>Expédition</SectionHeading>
@@ -256,8 +282,22 @@ export default async function AdminOrderDetail({
                   {o.shippingName}
                   <br />
                   {o.shippingLine1}
+                  {o.shippingLine2 && (
+                    <>
+                      <br />
+                      {o.shippingLine2}
+                    </>
+                  )}
                   <br />
-                  {o.shippingZip} {o.shippingCity} {o.shippingCountry}
+                  {o.shippingState
+                    ? `${o.shippingCity}, ${o.shippingState} ${o.shippingZip} ${o.shippingCountry}`
+                    : `${o.shippingZip} ${o.shippingCity} ${o.shippingCountry}`}
+                  {o.shippingPhone && (
+                    <>
+                      <br />
+                      {o.shippingPhone}
+                    </>
+                  )}
                 </div>
               )}
             </div>

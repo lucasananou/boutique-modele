@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import type { Session } from "next-auth";
 import { adminEmails, isAdminUserId } from "@/lib/roles";
+import { store } from "@/stores";
 
 // Destinataires des alertes admin (e-mails) — voir src/lib/roles.ts.
 export { adminEmails };
@@ -26,7 +27,8 @@ export async function currentUserIsAdmin(): Promise<boolean> {
 export async function requireAdmin(): Promise<Session> {
   const session = await auth();
   if (!session?.user) {
-    redirect("/compte/connexion?from=/admin");
+    // Vitrine sur mesure : sa propre page de connexion.
+    redirect(`${store.front?.paths.signIn ?? "/compte/connexion"}?from=/admin`);
   }
   if (!(await isAdminSession(session))) {
     redirect("/?admin=refuse");

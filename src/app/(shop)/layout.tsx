@@ -1,3 +1,4 @@
+import "../globals.css";
 import { headers } from "next/headers";
 import { auth } from "@/auth";
 import { isAdminSession } from "@/lib/admin";

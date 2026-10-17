@@ -6,7 +6,9 @@
  *   - une catégorie n'est complétée que si son `urlSlug` est vide (jamais
  *     importée) ; une catégorie absente est créée si le fichier donne son nom ;
  *   - une page n'est créée que si son slug n'existe pas ;
- *   - un réglage n'est créé que s'il n'existe pas.
+ *   - un réglage n'est créé que s'il n'existe pas ;
+ *   - un produit (products.json, avec variantes, images, détails) n'est créé
+ *     que si son slug n'existe pas : prix et stocks se gèrent ensuite dans l'admin.
  * Les modifications faites ensuite dans l'admin ne sont donc jamais écrasées.
  * `--force` réécrit tout depuis les fichiers (à n'utiliser qu'en connaissance
  * de cause). `--dry-run` n'écrit rien et affiche ce qui serait fait.
@@ -153,6 +155,74 @@ async function syncSettings(prisma, settings, log) {
   }
 }
 
+async function syncProducts(prisma, products, log) {
+  for (const p of products) {
+    const existing = await prisma.product.findUnique({ where: { slug: p.slug } });
+    if (existing && !FORCE) continue;
+    if (existing && FORCE) {
+      log(`produit ${p.slug} : déjà présent, --force ne réécrit pas un produit (admin > Produits)`);
+      continue;
+    }
+    log(`produit créé : ${p.slug} (${(p.variants ?? []).length} variante(s))`);
+    if (DRY) continue;
+    const category =
+      (await prisma.category.findUnique({ where: { slug: p.category.slug } })) ??
+      (await prisma.category.create({
+        data: { slug: p.category.slug, name: p.category.name, description: p.category.name, imageAlt: p.category.name },
+      }));
+    const collection =
+      (await prisma.collection.findUnique({ where: { slug: p.collection.slug } })) ??
+      (await prisma.collection.create({
+        data: {
+          slug: p.collection.slug,
+          name: p.collection.name,
+          tagline: p.collection.name,
+          description: p.collection.name,
+          heroImageAlt: p.collection.name,
+        },
+      }));
+    const product = await prisma.product.create({
+      data: {
+        slug: p.slug,
+        name: p.name,
+        price: p.price,
+        compareAtPrice: p.compareAtPrice ?? null,
+        sku: p.sku,
+        categoryId: category.id,
+        collectionId: collection.id,
+        materialLabel: p.materialLabel ?? "",
+        shortDescription: p.shortDescription ?? "",
+        description: p.description ?? "",
+        seoTitle: p.seoTitle ?? null,
+        seoDescription: p.seoDescription ?? null,
+        stock: p.stock ?? 0,
+        status: p.status ?? "active",
+        catalogVisible: p.catalogVisible ?? true,
+        sortOrder: p.sortOrder ?? 0,
+        details: { create: (p.details ?? []).map((d, i) => ({ label: d.label, value: d.value, sortOrder: i })) },
+        images: { create: (p.images ?? []).map((im, i) => ({ src: im.src, alt: im.alt, sortOrder: i })) },
+      },
+    });
+    for (const [i, v] of (p.variants ?? []).entries()) {
+      await prisma.productVariant.create({
+        data: {
+          productId: product.id,
+          key: v.key,
+          label: v.label,
+          sku: v.sku ?? null,
+          optionName: v.optionName ?? "Option",
+          optionValue: v.optionValue ?? v.label,
+          stock: v.stock ?? 0,
+          priceDelta: v.priceDelta ?? 0,
+          units: v.units ?? 1,
+          available: v.available ?? true,
+          sortOrder: i,
+        },
+      });
+    }
+  }
+}
+
 async function main() {
   if (!fs.existsSync(dir)) {
     console.log(`[contenus] aucun dossier content/${storeId} : rien à importer`);
@@ -165,9 +235,11 @@ async function main() {
     const cats = read("categories.json");
     const pages = read("pages.json");
     const settings = read("settings.json");
+    const products = read("products.json");
     if (cats) await syncCategories(prisma, cats, log);
     if (pages) await syncPages(prisma, pages, log);
     if (settings) await syncSettings(prisma, settings, log);
+    if (products) await syncProducts(prisma, products, log);
   } finally {
     await prisma.$disconnect();
   }

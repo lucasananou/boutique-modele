@@ -17,6 +17,8 @@ export const carriers: Carrier[] = [
   { key: "gls", label: "GLS", url: "https://gls-group.com/FR/fr/suivi-colis?match={n}" },
   { key: "dhl", label: "DHL", url: "https://www.dhl.com/fr-fr/home/suivi.html?tracking-id={n}" },
   { key: "ups", label: "UPS", url: "https://www.ups.com/track?loc=fr_FR&tracknum={n}" },
+  { key: "usps", label: "USPS", url: "https://tools.usps.com/go/TrackConfirmAction?tLabels={n}" },
+  { key: "fedex", label: "FedEx", url: "https://www.fedex.com/fedextrack/?trknbr={n}" },
   { key: "inpost", label: "InPost", url: "https://inpost.pl/sledzenie-przesylek?number={n}" },
   { key: "autre", label: "Autre transporteur" },
 ];

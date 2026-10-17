@@ -54,6 +54,7 @@ type Row = {
     sizeLabel: string | null;
     stock: number;
     priceDelta: number;
+    units: number;
     available: boolean;
   }[];
   images: { src: string; alt: string; variantId: string | null }[];
@@ -505,6 +506,7 @@ function mapProduct(p: Row, locale: Locale = "fr"): Product {
         undefined,
       stock: v.stock,
       priceDelta: v.priceDelta,
+      units: v.units,
       available: v.available,
     })),
     badge: publicBadge(p.badge, locale),

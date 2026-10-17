@@ -6,8 +6,9 @@ import { useEffect, useId, useRef, useState } from "react";
 import { initials } from "@/lib/adminData";
 import { useAdminPrefs } from "./AdminPrefsContext";
 import type { AdminPrefs } from "@/lib/adminPrefs";
+import { store } from "@/stores";
 
-const items = [
+const baseItems = [
   { label: "Dashboard", href: "/admin" },
   { label: "Live", href: "/admin/live" },
   { label: "Produits", href: "/admin/produits" },
@@ -20,6 +21,17 @@ const items = [
   { label: "Promotions", href: "/admin/promotions" },
   { label: "Paramètres", href: "/admin/parametres" },
 ];
+
+// Écrans optionnels : expéditions via un fournisseur, abonnements.
+const items = baseItems.flatMap((item) =>
+  item.href === "/admin/commandes"
+    ? [
+        item,
+        ...(store.fulfillment ? [{ label: "Expéditions", href: "/admin/expeditions" }] : []),
+        ...(store.subscriptions ? [{ label: "Abonnements", href: "/admin/abonnements" }] : []),
+      ]
+    : [item],
+);
 
 function useIsActive() {
   const pathname = usePathname();

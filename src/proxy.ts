@@ -41,6 +41,15 @@ function isProductionHost(host: string | null): boolean {
   return PROD_HOSTS.has(normalizeHost(host));
 }
 
+/** Vitrine sur mesure (config `front`) : préfixes laissés aux pages du modèle. */
+const FRONT_PASSTHROUGH = store.front
+  ? ["/admin", "/icon", "/opengraph-image", ...store.front.passthrough]
+  : [];
+
+function isPassthrough(pathname: string): boolean {
+  return FRONT_PASSTHROUGH.some((p) => pathname === p || pathname.startsWith(`${p}/`));
+}
+
 export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
@@ -48,6 +57,31 @@ export function proxy(request: NextRequest) {
   // `x-forwarded-host` ; repli sur l'en-tête `host` classique.
   const host =
     request.headers.get("x-forwarded-host") ?? request.headers.get("host");
+
+  // --- Vitrine sur mesure (src/stores/<id>/front) ---
+  // Toutes les pages publiques sont servies par /vitrine/<chemin>, URL affichée
+  // inchangée ; l'admin (et les préfixes `front.passthrough`) restent au modèle.
+  if (store.front) {
+    if (pathname === "/vitrine" || pathname.startsWith("/vitrine/")) {
+      const target = request.nextUrl.clone();
+      target.pathname = pathname.slice("/vitrine".length) || "/";
+      return NextResponse.redirect(target, 308);
+    }
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.delete("x-store-locale");
+    if (isPassthrough(pathname)) {
+      requestHeaders.delete("x-vitrine");
+      const passed = NextResponse.next({ request: { headers: requestHeaders } });
+      if (!isProductionHost(host)) passed.headers.set("X-Robots-Tag", "noindex, nofollow");
+      return passed;
+    }
+    const destination = request.nextUrl.clone();
+    destination.pathname = `/vitrine${pathname === "/" ? "" : pathname}`;
+    requestHeaders.set("x-vitrine", "1");
+    const rewritten = NextResponse.rewrite(destination, { request: { headers: requestHeaders } });
+    if (!isProductionHost(host)) rewritten.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return rewritten;
+  }
 
   const profile = hostProfile(host);
   const locale = localeFromPathname(pathname);
@@ -91,12 +125,14 @@ export function proxy(request: NextRequest) {
         destination.pathname = pathname.replace(/^\/(en|he)(?=\/|$)/, "") || "/";
         const requestHeaders = new Headers(request.headers);
         requestHeaders.set("x-store-locale", locale);
+        requestHeaders.delete("x-vitrine");
         return NextResponse.rewrite(destination, { request: { headers: requestHeaders } });
       })()
     : (() => {
         // En-tête interne : jamais accepté tel qu'envoyé par le navigateur.
         const requestHeaders = new Headers(request.headers);
         requestHeaders.delete("x-store-locale");
+        requestHeaders.delete("x-vitrine");
         return NextResponse.next({ request: { headers: requestHeaders } });
       })();
 

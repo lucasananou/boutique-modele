@@ -31,6 +31,7 @@ model User {
   sessions  Session[]
   orders    Order[]
   addresses Address[]
+  subscriptions Subscription[]
 }
 
 enum UserRole {
@@ -89,6 +90,23 @@ model Order {
   shippingZip     String?
   shippingCity    String?
   shippingCountry String?
+  /// Complément d'adresse, État / région (obligatoire aux États-Unis), téléphone.
+  shippingLine2   String?
+  shippingState   String?
+  shippingPhone   String?
+  /// Frais de port facturés, en unités mineures (inclus dans amountTotal).
+  shippingAmount  Int         @default(0)
+  /// Nature : "one_time" (achat simple), "subscription_start" (1re livraison
+  /// d'un abonnement, éventuellement avec des achats simples), "subscription_renewal".
+  kind            String      @default("one_time")
+  subscriptionId  String?
+  subscription    Subscription? @relation(fields: [subscriptionId], references: [id])
+  stripeCustomerId String?
+  /// Facture Stripe d'un renouvellement (idempotence du webhook invoice.paid).
+  stripeInvoiceId String?     @unique
+  /// Commande transmise au fournisseur qui expédie (ex. Supliful) + sa référence.
+  forwardedAt     DateTime?
+  fulfillmentRef  String?
   /// Expédition : transporteur (clé de src/lib/carriers.ts), n° de suivi,
   /// lien de suivi éventuel (transporteur « autre ») et date d'expédition.
   trackingCarrier String?
@@ -116,6 +134,10 @@ model OrderItem {
   /// Prix unitaire en centimes au moment de l'achat.
   unitPrice    Int
   quantity     Int
+  /// Unités physiques par article (ex. pack de 2 pots = 2), copiées de la variante.
+  units        Int     @default(1)
+  /// Ligne d'abonnement : fréquence de livraison en jours (null = achat simple).
+  intervalDays Int?
 }
 
 enum OrderStatus {
@@ -125,6 +147,55 @@ enum OrderStatus {
   DELIVERED
   CANCELLED
   REFUNDED
+}
+
+/* ---- Abonnements (Stripe Billing) ---- */
+
+/// Abonnement d'une cliente : une ligne (produit + variante) livrée tous les
+/// `intervalDays` jours. Stripe fait foi pour la facturation ; cette table sert
+/// à l'affichage (compte, admin) et à créer les commandes de renouvellement.
+model Subscription {
+  id                   String    @id @default(cuid())
+  userId               String?
+  user                 User?     @relation(fields: [userId], references: [id])
+  email                String
+  /// active | paused | past_due | canceled | incomplete
+  status               String    @default("incomplete")
+  productId            String
+  slug                 String
+  name                 String
+  variantId            String?
+  variantLabel         String?
+  units                Int       @default(1)
+  quantity             Int       @default(1)
+  intervalDays         Int
+  /// Montant facturé à chaque livraison (unités mineures, remise incluse).
+  unitAmount           Int
+  currency             String    @default("usd")
+  locale               String    @default("en")
+  stripeSubscriptionId String?   @unique
+  stripeCustomerId     String?
+  /// Prochaine facturation / expédition.
+  nextChargeAt         DateTime?
+  /// Résiliation programmée en fin de période.
+  cancelAtPeriodEnd    Boolean   @default(false)
+  canceledAt           DateTime?
+  /// Jeton opaque du lien « gérer mon abonnement » (sans compte).
+  manageToken          String    @unique
+  shippingName         String?
+  shippingLine1        String?
+  shippingLine2        String?
+  shippingCity         String?
+  shippingState        String?
+  shippingZip          String?
+  shippingCountry      String?
+  shippingPhone        String?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  orders               Order[]
+
+  @@index([email])
+  @@index([status])
 }
 
 /* ---- Catalogue ---- */
@@ -281,6 +352,8 @@ model ProductVariant {
   stock      Int     @default(0)
   /// Surcoût en centimes par rapport au prix de base.
   priceDelta Int     @default(0)
+  /// Unités physiques contenues (pack de 2 pots = 2) : vue fournisseur, abonnements.
+  units      Int     @default(1)
   available  Boolean @default(true)
   sortOrder  Int     @default(0)
 

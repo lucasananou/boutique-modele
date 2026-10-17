@@ -25,11 +25,17 @@ if (!fs.existsSync(configFile) || !fs.existsSync(fontsFile)) {
   console.error(`Boutique « ${id} » introuvable ou incomplète (src/stores/${id}/config.ts et fonts.ts). Disponibles : ${available.join(", ")}`);
   process.exit(1);
 }
+// Vitrine sur mesure facultative : src/stores/<id>/front/index.tsx (voir src/stores/front.ts).
+const hasFront = fs.existsSync(path.join(root, "src/stores", id, "front", "index.tsx"));
 const header = "// Généré par scripts/select-store.mjs (NEXT_PUBLIC_STORE_ID) : ne pas modifier à la main.\n";
 const files = {
   "src/stores/current.ts": `${header}export { config as store } from "./${id}/config";\n`,
   // Polices : importé uniquement par src/app/layout.tsx (next/font, déclarations statiques).
   "src/stores/current-fonts.ts": `${header}export { fontVariables } from "./${id}/fonts";\n`,
+  // Vitrine : importé par src/app/layout.tsx et src/app/vitrine (null = vitrine du modèle).
+  "src/stores/current-front.ts": hasFront
+    ? `${header}export { front } from "./${id}/front";\n`
+    : `${header}import type { StoreFront } from "./front";\n\nexport const front: StoreFront | null = null;\n`,
 };
 let changed = false;
 for (const [rel, content] of Object.entries(files)) {

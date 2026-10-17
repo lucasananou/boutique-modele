@@ -11,7 +11,15 @@ import { CookieBanner } from "@/components/consent/CookieBanner";
 import { headers } from "next/headers";
 import { defaultLocale, localeConfig, localizedPath, type Locale } from "@/lib/i18n";
 import { fontVariables } from "@/stores/current-fonts";
-import "./globals.css";
+import { front } from "@/stores/current-front";
+// Les styles du modèle (Tailwind, globals.css) sont importés par les layouts
+// (shop) et admin, pas ici : une vitrine sur mesure (src/stores/<id>/front)
+// arrive avec ses propres styles, sans reset ni utilitaires du modèle.
+
+/** Requête réécrite vers la vitrine sur mesure par src/proxy.ts ? */
+async function isVitrineRequest(): Promise<boolean> {
+  return Boolean(front) && (await headers()).get("x-vitrine") === "1";
+}
 
 const siteMetadata: Record<Locale, { tagline: string; description: string; ogLocale: string }> = {
   fr: {
@@ -24,6 +32,9 @@ const siteMetadata: Record<Locale, { tagline: string; description: string; ogLoc
 };
 
 export async function generateMetadata(): Promise<Metadata> {
+  if (front && (await isVitrineRequest())) {
+    return { metadataBase: new URL(await requestOrigin()), ...front.metadata };
+  }
   const localeHeader = (await headers()).get("x-store-locale");
   const locale: Locale = localeHeader === "en" || localeHeader === "he" ? localeHeader : defaultLocale;
   const copy = siteMetadata[locale];
@@ -67,6 +78,14 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Vitrine sur mesure : document nu, la vitrine fournit tout (styles, chrome).
+  if (front && (await isVitrineRequest())) {
+    return (
+      <html lang={front.lang} className={front.htmlClassName}>
+        <body>{children}</body>
+      </html>
+    );
+  }
   const localeHeader = (await headers()).get("x-store-locale");
   const locale: Locale = localeHeader === "en" || localeHeader === "he" ? localeHeader : defaultLocale;
   const config = localeConfig[locale];
