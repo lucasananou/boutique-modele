@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "colostrum-575",
+    "name": "Colostrum 575",
+    "sku": "FD-COL575",
+    "price": 4900,
+    "category": { "slug": "colostrum", "name": "Colostrum" },
+    "collection": { "slug": "first-draw", "name": "FIRST DRAW" },
+    "materialLabel": "Bovine colostrum, 575 mg IgG per serving",
+    "shortDescription": "Grass-fed bovine colostrum, 2,300 mg per scoop standardized to 575 mg of IgG. 30 servings, 69 g (2.43 oz).",
+    "description": "One ingredient: bovine colostrum (25% IgG). One scoop (2.3 g) in six to eight ounces of cold water. Supports gut health and immune function.* Contains milk.",
+    "seoTitle": "Colostrum 575, 575 mg IgG per serving | FIRST DRAW",
+    "stock": 0,
+    "details": [
+      { "label": "Serving size", "value": "1 scoop, 2.3 g" },
+      { "label": "IgG per serving", "value": "575 mg" },
+      { "label": "Servings per jar", "value": "30" },
+      { "label": "Net weight", "value": "69 g, 2.43 oz" },
+      { "label": "Supplier SKU (Supliful)", "value": "JTP10COPO" }
+    ],
+    "images": [
+      { "src": "/stores/firstdraw/img/fd-shop1.jpg", "alt": "The First Draw jar on a white background" },
+      { "src": "/stores/firstdraw/img/fd-shop2.jpg", "alt": "Two First Draw jars" },
+      { "src": "/stores/firstdraw/img/fd-shop3.jpg", "alt": "Three First Draw jars" }
+    ],
+    "variants": [
+      { "key": "1-jar", "label": "One jar", "sku": "FD-COL575-1", "optionName": "Pack", "units": 1, "priceDelta": 0, "stock": 100000 },
+      { "key": "2-jars", "label": "Two jars", "sku": "FD-COL575-2", "optionName": "Pack", "units": 2, "priceDelta": 3900, "stock": 100000 },
+      { "key": "3-jars", "label": "Three jars", "sku": "FD-COL575-3", "optionName": "Pack", "units": 3, "priceDelta": 6800, "stock": 100000 }
+    ]
+  }
+]

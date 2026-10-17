@@ -46,6 +46,19 @@ const FRONT_PASSTHROUGH = store.front
   ? ["/admin", "/icon", "/opengraph-image", ...store.front.passthrough]
   : [];
 
+/**
+ * Cible d'une réécriture interne. Attention (Next 16.3) : l'URL initiale est
+ * construite avec l'hôte d'écoute (`next start -H …`) alors que NextURL écrit
+ * 127.0.0.1 « localhost » ; avec `-H 127.0.0.1`, les origines diffèrent et
+ * TOUTE réécriture devient un proxy HTTP externe (« Failed to proxy … socket
+ * hang up », erreur 500). Lancer `next start -H localhost` (ou sans -H).
+ */
+function sameOriginUrl(request: NextRequest, pathname: string): URL {
+  const url = request.nextUrl.clone();
+  url.pathname = pathname;
+  return url;
+}
+
 function isPassthrough(pathname: string): boolean {
   return FRONT_PASSTHROUGH.some((p) => pathname === p || pathname.startsWith(`${p}/`));
 }
@@ -61,12 +74,9 @@ export function proxy(request: NextRequest) {
   // --- Vitrine sur mesure (src/stores/<id>/front) ---
   // Toutes les pages publiques sont servies par /vitrine/<chemin>, URL affichée
   // inchangée ; l'admin (et les préfixes `front.passthrough`) restent au modèle.
+  // Un accès direct à /vitrine/… devient /vitrine/vitrine/… : 404, aucune
+  // seconde URL pour la même page.
   if (store.front) {
-    if (pathname === "/vitrine" || pathname.startsWith("/vitrine/")) {
-      const target = request.nextUrl.clone();
-      target.pathname = pathname.slice("/vitrine".length) || "/";
-      return NextResponse.redirect(target, 308);
-    }
     const requestHeaders = new Headers(request.headers);
     requestHeaders.delete("x-store-locale");
     if (isPassthrough(pathname)) {
@@ -75,8 +85,7 @@ export function proxy(request: NextRequest) {
       if (!isProductionHost(host)) passed.headers.set("X-Robots-Tag", "noindex, nofollow");
       return passed;
     }
-    const destination = request.nextUrl.clone();
-    destination.pathname = `/vitrine${pathname === "/" ? "" : pathname}`;
+    const destination = sameOriginUrl(request, `/vitrine${pathname === "/" ? "" : pathname}`);
     requestHeaders.set("x-vitrine", "1");
     const rewritten = NextResponse.rewrite(destination, { request: { headers: requestHeaders } });
     if (!isProductionHost(host)) rewritten.headers.set("X-Robots-Tag", "noindex, nofollow");
@@ -121,8 +130,7 @@ export function proxy(request: NextRequest) {
   // française correspondante, qui lit la langue dans `x-store-locale`.
   const response = isPrefixedLocale
     ? (() => {
-        const destination = request.nextUrl.clone();
-        destination.pathname = pathname.replace(/^\/(en|he)(?=\/|$)/, "") || "/";
+        const destination = sameOriginUrl(request, pathname.replace(/^\/(en|he)(?=\/|$)/, "") || "/");
         const requestHeaders = new Headers(request.headers);
         requestHeaders.set("x-store-locale", locale);
         requestHeaders.delete("x-vitrine");
