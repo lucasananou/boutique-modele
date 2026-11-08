@@ -405,8 +405,8 @@ function bootProduct({ form, addHandle, say }) {
   const images =
     handle === "ceremonie"
       ? {
-          "30 g": [IMG + "pp-30g.webp", "Canette verte Aoyuki Matcha Cérémonie sur une pierre, près d'un petit tas de matcha."],
-          "100 g": [IMG + "pp-100g.webp", "Grande canette verte Aoyuki Matcha Cérémonie de 100 g sur une pierre."],
+          "30 g": [IMG + "pp-30g.webp", "Canette verte Aoyuki Matcha Cérémonie sur fond crème."],
+          "100 g": [IMG + "pp-100g.webp", "Grande canette verte Aoyuki Matcha Cérémonie de 100 g sur fond crème."],
         }
       : null;
 

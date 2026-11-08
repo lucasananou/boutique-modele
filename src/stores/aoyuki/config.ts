@@ -108,6 +108,7 @@ export const config: StoreConfig = {
       manageSubscription: "/compte/abonnement",
     },
     passthrough: [],
+    sitemap: ["/", "/boutique", "/mentions-legales", "/cgv", "/confidentialite", "/retractation"],
   },
 
   promos: { cartRecoveryCode: "PANIER10", cartRecoveryPercent: 10 },

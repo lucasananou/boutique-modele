@@ -244,6 +244,8 @@ export interface StoreConfig {
     };
     /** Préfixes servis par le modèle et non par la vitrine (en plus de /admin). */
     passthrough: readonly string[];
+    /** Pages servies par la vitrine à lister dans le sitemap (les fiches produit s'y ajoutent). */
+    sitemap?: readonly string[];
   };
 
   promos: {

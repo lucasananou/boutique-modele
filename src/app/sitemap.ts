@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { prisma } from "@/lib/db";
+import { store } from "@/stores";
 import { requestOrigin } from "@/lib/site";
 import { hostProfile, intlIndexable } from "@/lib/domains";
 import { defaultLocale, localizedPath, type Locale } from "@/lib/i18n";
@@ -39,6 +40,18 @@ const staticPaths: { path: string; priority: number; freq: MetadataRoute.Sitemap
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Vitrine sur mesure : seules ses propres pages existent.
+  if (store.front?.sitemap) {
+    const [base, rows] = await Promise.all([
+      requestOrigin(),
+      prisma.product.findMany({ where: { status: "active" }, select: { slug: true, updatedAt: true } }),
+    ]);
+    return [
+      ...store.front.sitemap.map((path) => ({ url: `${base}${path === "/" ? "" : path}`, lastModified: new Date() })),
+      ...rows.map((p) => ({ url: `${base}/produit/${p.slug}`, lastModified: p.updatedAt })),
+    ];
+  }
+
   const [origin, products, categories, collections, articles, landings] = await Promise.all([
     requestOrigin(),
     prisma.product.findMany({

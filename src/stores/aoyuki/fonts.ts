@@ -1,33 +1,33 @@
-import { Inter, Noto_Sans_Hebrew, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 
 /*
- * Polices de Aoyuki. Contrat : définir les variables CSS --font-serif-src,
- * --font-sans-src et --font-hebrew-src (lues par src/app/globals.css) ;
- * importé uniquement par src/app/layout.tsx via src/stores/current-fonts.ts.
- * Changer de police : remplacer l'import et l'appel (Google Fonts, options
- * littérales obligatoires), en gardant les trois variables CSS.
+ * Polices de l'admin Aoyuki (la vitrine charge les siennes depuis la maquette).
+ * Contrat : variables --font-serif-src, --font-sans-src, --font-hebrew-src
+ * (src/app/globals.css). preload: false : rien de plus à télécharger sur la vitrine.
  */
 
-const serif = Playfair_Display({
+const serif = localFont({
+  src: "../../../public/stores/aoyuki/fonts/fraunces-600.woff2",
   variable: "--font-serif-src",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: "600",
   display: "swap",
+  preload: false,
 });
 
-const sans = Inter({
+const sans = localFont({
+  src: "../../../public/stores/aoyuki/fonts/dmsans.woff2",
   variable: "--font-sans-src",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: "400 700",
   display: "swap",
+  preload: false,
 });
 
-const hebrew = Noto_Sans_Hebrew({
+const hebrew = localFont({
+  src: "../../../public/stores/aoyuki/fonts/dmsans.woff2",
   variable: "--font-hebrew-src",
-  subsets: ["hebrew"],
-  weight: ["300", "400", "500", "600"],
+  weight: "400 700",
   display: "swap",
+  preload: false,
 });
 
 export const fontVariables = `${serif.variable} ${sans.variable} ${hebrew.variable}`;

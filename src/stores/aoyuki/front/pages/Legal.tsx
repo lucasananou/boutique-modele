@@ -16,10 +16,10 @@ const mediator = store.mediator;
 const hosting = store.hosting;
 const TODO = (label: string) => <em className="legal-todo">[À compléter avant le lancement : {label}]</em>;
 
-async function LegalPage({ eyebrow, title, children, extra = "" }: { eyebrow: string; title: string; children: ReactNode; extra?: string }) {
+async function LegalPage({ eyebrow, title, children }: { eyebrow: string; title: string; children: ReactNode }) {
   const catalog = await loadCatalog();
   return (
-    <Page catalog={catalog} extra={extra ? fill(extra, catalog) : ""}>
+    <Page catalog={catalog}>
       <article className="shop-page legal-page">
         <p className="eyebrow">{eyebrow}</p>
         <h1 className="h2">{title}<span className="dot">.</span></h1>
@@ -84,10 +84,13 @@ export function Confidentialite() {
   );
 }
 
-export function Retractation() {
+export async function Retractation() {
+  const catalog = await loadCatalog();
+  const form = fill(DRAWER_RETOURS.replace(" hidden>", ">").replace('<div class="drawer"', '<div class="drawer drawer--page"'), catalog);
   return (
-    <LegalPage eyebrow="Service client" title="Rétractation et retours" extra={DRAWER_RETOURS.replace(' hidden>', ">").replace('<div class="drawer"', '<div class="drawer drawer--page"')}>
-      <p>Vous disposez de 14 jours après réception pour vous rétracter. Une canette non ouverte peut être retournée. Remplissez le formulaire ci-contre : votre demande nous est transmise.</p>
+    <LegalPage eyebrow="Service client" title="Rétractation et retours">
+      <p>Vous disposez de 14 jours après réception pour vous rétracter. Une canette non ouverte peut être retournée. Remplissez le formulaire ci-dessous : votre demande nous est transmise.</p>
+      <div dangerouslySetInnerHTML={{ __html: form }} />
     </LegalPage>
   );
 }
