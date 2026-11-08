@@ -1,0 +1,50 @@
+/* Pages boutique (commande, compte, légal) dans l'esprit de la maquette, et pied de page légal commun. */
+.foot__bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem 1.5rem; margin-top: 2rem; }
+.foot__bar nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+.foot__bar a, .foot__bar button { min-height: 40px; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; font-size: .875rem; color: #D7DBCB; text-decoration: none; display: inline-flex; align-items: center; }
+.foot__loc { padding: 0 .9rem !important; border: 1px solid rgba(244, 235, 221, .3) !important; border-radius: 999px; }
+.foot__bar + .foot__legal { margin-top: 1rem; }
+
+.shop-page { max-width: var(--max); margin: 0 auto; padding: clamp(2rem, 1.2rem + 3vw, 4rem) var(--pad) clamp(3rem, 2rem + 4vw, 6rem); }
+.shop-page .h2 { margin-bottom: 1rem; }
+.shop-page__intro { color: var(--muted); max-width: 46ch; margin: 0 0 2rem; }
+.shop-grid { display: grid; gap: clamp(1rem, .5rem + 1.5vw, 1.75rem); align-items: start; }
+@media (min-width: 900px) { .shop-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); } }
+.shop-card { background: var(--carte); border-radius: var(--r); padding: clamp(1.25rem, 1rem + 1vw, 2rem); }
+.shop-card h2 { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 1.375rem; margin: 0 0 1rem; color: var(--sapin); }
+.shop-card h3 { font-size: .9375rem; margin: 1.25rem 0 .35rem; }
+.shop-card p { margin: 0 0 .9rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+.form-grid .full { grid-column: 1 / -1; }
+.form-grid label { display: grid; gap: .4rem; font-size: .875rem; font-weight: 500; }
+.form-grid small { font-weight: 400; color: var(--muted); }
+.shop-input { width: 100%; min-height: 48px; padding: .6rem .8rem; border: 1px solid var(--filet); border-radius: 10px; background: var(--creme); font: inherit; color: var(--texte); }
+.shop-input:focus-visible { outline: 2px solid var(--sapin); outline-offset: 1px; }
+.shop-input[aria-invalid] { border-color: #A23B2A; }
+.fine { font-size: .8125rem; color: var(--muted); }
+.fine a, .shop-card p a { text-decoration: underline; }
+.form-error { margin: .9rem 0 0; color: #A23B2A; font-size: .9375rem; }
+.form-ok { margin: .9rem 0 0; color: var(--sapin); font-size: .9375rem; }
+.demo-note { margin: 1rem 0 0; padding: .7rem .9rem; border-radius: 10px; background: var(--creme-2); font-size: .875rem; color: var(--muted); }
+.sum-line { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: .75rem; align-items: center; padding: .7rem 0; border-bottom: 1px solid var(--filet); font-size: .9375rem; }
+.sum-line img { width: 56px; height: 68px; object-fit: cover; border-radius: 8px; }
+.sum-line small { display: block; margin-top: .2rem; color: var(--muted); font-size: .8125rem; }
+.sum-total { display: flex; justify-content: space-between; padding: .35rem 0; font-size: .9375rem; }
+.sum-total.grand { font-weight: 600; font-size: 1.0625rem; margin-top: .35rem; border-top: 1px solid var(--filet); padding-top: .7rem; }
+.text-link { padding: 0; border: 0; background: none; cursor: pointer; color: inherit; text-decoration: underline; font: inherit; font-size: .875rem; }
+.status-chip { display: inline-block; padding: .15rem .6rem; border-radius: 999px; background: var(--creme-2); font-size: .8125rem; }
+.status-chip.on { background: var(--sapin); color: var(--sur-sapin); }
+.account-list { display: grid; }
+.account-row { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--filet); font-size: .9375rem; }
+.manage-actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-top: 1rem; }
+.manage-actions form { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.legal-page { max-width: 760px; }
+.legal-page h2 { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; margin: 1.75rem 0 .5rem; color: var(--sapin); }
+.legal-page p { margin: 0 0 .75rem; }
+.legal-todo { font-style: normal; background: var(--creme-2); padding: 0 .3rem; }
+.shop-search { display: flex; gap: .5rem; max-width: 460px; margin: 0 0 1.75rem; }
+.drawer--page { position: static; inset: auto; z-index: auto; display: block; }
+.drawer--page .drawer__scrim, .drawer--page .drawer__head { display: none; }
+.drawer--page .drawer__panel { position: static; transform: none; width: auto; max-width: 560px; height: auto; margin: 0 auto 4rem; box-shadow: none; background: var(--carte); border-radius: var(--r); }
+.drawer--page .drawer__body { overflow: visible; }
+@media (max-width: 899px) { .form-grid { grid-template-columns: 1fr; } .form-grid .full { grid-column: auto; } }

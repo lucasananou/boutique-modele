@@ -1,0 +1,362 @@
+[
+  {
+    "slug": "matcha-ceremonie",
+    "name": "Matcha Cérémonie",
+    "sku": "AOY-CER",
+    "price": 3200,
+    "category": {
+      "slug": "matcha",
+      "name": "Matcha"
+    },
+    "collection": {
+      "slug": "aoyuki",
+      "name": "Aoyuki"
+    },
+    "materialLabel": "Matcha, Okumidori de Kagoshima",
+    "shortDescription": "Un seul cultivar, l’Okumidori, cueilli à la première récolte à Kagoshima et moulu à la pierre.",
+    "description": "Un matcha pur, d’un seul cultivar, assez doux pour se boire à l’eau. Ingrédient : thé matcha. Canette de 30 g ou 100 g.",
+    "seoTitle": "Matcha Cérémonie, Okumidori de Kagoshima | Aoyuki",
+    "stock": 100,
+    "sortOrder": 1,
+    "details": [
+      {
+        "label": "Cultivar",
+        "value": "Okumidori"
+      },
+      {
+        "label": "Origine",
+        "value": "Kagoshima, Japon"
+      },
+      {
+        "label": "Récolte",
+        "value": "Première récolte"
+      },
+      {
+        "label": "Mouture",
+        "value": "À la pierre"
+      },
+      {
+        "label": "Ingrédient",
+        "value": "Thé matcha"
+      }
+    ],
+    "images": [
+      {
+        "src": "/stores/aoyuki/img/pp-30g.webp",
+        "alt": "Canette verte Aoyuki Matcha Cérémonie sur une pierre."
+      },
+      {
+        "src": "/stores/aoyuki/img/pp-ouverte.webp",
+        "alt": "Canette ouverte remplie de poudre de matcha."
+      },
+      {
+        "src": "/stores/aoyuki/img/pp-formats.webp",
+        "alt": "Les deux formats de canette, 30 g et 100 g."
+      }
+    ],
+    "variants": [
+      {
+        "key": "30g",
+        "label": "30 g",
+        "sku": "AOY-CER-30",
+        "optionName": "Format",
+        "optionValue": "30 g",
+        "units": 1,
+        "priceDelta": 0,
+        "stock": 100
+      },
+      {
+        "key": "100g",
+        "label": "100 g",
+        "sku": "AOY-CER-100",
+        "optionName": "Format",
+        "optionValue": "100 g",
+        "units": 1,
+        "priceDelta": 5700,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "slug": "latte-vanille",
+    "name": "Matcha latte Vanille",
+    "sku": "AOY-LVAN",
+    "price": 2900,
+    "category": {
+      "slug": "lattes",
+      "name": "Matcha latte"
+    },
+    "collection": {
+      "slug": "aoyuki",
+      "name": "Aoyuki"
+    },
+    "materialLabel": "Matcha du Japon aromatisé",
+    "shortDescription": "Base matcha du Japon aromatisée. Rond et doux.",
+    "description": "Matcha latte Vanille, 30 g : base matcha du Japon aromatisée. Composition en cours de validation avec le producteur.",
+    "seoTitle": "Matcha latte Vanille | Aoyuki",
+    "stock": 100,
+    "sortOrder": 2,
+    "details": [
+      {
+        "label": "Base",
+        "value": "Matcha du Japon aromatisé"
+      },
+      {
+        "label": "Format",
+        "value": "Canette de 30 g"
+      },
+      {
+        "label": "Notes",
+        "value": "Rond, doux"
+      }
+    ],
+    "images": [
+      {
+        "src": "/stores/aoyuki/img/prod-vanille.webp",
+        "alt": "Canette verte Aoyuki Matcha latte Vanille sur une pierre."
+      },
+      {
+        "src": "/stores/aoyuki/img/latte.webp",
+        "alt": "Matcha latte."
+      }
+    ],
+    "variants": [
+      {
+        "key": "30g",
+        "label": "30 g",
+        "sku": "AOY-LVAN-30",
+        "optionName": "Format",
+        "optionValue": "30 g",
+        "units": 1,
+        "priceDelta": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "slug": "latte-fraise",
+    "name": "Matcha latte Fraise",
+    "sku": "AOY-LFRA",
+    "price": 2900,
+    "category": {
+      "slug": "lattes",
+      "name": "Matcha latte"
+    },
+    "collection": {
+      "slug": "aoyuki",
+      "name": "Aoyuki"
+    },
+    "materialLabel": "Matcha du Japon aromatisé",
+    "shortDescription": "Base matcha du Japon aromatisée. Le duo des cafés à matcha.",
+    "description": "Matcha latte Fraise, 30 g : base matcha du Japon aromatisée. Composition en cours de validation avec le producteur.",
+    "seoTitle": "Matcha latte Fraise | Aoyuki",
+    "stock": 100,
+    "sortOrder": 3,
+    "details": [
+      {
+        "label": "Base",
+        "value": "Matcha du Japon aromatisé"
+      },
+      {
+        "label": "Format",
+        "value": "Canette de 30 g"
+      },
+      {
+        "label": "Notes",
+        "value": "Fruité, frais"
+      }
+    ],
+    "images": [
+      {
+        "src": "/stores/aoyuki/img/prod-fraise.webp",
+        "alt": "Canette verte Aoyuki Matcha latte Fraise sur une pierre."
+      },
+      {
+        "src": "/stores/aoyuki/img/vedette-fraise.webp",
+        "alt": "Verre de latte glacé à côté d’une canette Aoyuki Matcha latte Fraise."
+      }
+    ],
+    "variants": [
+      {
+        "key": "30g",
+        "label": "30 g",
+        "sku": "AOY-LFRA-30",
+        "optionName": "Format",
+        "optionValue": "30 g",
+        "units": 1,
+        "priceDelta": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "slug": "latte-yuzu",
+    "name": "Matcha latte Yuzu",
+    "sku": "AOY-LYUZ",
+    "price": 2900,
+    "category": {
+      "slug": "lattes",
+      "name": "Matcha latte"
+    },
+    "collection": {
+      "slug": "aoyuki",
+      "name": "Aoyuki"
+    },
+    "materialLabel": "Matcha du Japon aromatisé",
+    "shortDescription": "Base matcha du Japon aromatisée. Vif et frais.",
+    "description": "Matcha latte Yuzu, 30 g : base matcha du Japon aromatisée. Composition en cours de validation avec le producteur.",
+    "seoTitle": "Matcha latte Yuzu | Aoyuki",
+    "stock": 100,
+    "sortOrder": 4,
+    "details": [
+      {
+        "label": "Base",
+        "value": "Matcha du Japon aromatisé"
+      },
+      {
+        "label": "Format",
+        "value": "Canette de 30 g"
+      },
+      {
+        "label": "Notes",
+        "value": "Vif, citronné"
+      }
+    ],
+    "images": [
+      {
+        "src": "/stores/aoyuki/img/prod-yuzu.webp",
+        "alt": "Canette verte Aoyuki Matcha latte Yuzu sur une pierre."
+      },
+      {
+        "src": "/stores/aoyuki/img/latte.webp",
+        "alt": "Matcha latte."
+      }
+    ],
+    "variants": [
+      {
+        "key": "30g",
+        "label": "30 g",
+        "sku": "AOY-LYUZ-30",
+        "optionName": "Format",
+        "optionValue": "30 g",
+        "units": 1,
+        "priceDelta": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "slug": "hojicha",
+    "name": "Hojicha",
+    "sku": "AOY-HOJ",
+    "price": 2400,
+    "category": {
+      "slug": "hojicha",
+      "name": "Hojicha"
+    },
+    "collection": {
+      "slug": "aoyuki",
+      "name": "Aoyuki"
+    },
+    "materialLabel": "Thé vert torréfié du Japon",
+    "shortDescription": "Doux, grillé, aux notes de noisette.",
+    "description": "Hojicha, 30 g : thé vert japonais torréfié, doux et grillé, aux notes de noisette. Origine Japon, grade à confirmer avec le fournisseur.",
+    "seoTitle": "Hojicha, thé torréfié du Japon | Aoyuki",
+    "stock": 100,
+    "sortOrder": 5,
+    "details": [
+      {
+        "label": "Origine",
+        "value": "Japon"
+      },
+      {
+        "label": "Format",
+        "value": "Canette de 30 g"
+      },
+      {
+        "label": "Goût",
+        "value": "Doux, grillé, notes de noisette"
+      }
+    ],
+    "images": [
+      {
+        "src": "/stores/aoyuki/img/canette-hojicha.webp",
+        "alt": "Canette Aoyuki Hojicha."
+      },
+      {
+        "src": "/stores/aoyuki/img/tuile-hojicha.webp",
+        "alt": "Hojicha en canette."
+      }
+    ],
+    "variants": [
+      {
+        "key": "30g",
+        "label": "30 g",
+        "sku": "AOY-HOJ-30",
+        "optionName": "Format",
+        "optionValue": "30 g",
+        "units": 1,
+        "priceDelta": 0,
+        "stock": 100
+      }
+    ]
+  },
+  {
+    "slug": "fouet-bambou",
+    "name": "Fouet en bambou",
+    "sku": "AOY-FOU",
+    "price": 0,
+    "category": {
+      "slug": "accessoires",
+      "name": "Accessoires"
+    },
+    "collection": {
+      "slug": "aoyuki",
+      "name": "Aoyuki"
+    },
+    "materialLabel": "Accessoire",
+    "shortDescription": "Bientôt disponible. Prix à valider : aucun fournisseur retenu.",
+    "description": "Accessoire annoncé « bientôt » dans la marque : prix et fournisseur à valider.",
+    "stock": 0,
+    "status": "draft",
+    "catalogVisible": false,
+    "sortOrder": 10,
+    "details": [],
+    "images": [
+      {
+        "src": "/stores/aoyuki/img/tuile-accessoires.webp",
+        "alt": "Fouet en bambou"
+      }
+    ],
+    "variants": []
+  },
+  {
+    "slug": "bol-matcha",
+    "name": "Bol à matcha",
+    "sku": "AOY-BOL",
+    "price": 0,
+    "category": {
+      "slug": "accessoires",
+      "name": "Accessoires"
+    },
+    "collection": {
+      "slug": "aoyuki",
+      "name": "Aoyuki"
+    },
+    "materialLabel": "Accessoire",
+    "shortDescription": "Bientôt disponible. Prix à valider : aucun fournisseur retenu.",
+    "description": "Accessoire annoncé « bientôt » dans la marque : prix et fournisseur à valider.",
+    "stock": 0,
+    "status": "draft",
+    "catalogVisible": false,
+    "sortOrder": 10,
+    "details": [],
+    "images": [
+      {
+        "src": "/stores/aoyuki/img/tuile-accessoires.webp",
+        "alt": "Bol à matcha"
+      }
+    ],
+    "variants": []
+  }
+]

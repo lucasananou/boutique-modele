@@ -669,3 +669,21 @@ export async function sendAdminChatMessage(data: {
     ),
   });
 }
+
+/** Demande de rétractation ou de retour : transmise aux administrateurs (journalisée sans Resend). */
+export async function sendReturnRequest(data: {
+  type: string;
+  email: string;
+  reference?: string;
+  message?: string;
+}) {
+  const admins = adminEmails();
+  if (admins.length === 0) return;
+  const rows = [
+    `<p><strong>Type :</strong> ${escapeHtml(data.type)}</p>`,
+    `<p><strong>E-mail :</strong> ${escapeHtml(data.email)}</p>`,
+    data.reference ? `<p><strong>Commande :</strong> ${escapeHtml(data.reference)}</p>` : "",
+    data.message ? `<p><strong>Message :</strong><br>${escapeHtml(data.message)}</p>` : "",
+  ].join("");
+  await send({ to: admins, subject: `Demande de ${data.type.toLowerCase()} : ${data.email}`, html: layout(`Demande de ${data.type.toLowerCase()}`, rows) });
+}
