@@ -18,8 +18,9 @@
 .gal__view { position: relative; }
 .gal { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
 .gal::-webkit-scrollbar { display: none; }
-.gal figure { flex: 0 0 100%; scroll-snap-align: start; scroll-snap-stop: always; aspect-ratio: 4 / 4.6; overflow: hidden; }
+.gal figure { flex: 0 0 100%; scroll-snap-align: start; scroll-snap-stop: always; aspect-ratio: 4 / 3.91; overflow: hidden; }
 .gal img { width: 100%; height: 100%; object-fit: cover; }
+.gal img[src*="gal-latte"] { object-position: 50% 100%; }
 .gal__dots { position: absolute; left: 50%; bottom: .8rem; transform: translateX(-50%); display: flex; gap: .4rem; padding: .4rem .6rem; border-radius: 999px; background: rgba(16, 47, 35, .55); }
 .gal__dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(244, 235, 221, .5); transition: width .25s, background-color .25s; }
 .gal__dots span.is-on { width: 20px; border-radius: 4px; background: var(--sur-sapin); }
@@ -100,12 +101,13 @@
 .cr .btn { min-height: 42px; padding-inline: 1.1rem; font-size: .9063rem; }
 @media (min-width: 960px) {
   .pp { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 4rem); align-items: start; padding-top: 1.25rem; }
-  .pp__gal { position: sticky; top: calc(var(--nav-h) + 1rem); margin-inline: 0; display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: .8rem; }
+  .pp__gal { --gal-h: max(min(calc((100vh - var(--nav-h) - 2.5rem) * .85), 731px), 391px); position: sticky; top: calc(var(--nav-h) + 1rem); margin-inline: 0; display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: .8rem; }
   .gal__thumbs { display: grid; align-content: center; gap: .5rem; }
   .gal__thumbs button { padding: 0; border: 1px solid transparent; border-radius: 10px; overflow: hidden; background: none; cursor: pointer; opacity: .72; transition: opacity .2s, border-color .2s; }
   .gal__thumbs button[aria-current="true"] { opacity: 1; border-color: var(--sapin); }
-  .gal__thumbs img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-  .gal figure { aspect-ratio: auto; height: min(calc(100vh - var(--nav-h) - 2.5rem), 860px); min-height: 460px; border-radius: var(--r); }
+  .gal__thumbs img { width: 100%; height: min(95px, calc((var(--gal-h) - 3rem - 14px) / 7)); object-fit: cover; }
+  .gal__view { container-type: inline-size; }
+  .gal figure { aspect-ratio: auto; height: max(var(--gal-h), 100cqw); border-radius: var(--r); }
   .gal__dots { display: none; }
   .pp__buy { padding-top: 0; }
   .pp__title { font-size: clamp(2.75rem, 4.1vw, 3.75rem); }

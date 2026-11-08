@@ -11,7 +11,7 @@ import { esc, eur } from "./render";
 
 const I = "/stores/aoyuki/img/";
 /* Même version d'URL que la maquette. */
-const V = "?v=6";
+const V = "?v=8";
 
 interface Card {
   img: string;
