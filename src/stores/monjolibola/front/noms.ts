@@ -1,0 +1,26 @@
+/* Noms des modèles pour les balises <title> des fiches (le contenu vient de la base). */
+export const NOMS: Record<string, string> = {
+  "bola-de-grossesse-arbre-de-vie": "Bola Arbre de vie",
+  "bola-de-grossesse-fleur-or": "Bola Fleur d'or",
+  "bola-de-grossesse-souhait": "Bola Souhait",
+  "bola-de-grossesse-maman": "Bola Maman",
+  "bola-de-grossesse-rosace": "Bola Rosace",
+  "bola-de-grossesse-paquerette": "Bola Pâquerette",
+  "bola-de-grossesse-bali": "Bola Bali",
+  "bola-de-grossesse-nature": "Bola Nature",
+  "bola-de-grossesse-etoile": "Bola Étoile",
+  "bola-de-grossesse-zen": "Bola Zen",
+  "bola-de-grossesse-trefle": "Bola Trèfle",
+  "bola-de-grossesse-rond-or": "Bola Rond d'or",
+  "bola-de-grossesse-plume": "Bola Plume",
+  "bola-de-grossesse-fleur-verte": "Bola Fleur verte",
+  "bola-de-grossesse-vert": "Bola Vert",
+  "bola-de-grossesse-jade": "Bola Jade",
+  "bola-de-grossesse-cadenas": "Bola Cadenas",
+  "bola-de-grossesse-bleu": "Bola Bleu",
+  "bola-de-grossesse-indien": "Bola Indien",
+  "bola-de-grossesse-rose": "Bola Rose",
+  "bola-de-grossesse-naissance": "Bola Naissance",
+  "bola-de-grossesse-fleur-argent": "Bola Fleur argent",
+  "bola-de-grossesse-jumeaux": "Bola Jumeaux"
+};

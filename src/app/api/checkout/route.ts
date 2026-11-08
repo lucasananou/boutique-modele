@@ -55,6 +55,10 @@ function msg(locale: Locale, fr: string, en: string) {
 }
 
 export async function POST(req: Request) {
+  // Boutique fermée (COMMANDES_OUVERTES=0) : aucune commande, même en mode démo.
+  if (process.env.COMMANDES_OUVERTES === "0") {
+    return NextResponse.json({ error: "Les commandes sont fermées pour le moment." }, { status: 403 });
+  }
   // Anti-abus : ~10 initiations de paiement / minute / IP.
   const ip = getClientIp(req.headers);
   const limit = rateLimit(`checkout:${ip}`, { limit: 10, windowMs: 60_000 });
