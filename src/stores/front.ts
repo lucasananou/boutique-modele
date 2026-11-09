@@ -21,7 +21,8 @@ import type { ComponentType, ReactNode } from "react";
 export type SearchParams = Record<string, string | string[] | undefined>;
 
 export interface FrontRoute {
-  metadata?: Metadata;
+  /** Peut être une promesse : page lue en base. */
+  metadata?: Metadata | Promise<Metadata>;
   render: (props: { searchParams: SearchParams }) => ReactNode | Promise<ReactNode>;
 }
 

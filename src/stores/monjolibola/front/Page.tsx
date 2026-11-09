@@ -4,7 +4,7 @@ import { commandesOuvertes } from "./catalog";
 
 const A = "/stores/monjolibola";
 const V = "1";
-const NAV = [["/boutique", "Nos bolas"], ["/concept", "L’univers"], ["/#coffret", "Le coffret cadeau"]];
+const NAV = [["/boutique", "Nos bolas"], ["/guide", "Guides"], ["/concept", "L’univers"], ["/#coffret", "Le coffret cadeau"]];
 
 const Sprite = () => (
   <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden>
@@ -45,7 +45,7 @@ export default function Page({ children }: { children: ReactNode }) {
       <footer className="pied">
         <div className="pied__in">
           <span className="logo logo--p">Mon Joli Bola</span>
-          <nav><a href="/boutique">Nos bolas</a><a href="/#coffret">Le coffret cadeau</a><a href="/concept">L’univers</a><a href="/histoire">Notre histoire</a><a href="/faq">Contact</a></nav>
+          <nav><a href="/bola-de-grossesse">Le bola de grossesse</a><a href="/boutique">Nos bolas</a><a href="/guide">Guides</a><a href="/#coffret">Le coffret cadeau</a><a href="/concept">L’univers</a><a href="/histoire">Notre histoire</a><a href="/faq">Contact</a></nav>
         </div>
         <nav className="pied__legal"><a href="/mentions-legales">Mentions légales</a><a href="/cgv">Conditions de vente</a><a href="/confidentialite">Confidentialité</a><a href="/retractation">Rétractation</a></nav>
         <p className="pied__note">Les mises en scène sont des images d’illustration : les personnes qui y figurent ne sont pas des clientes.</p>

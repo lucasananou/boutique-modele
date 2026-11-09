@@ -13,6 +13,7 @@ import { Commande, Confirmation, Panier } from "./pages/Shop";
 import { AccountHome, Login, Register, SubscriptionByToken } from "./pages/Account";
 import { Concept, Faq, Histoire } from "./pages/Editorial";
 import { Cgv, Confidentialite, Mentions, Retractation } from "./pages/Legal";
+import { GUIDES_INDEX_META, GuidePage, GuidesIndex, guideMetadata } from "./pages/Guides";
 
 /* Vitrine Mon Joli Bola : maquette crème et bordeaux de Lucas, branchée sur le modèle (catalogue, comptes, admin). */
 
@@ -56,6 +57,7 @@ const ROUTES: Record<string, FrontRoute> = {
   concept: { metadata: page("L’univers"), render: () => <Concept /> },
   histoire: { metadata: page("Notre histoire"), render: () => <Histoire /> },
   faq: { metadata: page("Questions"), render: () => <Faq /> },
+  guide: { metadata: GUIDES_INDEX_META, render: () => <GuidesIndex /> },
   panier: { metadata: page("Panier"), render: () => <Panier /> },
   commande: { metadata: page("Commande"), render: () => <Commande /> },
   "commande/confirmation": {
@@ -96,7 +98,11 @@ export const front: StoreFront = {
         render: () => <ProductPage slug={slug} />,
       };
     }
-    return ROUTES[parts.join("/")] ?? null;
+    const chemin = parts.join("/");
+    if ((parts[0] === "guide" && parts.length === 2) || (parts[0] === "bola-de-grossesse" && parts.length <= 2)) {
+      return { metadata: guideMetadata(chemin), render: () => <GuidePage slug={chemin} /> };
+    }
+    return ROUTES[chemin] ?? null;
   },
 };
 

@@ -33,7 +33,8 @@ export default async function ProductPage({ slug }: { slug: string }) {
             <div className="fiche__a leve l2"><Ajouter disponible={item.available} ligne={{ productId: item.productId, slug: item.slug, variantId: item.variantId, name: item.name, size: item.variantLabel, unitPrice: item.price, img: item.img }} /><BoutonSon /></div>
             <details open><summary>Matière et dimensions<span>+</span></summary><p>{item.matiere}. <AC>Composition exacte, diamètre et longueur de chaîne à confirmer avant publication.</AC></p></details>
             <details><summary>Livraison et retours<span>+</span></summary><p>Droit de rétractation légal de 14 jours. <AC>Délais et frais à confirmer.</AC></p></details>
-            <details><summary>Précaution<span>+</span></summary><p>Ce bijou contient de petites pièces. Gardez-le hors de portée d’un bébé.</p></details>
+            <details><summary>Précaution<span>+</span></summary><p>Ce bijou contient de petites pièces. Gardez-le hors de portée d’un bébé. Pour aller plus loin : <a href="/guide/bola-de-grossesse-dangereux">un bola est-il dangereux ?</a></p></details>
+            <details><summary>Guides<span>+</span></summary><p><a href="/bola-de-grossesse">Tout savoir sur le bola de grossesse</a><br /><a href="/guide/comment-choisir-son-bola-de-grossesse">Comment choisir son bola</a></p></details>
           </div>
         </div></section>
         <Rituel />

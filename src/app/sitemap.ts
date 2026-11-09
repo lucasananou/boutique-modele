@@ -42,12 +42,14 @@ const staticPaths: { path: string; priority: number; freq: MetadataRoute.Sitemap
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Vitrine sur mesure : seules ses propres pages existent.
   if (store.front?.sitemap) {
-    const [base, rows] = await Promise.all([
+    const [base, rows, contenus] = await Promise.all([
       requestOrigin(),
       prisma.product.findMany({ where: { status: "active" }, select: { slug: true, updatedAt: true } }),
+      prisma.page.findMany({ where: { status: "published" }, select: { slug: true, contentUpdatedAt: true, updatedAt: true } }),
     ]);
     return [
       ...store.front.sitemap.map((path) => ({ url: `${base}${path === "/" ? "" : path}`, lastModified: new Date() })),
+      ...contenus.map((p) => ({ url: `${base}/${p.slug}`, lastModified: p.contentUpdatedAt ? new Date(p.contentUpdatedAt) : p.updatedAt })),
       ...rows.map((p) => ({ url: `${base}/produit/${p.slug}`, lastModified: p.updatedAt })),
     ];
   }

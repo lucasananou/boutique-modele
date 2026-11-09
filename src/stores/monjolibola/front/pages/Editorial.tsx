@@ -9,7 +9,7 @@ export function Concept() {
   return (
     <Page><div className="pile">
       <section className="edito"><div className="edito__txt"><p className="sur leve">L’univers</p><h1 className="leve">Le bola, en quelques <em>mots</em></h1><p className="leve l1">Un pendentif rond, une petite bille à l’intérieur, une chaîne longue. Vous bougez, il tinte.</p><div className="boutons leve l2"><a className="btn btn--plein" href="/boutique">Découvrir nos bolas</a><BoutonSon /></div></div><figure><img src={`${A}/femme.webp`} alt="Femme enceinte portant un bola vert" fetchPriority="high" /><figcaption>Image d’illustration</figcaption></figure></section>
-      <section className="centre rv"><h2>D’où <em>vient</em>-il ?</h2><p>On l’associe souvent à des traditions d’Amérique centrale et d’Indonésie, sous le nom de « clochette des anges ». Aujourd’hui, on le choisit surtout pour sa beauté, et pour ce petit son qui accompagne la grossesse.</p><p><strong>C’est un bijou : il ne soigne rien et ne promet rien.</strong></p><p><a href="/histoire">Notre histoire</a></p></section>
+      <section className="centre rv"><h2>D’où <em>vient</em>-il ?</h2><p>On l’associe souvent à des traditions d’Amérique centrale et d’Indonésie, sous le nom de « clochette des anges ». Aujourd’hui, on le choisit surtout pour sa beauté, et pour ce petit son qui accompagne la grossesse.</p><p><strong>C’est un bijou : il ne soigne rien et ne promet rien.</strong></p><p><a href="/bola-de-grossesse">Tout savoir sur le bola de grossesse</a> · <a href="/histoire">Notre histoire</a></p></section>
       <Rituel /><BandeFinale />
     </div></Page>
   );
@@ -36,7 +36,7 @@ const Q: [string, string, React.ReactNode][] = [
 export function Faq() {
   return (
     <Page>
-      <div className="questions"><h1 className="leve">Vos <em>questions</em></h1>{[...new Set(Q.map((q) => q[0]))].map((t) => <section key={t}><p className="sur">{t}</p>{Q.filter((q) => q[0] === t).map(([, q, r]) => <details key={q}><summary>{q}<span>+</span></summary><p>{r}</p></details>)}</section>)}<p className="questions__c">Une question ? <AC>Adresse de contact à confirmer.</AC></p></div>
+      <div className="questions"><h1 className="leve">Vos <em>questions</em></h1>{[...new Set(Q.map((q) => q[0]))].map((t) => <section key={t}><p className="sur">{t}</p>{Q.filter((q) => q[0] === t).map(([, q, r]) => <details key={q}><summary>{q}<span>+</span></summary><p>{r}</p></details>)}</section>)}<p className="questions__c">Pour aller plus loin : <a href="/guide">tous nos guides sur le bola de grossesse</a>, dont <a href="/guide/bola-de-grossesse-dangereux">la sécurité</a>, <a href="/guide/quand-porter-un-bola-de-grossesse">quand le porter</a> et <a href="/guide/comment-choisir-son-bola-de-grossesse">comment le choisir</a>.</p><p className="questions__c">Une question ? <AC>Adresse de contact à confirmer.</AC></p></div>
       <BandeFinale />
     </Page>
   );
