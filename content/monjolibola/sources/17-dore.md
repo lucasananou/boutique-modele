@@ -1,8 +1,8 @@
 ---
 slug: bola-de-grossesse/dore
 kind: landing
-titre: Bola doré, finition couleur or
-meta: Bola doré, finition couleur or · Mon Joli Bola
+titre: Bola doré, finition couleur dorée
+meta: Bola doré, finition couleur dorée · Mon Joli Bola
 extrait: Nos bolas dorés : métal, finition couleur dorée. Ce que veut dire cette mention, comment les porter et les questions fréquentes.
 rubrique: Collection
 image: /stores/monjolibola/img/trio.webp
@@ -17,7 +17,7 @@ ordre: 31
 ---
 ## Ce que veut dire « finition couleur »
 
-« Finition couleur or » ou « couleur dorée » **décrit l'apparence du bijou, pas sa composition**. **Nos modèles sont en métal**, et leur couleur est obtenue par une finition de surface. Ils ne sont pas vendus sous la mention or, ni sous une mention de carats.
+« Finition couleur dorée » **décrit l'apparence du bijou, pas sa composition**. **Nos modèles sont en métal**, et leur couleur est obtenue par une finition de surface. Ils ne sont pas vendus sous la mention or, ni sous une mention de carats.
 
 La composition exacte de chaque modèle sera indiquée sur sa fiche dès qu'elle sera confirmée. Pour tout comprendre sur ces mentions, lisez notre guide [bola or ou couleur or](/guide/bola-or-ou-couleur-or).
 
