@@ -7,11 +7,11 @@ import { eur } from "../render";
 
 const A = "/stores/monjolibola/img";
 const SCENES: Record<string, { src: string; alt: string; ill?: boolean }> = {
-  "bola-de-grossesse-fleur-or": { src: `${A}/lin.webp`, alt: "Bola Fleur d’or posé sur du lin" },
+  "bola-de-grossesse-fleur-doree": { src: `${A}/lin.webp`, alt: "Bola Fleur dorée posé sur du lin" },
   "bola-de-grossesse-arbre-de-vie": { src: `${A}/femme.webp`, alt: "Femme enceinte portant le bola Arbre de vie", ill: true },
   "bola-de-grossesse-etoile": { src: `${A}/paume.webp`, alt: "Bola Étoile posé dans une paume, pour voir sa taille", ill: true },
   "bola-de-grossesse-rosace": { src: `${A}/rituel-macro.webp`, alt: "Bola Rosace suspendu dans la lumière" },
-  "bola-de-grossesse-rond-or": { src: `${A}/rituel.webp`, alt: "Femme enceinte à la fenêtre portant le bola Rond d’or", ill: true },
+  "bola-de-grossesse-rond-dore": { src: `${A}/rituel.webp`, alt: "Femme enceinte à la fenêtre portant le bola Rond doré", ill: true },
 };
 
 export default async function ProductPage({ slug }: { slug: string }) {
@@ -31,7 +31,7 @@ export default async function ProductPage({ slug }: { slug: string }) {
             <p className="fiche__p leve l1">{eur(item.price)}</p>
             {proches.length > 0 && <div className="fiche__v leve l2"><p>Dans les mêmes couleurs</p><div>{proches.map((p) => <a key={p.slug} href={`/produit/${p.slug}`} aria-label={`Bola ${p.nom}`}><img src={p.img} alt="" width={64} height={64} loading="lazy" /></a>)}</div></div>}
             <div className="fiche__a leve l2"><Ajouter disponible={item.available} ligne={{ productId: item.productId, slug: item.slug, variantId: item.variantId, name: item.name, size: item.variantLabel, unitPrice: item.price, img: item.img }} /><BoutonSon /></div>
-            <details open><summary>Matière et dimensions<span>+</span></summary><p><AC>Matière, diamètre et longueur de chaîne à confirmer avant publication.</AC></p></details>
+            <details open><summary>Matière et dimensions<span>+</span></summary><p>{item.matiere}. <AC>Composition exacte, diamètre et longueur de chaîne à confirmer avant publication.</AC></p></details>
             <details><summary>Livraison et retours<span>+</span></summary><p>Droit de rétractation légal de 14 jours. <AC>Délais et frais à confirmer.</AC></p></details>
             <details><summary>Précaution<span>+</span></summary><p>Ce bijou contient de petites pièces. Gardez-le hors de portée d’un bébé.</p></details>
           </div>

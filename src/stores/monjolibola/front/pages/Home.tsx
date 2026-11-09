@@ -5,7 +5,7 @@ import { AC, BandeFinale, Rituel } from "../blocs";
 import { eur } from "../render";
 
 const A = "/stores/monjolibola/img";
-const TROIS = [["bola-de-grossesse-fleur-or", "31%"], ["bola-de-grossesse-fleur-argent", "50%"], ["bola-de-grossesse-rond-or", "68%"]];
+const TROIS = [["bola-de-grossesse-fleur-doree", "31%"], ["bola-de-grossesse-fleur-argentee", "50%"], ["bola-de-grossesse-rond-dore", "68%"]];
 const AVIS = [["Un bijou sublime, rempli de sens. Je ne le quitte plus.", "Élise"], ["Un son si doux et apaisant… Un vrai coup de cœur.", "Camille"]];
 
 export default function Home({ catalog }: { catalog: Catalog }) {
@@ -21,7 +21,7 @@ export default function Home({ catalog }: { catalog: Catalog }) {
         </section>
 
         <section className="presence">
-          <div className="presence__img"><img src={`${A}/lin.webp`} alt="Bola Fleur d’or posé sur du lin ivoire" loading="lazy" /></div>
+          <div className="presence__img"><img src={`${A}/lin.webp`} alt="Bola Fleur dorée posé sur du lin ivoire" loading="lazy" /></div>
           <div className="presence__txt rv"><h2>Plus qu’un bijou,<br />une <em>présence</em>.</h2><p>Un tintement doux, presque secret, qui accompagne vos jours et ponctue ces mois d’attente, bien avant la première rencontre.</p><span className="filet" /></div>
         </section>
 

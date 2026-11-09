@@ -2,6 +2,13 @@ import type { StoreConfig } from "../types";
 
 /* Anciennes URL de mon-joli-bola.fr (site Next/Nest remplacé). */
 export const redirects: StoreConfig["redirects"] = [
+  // Modèles renommés le 09/11/2026 : leur nom suggérait un métal précieux.
+  { source: "/produit/bola-de-grossesse-fleur-or", destination: "/produit/bola-de-grossesse-fleur-doree", permanent: true },
+  { source: "/products/bola-de-grossesse-fleur-or", destination: "/produit/bola-de-grossesse-fleur-doree", permanent: true },
+  { source: "/produit/bola-de-grossesse-rond-or", destination: "/produit/bola-de-grossesse-rond-dore", permanent: true },
+  { source: "/products/bola-de-grossesse-rond-or", destination: "/produit/bola-de-grossesse-rond-dore", permanent: true },
+  { source: "/produit/bola-de-grossesse-fleur-argent", destination: "/produit/bola-de-grossesse-fleur-argentee", permanent: true },
+  { source: "/products/bola-de-grossesse-fleur-argent", destination: "/produit/bola-de-grossesse-fleur-argentee", permanent: true },
   { source: "/products/:slug", destination: "/produit/:slug", permanent: true },
   { source: "/collections/:slug", destination: "/boutique", permanent: true },
   { source: "/cart", destination: "/panier", permanent: true },

@@ -28,7 +28,7 @@ const Q: [string, string, React.ReactNode][] = [
   ["Le porter", "À partir de quand le porter ?", "Quand vous en avez envie. Il n’y a pas de date à respecter, et rien ne vous empêche de le porter après la naissance."],
   ["Le porter", "Mon bébé va-t-il l’entendre ?", "Nous ne promettons rien sur ce point. Le bola est un bijou, pas un soin : vous, vous l’entendrez."],
   ["Le porter", "Peut-on le laisser près de bébé ?", "Non. C’est un petit objet avec une chaîne : gardez-le hors de portée d’un bébé, et jamais dans un lit ou un doudou."],
-  ["Le choisir", "En quelle matière est-il ?", <AC key="m">Matière exacte à confirmer avec le fournisseur avant publication.</AC>],
+  ["Le choisir", "En quelle matière est-il ?", <span key="m">Métal, avec une finition couleur dorée ou couleur argent selon le modèle : il s’agit d’une couleur, qui n’indique pas un métal précieux. <AC>Composition exacte à confirmer avec le fournisseur.</AC></span>],
   ["Le choisir", "Quelle taille fait-il ?", <AC key="t">Diamètre et longueur de chaîne à confirmer.</AC>],
   ["Le recevoir", "Quels sont les délais de livraison ?", <AC key="d">Délais et transporteur à confirmer selon qui expédie.</AC>],
   ["Le recevoir", "Puis-je le retourner ?", <span key="r">Vous disposez du droit de rétractation légal de 14 jours. <AC>Conditions complètes à confirmer.</AC></span>],

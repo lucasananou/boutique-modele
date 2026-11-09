@@ -14,6 +14,8 @@ export interface CatalogItem {
   famille: string;
   familleNom: string;
   description: string;
+  /** Matière annoncée sur la fiche (admin > Produits, champ matière). */
+  matiere: string;
   price: number;
   variantId: string;
   variantLabel: string;
@@ -46,6 +48,7 @@ function toItem(p: Product): CatalogItem {
     famille: p.category,
     familleNom: FAMILLES[p.category] ?? "",
     description: p.shortDescription,
+    matiere: p.materialLabel || "Métal, finition à confirmer",
     price,
     variantId: v?.id ?? "",
     variantLabel: v?.label ?? "",
