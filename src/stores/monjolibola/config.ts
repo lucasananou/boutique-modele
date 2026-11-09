@@ -61,9 +61,9 @@ export const config: StoreConfig = {
   // Médiateur de la consommation : obligatoire pour vendre en France, à renseigner au lancement.
   mediator: null,
 
-  domains: { primary: "bola.orylis.fr", intl: "" },
+  domains: { primary: "mon-joli-bola.fr", intl: "" },
 
-  emailFromFallback: "Mon Joli Bola <commandes@bola.orylis.fr>",
+  emailFromFallback: "Mon Joli Bola <commandes@mon-joli-bola.fr>",
 
   orders: { prefix: "MJB" },
 
