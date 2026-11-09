@@ -53,6 +53,14 @@ Un bola se porte facilement avec les tenues de grossesse. Quelques idées simple
 
 Inutile d'en faire trop : laissez-la décider comment elle le portera. Vous pouvez lui glisser ces conseils dans votre message, ou simplement lui envoyer notre guide sur [la longueur de chaîne](/guide/longueur-chaine-bola-de-grossesse).
 
+## Si vous l'offrez à deux, ou de la part de plusieurs personnes
+
+Offrir un bola à plusieurs permet de partager le prix et de signer ensemble la carte. C'est aussi l'occasion de glisser un mot de chacun, plutôt qu'une seule phrase convenue. Mettez-vous d'accord à l'avance sur la couleur, doré ou argenté, en vous appuyant sur ce que porte la future mère. Si personne ne connaît ses goûts, une personne proche d'elle saura vous renseigner discrètement.
+
+## Le bola et le coparent
+
+Vous pouvez aussi l'offrir au coparent, ou choisir de porter chacun le vôtre. Rien ne le réserve aux femmes enceintes. Ce geste peut compter pour celui ou celle qui attend cet enfant sans le porter, et qui cherche parfois sa place pendant la grossesse.
+
 ## Offrir à une femme qui n'est pas enceinte
 
 C'est possible, c'est un bijou comme un autre. Précisez seulement votre intention si le geste risque d'être mal compris : recevoir un bola peut être reçu comme une question sur un projet d'enfant ou comme une maladresse après un parcours difficile. Dans le doute, parlez-en d'abord.

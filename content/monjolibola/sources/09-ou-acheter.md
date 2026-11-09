@@ -45,6 +45,10 @@ Avant d'acheter, n'hésitez pas à écrire au vendeur :
 
 Un vendeur sérieux répondra simplement. Si la réponse est floue, ou s'il vous assure que le bijou est sans risque sans pouvoir le montrer, passez votre chemin. Notre guide sur [la sécurité d'un bola](/guide/bola-de-grossesse-dangereux) rappelle les limites réglementaires.
 
+## Les avis clients : comment les lire
+
+Les avis peuvent aider, s'ils sont sincères. Privilégiez ceux qui décrivent le bijou reçu, le délai réel ou un échange avec le vendeur, plutôt que ceux qui se contentent d'un mot. Méfiez-vous des pages qui n'affichent que des notes parfaites. À l'inverse, l'absence d'avis ne prouve rien à elle seule, surtout pour une petite boutique : nous n'en affichons d'ailleurs aucun tant que nous n'avons pas de commandes réelles à montrer.
+
 ## Quel budget prévoir ?
 
 Le prix varie beaucoup selon la matière et le vendeur. Un bola en métal précieux coûte naturellement plus cher qu'un bola en métal avec finition colorée. Un prix élevé ne garantit pas la matière, et un prix bas ne dit pas à lui seul que le bijou est mauvais. Comparez ce qui est comparable.
@@ -54,6 +58,10 @@ Nos modèles sont affichés à 59,90 € à ce jour.
 ## Acheter en ligne : délais et retours
 
 Avant de commander en ligne, lisez la page de livraison et de retour. Si vous achetez pour offrir, vérifiez que le délai de retour laisse le temps à la personne de l'échanger. Conservez la confirmation de commande. Et en cas de litige, sachez que le droit de rétractation et la garantie légale s'appliquent même pour un petit achat.
+
+## Essayer avant d'acheter : ce qui se perd en ligne
+
+Acheter en boutique vous permet d'entendre le son, de sentir le poids et de voir la couleur réelle. Ces trois éléments passent mal sur une photo. Si vous achetez en ligne, cherchez une vidéo, posez la question au vendeur, et assurez-vous de pouvoir renvoyer le bijou s'il ne vous convient pas. Une boutique qui répond clairement à ces questions avant la commande répondra sans doute mieux après.
 
 ## En magasin à Paris, Lyon, Toulouse ou ailleurs
 

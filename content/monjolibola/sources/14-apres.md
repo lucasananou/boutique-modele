@@ -49,6 +49,14 @@ Un doudou doit répondre aux règles de sécurité des jouets. Un bijou n'est pa
 
 Vous lirez peut-être que le tintement rassure le nouveau-né, parce qu'il l'aurait entendu pendant la grossesse. Ce n'est pas démontré pour le bola, et nous ne le prétendons pas. Notre guide [le bébé entend-il le bola ?](/guide/le-bebe-entend-il-le-bola) explique ce que l'on sait.
 
+## Une idée de rituel simple
+
+Si vous voulez que ce bijou garde une place particulière sans rester autour de votre cou, écrivez un petit mot daté, glissez-le avec le bola dans une boîte, et rangez le tout avec les souvenirs de la naissance. Vous pourrez le rouvrir un jour avec votre enfant, quand il sera en âge de l'avoir entre les mains sans risque.
+
+## Quand le ranger pour de bon
+
+Si le bola ne vous dit plus rien, rien ne vous oblige à le porter ou à le garder. Il peut être transmis, ou simplement rangé. Vous n'avez aucune obligation envers un bijou, aussi joli soit-il.
+
 ## Sources
 
 - [Ministère de la Santé : protégez votre enfant des accidents domestiques](https://sante.gouv.fr/IMG/pdf/etouf.pdf)

@@ -23,6 +23,12 @@ Le mot vient de l'espagnol : *bola* veut simplement dire « boule ». On rencont
 
 Ce qui compte pour choisir : c'est d'abord un bijou. Il n'a aucune fonction médicale et ne remplace aucun suivi. Pour comprendre le principe en détail, lisez [qu'est-ce qu'un bola de grossesse](/guide/qu-est-ce-qu-un-bola-de-grossesse).
 
+## Collier de grossesse, bola : est-ce la même chose ?
+
+Oui, dans la grande majorité des cas. « Collier de grossesse » et « bola de grossesse » désignent le même type de bijou : un pendentif sonore sur une chaîne longue. Certains vendeurs parlent aussi de « bijou de grossesse » de manière plus large, pour des pièces qui ne tintent pas. Si le son compte pour vous, vérifiez que la fiche parle bien d'un pendentif sonore, avec une bille ou un grelot à l'intérieur.
+
+Autre différence utile à connaître : un bola se reconnaît à sa longueur. Un collier ordinaire tombe sur le buste, alors qu'un bola est prévu pour descendre plus bas. Si vous portez déjà de longs colliers, le geste ne vous changera pas beaucoup.
+
 ## Comment le porter
 
 Le plus courant est de le porter sur une chaîne longue, par-dessus ou sous les vêtements. Par-dessus, le tintement s'entend mieux et le pendentif se voit. Dessous, il est plus discret et risque moins de s'accrocher.
@@ -61,11 +67,15 @@ Nous n'avons trouvé aucune étude décrivant un risque lié au port d'un bola p
 
 Pour une IRM, tout bijou métallique doit être retiré. Pour le reste, suivez les consignes de votre maternité. Et pour toute question sur votre grossesse, votre sage-femme ou votre médecin reste la bonne personne. Le sujet est traité en détail dans [le bola de grossesse est-il dangereux ?](/guide/bola-de-grossesse-dangereux), et la question du son dans [le bébé entend-il le bola ?](/guide/le-bebe-entend-il-le-bola).
 
+Les affirmations que l'on trouve en ligne vont parfois dans les deux sens : « ce bijou apaise votre bébé » d'un côté, « c'est dangereux pour lui » de l'autre. Dans les deux cas, nous n'avons trouvé aucune donnée pour le dire. Quand un vendeur ou un article affirme l'un ou l'autre, demandez-vous quelle source il cite. Si vous avez une inquiétude précise, la personne à qui la poser reste votre sage-femme.
+
 ## Offrir un bola de grossesse
 
 Il n'y a pas de règle sur qui l'offre : le ou la partenaire, la famille, les amies, ou la future mère elle-même. Le moment est libre aussi, de l'annonce à la baby shower, sachant que plus il est offert tôt, plus il sera porté longtemps.
 
 Si vous hésitez, un modèle sobre dans une couleur qu'elle porte déjà reste le choix le plus sûr. Nos conseils sont réunis dans [offrir un bola de grossesse](/guide/offrir-un-bola-de-grossesse).
+
+Évitez seulement de présenter le bola comme bon pour le bébé : c'est une promesse que personne ne peut tenir, et elle peut culpabiliser celle qui n'en porte pas. Dites plutôt que vous avez pensé à elle. Un mot écrit à la main accompagne très bien ce cadeau. Et si vous hésitez sur le modèle, une possibilité d'échange reste le meilleur des filets de sécurité.
 
 ## Après la naissance
 

@@ -42,6 +42,10 @@ Quelques exemples d'usage : une longue chaîne convient bien si vous portez surt
 
 Les deux se font. Au-dessus, le son s'entend mieux et le pendentif se voit. Dessous, il est plus discret et il évite de s'accrocher. Si vous le portez sous un vêtement ajusté, vous sentirez peut-être davantage le pendentif contre le ventre.
 
+## Et après la naissance ?
+
+Une longueur pensée pour le ventre n'est plus forcément idéale une fois le bébé né. Certaines personnes raccourcissent alors la chaîne, si le bijou le permet, ou portent le bola plus haut pour pouvoir le passer sous un vêtement. Le plus important reste que le bébé ne puisse pas l'attraper : notre guide [que faire de son bola après la naissance](/guide/bola-apres-la-naissance) en parle plus longuement.
+
 ## Les erreurs à éviter
 
 **Se fier à une photo.** Sur un mannequin, une chaîne peut sembler tomber à l'endroit idéal, mais votre morphologie est différente. Mesurez.

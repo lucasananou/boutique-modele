@@ -43,6 +43,14 @@ Si vous avez traversé un parcours difficile, une perte de grossesse ou une assi
 
 Il n'y a pas d'heure ni de durée à respecter. Vous pouvez le porter toute la journée si c'est confortable, ou seulement quelques heures, à la maison ou pour sortir. Retirez-le en cas de gêne ou de rougeur, et pensez à l'enlever la nuit : la chaîne peut s'accrocher pendant le sommeil. Si vous avez envie d'en faire un petit rituel, le matin ou au moment de vous poser le soir, faites-le pour vous, sans attendre d'effet sur le bébé.
 
+## Et si vous le recevez tard dans la grossesse ?
+
+Vous pouvez le porter dès que vous le recevez, même à quelques semaines de l'accouchement. Il n'existe pas de durée minimale pour qu'un bijou ait du sens. Pensez simplement que le ventre est déjà bien rond : commencez par vérifier la hauteur à laquelle il tombe, et n'hésitez pas à le porter plus haut pour plus de confort. Vous pourrez toujours le garder ou le porter autrement après la naissance.
+
+## Porter un bola pendant une deuxième grossesse
+
+Vous avez gardé le bola de votre première grossesse ? Vous pouvez le reporter, bien sûr. Vérifiez seulement l'état de la chaîne et du fermoir, ainsi que la finition du pendentif, surtout s'il a été rangé longtemps. Avec un aîné à la maison, gardez en tête qu'un jeune enfant pourra vouloir y toucher : le pendentif est tentant pour de petites mains, et il doit rester à distance d'eux.
+
 ## Comment l'adapter quand le ventre grandit
 
 Une chaîne qui convenait à trois mois peut être trop courte à huit. Quelques repères simples :

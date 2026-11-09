@@ -76,11 +76,21 @@ Vous pouvez tout à fait continuer à le porter, avec ces précautions. Plus d'i
 
 Quand vous l'enlevez, posez-le en hauteur, loin du lit à langer et du matelas d'éveil. Un bébé se retourne, attrape et porte à la bouche plus vite qu'on ne le croit. Le geste à prendre est le même que pour vos boucles d'oreilles ou vos médicaments : hors de portée, tout de suite. Si vous transmettez votre bola à une proche, dites-lui également que la chaîne doit rester loin des enfants.
 
+Vous pouvez tout à fait continuer à porter votre bola auprès d'un bébé, à une condition : qu'il ne soit jamais à sa portée. Dans les premiers mois, le plus simple reste de le porter quand votre enfant n'est pas dans vos bras, ou de le passer sous un vêtement fermé.
+
 ## Examens médicaux et accouchement
 
 Pour une IRM, tout bijou métallique doit être retiré : le champ magnétique peut l'attirer, le faire chauffer ou brouiller l'image. C'est une consigne habituelle des centres d'imagerie. Pour une échographie ou une autre consultation, suivez simplement ce que l'on vous demande.
 
 Pour l'accouchement, ce sont les consignes de votre maternité qui comptent. Vous pouvez laisser vos bijoux à la maison ou les confier à un proche. Prévoyez de l'enlever ou de le faire enlever facilement, et parlez-en à l'équipe si cela vous tient à cœur.
+
+## Un bola d'occasion ou reçu en héritage
+
+Un bola transmis par une proche, ou acheté d'occasion, n'est pas dangereux pour autant. Il faut simplement rester plus attentive à son état : la chaîne, le fermoir, l'anneau et la surface du pendentif. Une finition usée laisse apparaître le métal qui se trouve dessous, et on ne sait pas toujours de quoi il s'agit, surtout sans fiche. Si votre peau réagit, retirez-le. Pour les règles de composition, souvenez-vous que les limites européennes visent les bijoux mis sur le marché : un bijou ancien n'a pas forcément été soumis aux mêmes contrôles.
+
+## Si vous avez un doute
+
+Trois réflexes valent mieux que toutes les recherches en ligne. Retirez le bijou si quelque chose vous gêne. Montrez-le à votre sage-femme ou à votre médecin si vous avez une question, en disant ce que vous savez de sa composition. Écrivez au vendeur si vous voulez savoir de quoi il est fait : un vendeur sérieux répond. Et rappelez-vous qu'il est tout à fait possible de vivre une très belle grossesse sans porter de bola.
 
 ## Quand retirer son bola
 

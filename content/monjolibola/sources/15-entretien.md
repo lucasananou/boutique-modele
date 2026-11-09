@@ -48,6 +48,15 @@ Un bijou porté souvent s'use, et une chaîne fragile peut casser ou s'ouvrir. D
 
 Une finition de surface peut s'user ou se ternir à l'usage. Si cela arrive, c'est que la couche superficielle a été atteinte : ne tentez pas de la récupérer vous-même avec des produits. Si la peau réagit au bijou à ce moment-là, retirez-le et demandez conseil. Notre guide [le bola de grossesse est-il dangereux ?](/guide/bola-de-grossesse-dangereux) en parle.
 
+## Les gestes à éviter
+
+- Ne plongez pas le bola dans l'eau, même pour le nettoyer.
+- N'utilisez ni bicarbonate, ni vinaigre, ni dentifrice : ces recettes qu'on trouve en ligne peuvent abîmer une finition.
+- N'utilisez pas de chiffon abrasif ou de produit pour l'argenterie : ils sont pensés pour d'autres matières.
+- Ne l'ouvrez pas, et ne tirez pas sur l'anneau pour le réparer vous-même.
+
+Ces précautions valent mieux que n'importe quel nettoyage. Un bijou qu'on essuie, qu'on range au sec et qu'on enlève au bon moment vieillit nettement mieux.
+
 ## Pourquoi nos consignes restent générales
 
 Nos bolas sont en métal, avec une finition couleur argent ou dorée. Les consignes précises dépendent de la composition exacte de chaque modèle, que nous attendons de notre fournisseur. Nous préférons rester prudents plutôt que de vous donner un conseil inadapté. Nous préciserons ces consignes sur les fiches dès que possible.

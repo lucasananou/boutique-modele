@@ -31,6 +31,17 @@ Ce récit est présenté de manière assez différente selon les boutiques : on 
 
 Comme ces récits viennent surtout de boutiques, ils ont parfois une visée commerciale : un bijou chargé d'histoire se vend mieux qu'un simple pendentif. Nous n'y voyons rien de scandaleux, à condition de ne pas les présenter comme de l'histoire. Quand un site vous donne une date précise ou nomme une tradition sans citer de source, considérez ce récit comme une belle histoire, et rien de plus.
 
+## Comment lire une histoire de bola sur un site
+
+Avant de croire ou de répéter une histoire, posez-vous ces quatre questions :
+
+- Une date ou un lieu précis sont-ils donnés ?
+- Une source est-elle citée, comme un livre, un musée, un travail d'historien ?
+- Celui qui raconte cette histoire vend-il des bolas ?
+- La même histoire se retrouve-t-elle, mot pour mot, sur d'autres sites ?
+
+Si vous répondez non aux deux premières et oui aux deux dernières, vous avez sans doute affaire à un récit marketing, repris d'un site à l'autre. Il peut rester joli. Il ne constitue simplement pas une information.
+
 ## Ce qui est documenté et ce qui relève du récit
 
 Il est utile de distinguer trois choses.
@@ -52,6 +63,10 @@ Aujourd'hui, on offre et on porte un bola surtout pour ce qu'il représente : le
 Cette signification est personnelle. Personne ne peut vous dire ce que votre bola doit représenter, et aucun sens n'est obligatoire. Pour y réfléchir, notre guide [à quoi sert un bola de grossesse](/guide/a-quoi-sert-un-bola-de-grossesse) reprend ce que l'on peut en attendre, et [offrir un bola](/guide/offrir-un-bola-de-grossesse) explique comment accompagner ce geste.
 
 Si vous offrez un bola, ce sens peut se dire avec quelques mots simples sur une carte, sans avoir à raconter de légende. Et si vous l'achetez pour vous-même, vous n'avez pas à vous justifier. Un objet peut compter sans qu'il y ait besoin de lui inventer un passé.
+
+## Pourquoi associer un son à l'attente d'un enfant ?
+
+On comprend facilement l'attrait de ce bijou. Pendant la grossesse, on ne voit pas son enfant, et l'on passe beaucoup de temps à l'imaginer. Un petit objet qui fait du bruit à chaque pas rappelle sa présence. C'est sans doute cela, plus que n'importe quelle légende, qui fait son charme aujourd'hui. Comme il s'agit de symbolique, il n'est pas nécessaire de chercher une vérité derrière : le bola peut signifier beaucoup pour vous, et rien du tout pour votre voisine.
 
 ## Couleurs et motifs : ce que chacun y met
 
