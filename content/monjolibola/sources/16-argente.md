@@ -32,7 +32,7 @@ Une couleur argent s'accorde bien avec des tons froids, ou si vous portez déjà
 Pensez à l'enlever pour dormir et faire du sport, et à le garder hors de portée d'un bébé après la naissance. Pour découvrir l'ensemble des modèles et des couleurs, rendez-vous sur [la page bola de grossesse](/bola-de-grossesse), et pour comparer tous les critères, lisez [comment choisir son bola](/guide/comment-choisir-son-bola-de-grossesse).
 
 [FAQ]
-? Ces bolas sont-ils en argent ?
+? Ces bolas sont-ils en métal précieux ?
 Nous ne les vendons pas comme tels. Ils sont annoncés en métal, avec une finition couleur argent. C'est une couleur, qui n'indique pas un métal précieux.
 ? Comment reconnaître la finition de ces bolas ?
 Elle est annoncée sur chaque fiche : métal, finition couleur argent. La composition exacte sera ajoutée dès qu'elle sera confirmée pour ce modèle.

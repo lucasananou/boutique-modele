@@ -23,7 +23,7 @@ La composition exacte de chaque modèle sera indiquée sur sa fiche dès qu'elle
 
 Si votre peau est sensible, ou que vous avez déjà réagi à un bijou, demandez conseil avant de le porter et lisez [le bola de grossesse est-il dangereux ?](/guide/bola-de-grossesse-dangereux)
 
-Avant de choisir, sachez ce que nous pouvons vous dire aujourd'hui : la finition est annoncée en toutes lettres sur chaque fiche, le reste de la composition sera ajouté dès qu'il sera confirmé. Si un titre en millièmes ou en carats compte pour vous, un modèle en or chez un bijoutier vous conviendra mieux. Le prix affiché pour nos modèles est de 59,90 € à ce jour.
+Avant de choisir, sachez ce que nous pouvons vous dire aujourd'hui : la finition est annoncée en toutes lettres sur chaque fiche, le reste de la composition sera ajouté dès qu'il sera confirmé. Si un titre en millièmes ou en carats compte pour vous, un bijou en métal précieux chez un bijoutier vous conviendra mieux. Le prix affiché pour nos modèles est de 59,90 € à ce jour.
 
 ## Comment les porter
 
@@ -32,7 +32,7 @@ Le doré s'accorde facilement avec des tons chauds, et il va bien avec les bijou
 Pensez à l'enlever pour dormir et faire du sport, et à le garder hors de portée d'un bébé après la naissance. Pour découvrir l'ensemble des modèles, rendez-vous sur [la page bola de grossesse](/bola-de-grossesse), et pour comparer tous les critères, lisez [comment choisir son bola](/guide/comment-choisir-son-bola-de-grossesse).
 
 [FAQ]
-? Ces bolas sont-ils en or ?
+? Ces bolas sont-ils en métal précieux ?
 Nous ne les vendons pas comme tels. Ils sont annoncés en métal, avec une finition couleur dorée. C'est une couleur, qui n'indique pas un métal précieux.
 ? Comment reconnaître la finition de ces bolas ?
 Elle est annoncée sur chaque fiche : métal, finition couleur dorée. La composition exacte sera ajoutée dès qu'elle sera confirmée pour ce modèle.

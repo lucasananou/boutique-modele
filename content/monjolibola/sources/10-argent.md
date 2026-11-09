@@ -2,7 +2,7 @@
 slug: guide/bola-argent-ou-couleur-argent
 titre: Bola argent ou couleur argent : quelle différence ?
 meta: Bola argent ou couleur argent : la différence · Mon Joli Bola
-extrait: Bola argent, argent 925, argenté, couleur argent : ce que ces mots veulent dire, comment vérifier ce que vous achetez, et ce que nous vendons.
+extrait: Argent, argenté ou couleur argent : ce que ces mots veulent dire, comment vérifier ce que vous achetez, et ce que nous vendons.
 rubrique: Matières
 image: /stores/monjolibola/produits/bola-de-grossesse-fleur-argentee.webp
 alt: Bola Fleur argentée, métal, finition couleur argent, décoré de fleurs et de volutes
