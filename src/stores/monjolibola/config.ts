@@ -49,8 +49,17 @@ export const config: StoreConfig = {
     commitments: [],
   },
 
-  // Vendeur légal : null tant que Lucas n'a pas décidé (voir MISE-EN-PRODUCTION.md). Obligatoire avant toute vente.
-  seller: null,
+  // Vendeur légal confirmé par Lucas le 09/11/2026 (juridique/societe/FICHE-SOCIETE.md, comme Tsniout).
+  // Pas d'e-mail ni de téléphone : aucune boîte du domaine n'existe encore (« à compléter » dans les pages légales).
+  seller: {
+    name: "MAISON ANANOU - F.Z.E",
+    form: "Free Zone Establishment à responsabilité limitée (associé unique)",
+    authority: "Free Zones Authority of Ajman (AFZ), Émirats arabes unis",
+    registration: "Licence n° 40574",
+    capital: "100 000 AED",
+    address: "Office C1-1F-SF10271, Ajman Free Zone C1 Building, Ajman Free Zone, Ajman, Émirats arabes unis",
+    director: "Lucas Rémi Kevin Ananou, gérant",
+  },
 
   hosting: {
     name: "OVH SAS",

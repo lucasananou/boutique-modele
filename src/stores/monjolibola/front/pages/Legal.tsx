@@ -4,8 +4,8 @@ import Page from "../Page";
 import RetourForm from "../RetourForm";
 
 /*
- * Pages légales provisoires : le vendeur, le médiateur et les conditions de
- * vente sont à compléter avant toute mise en vente (voir
+ * Pages légales : vendeur renseigné (MAISON ANANOU - F.Z.E). Restent à
+ * compléter avant toute mise en vente : contact, médiateur, livraison (voir
  * projets/mon-joli-bola/BASCULE.md). Rien n'est inventé.
  */
 
@@ -20,7 +20,7 @@ async function LegalPage({ eyebrow, title, children, produit = false }: { eyebro
       <article className="shop-page legal-page">
         <p className="sur">{eyebrow}</p>
         <h1 className="h2">{title}</h1>
-        {!seller && <p className="demo-note">Document provisoire : l’identité du vendeur et plusieurs conditions restent à compléter avant toute vente réelle.</p>}
+        {(!seller || !seller.email || !mediator) && <p className="demo-note">Document provisoire : plusieurs informations restent à compléter avant toute vente réelle. Les commandes sont fermées.</p>}
         {children}
       </article>
     </Page>
@@ -31,7 +31,14 @@ export function Mentions() {
   return (
     <LegalPage eyebrow="Informations légales" title="Mentions légales">
       <h2>Vendeur et éditeur du site</h2>
-      {seller ? <p>{seller.name}, {seller.form}, {seller.registration}, {seller.address}. Contact : {seller.email}.</p> : <p>{TODO("dénomination sociale, forme, siège, n° d’immatriculation, directeur de la publication, e-mail, téléphone")}</p>}
+      {seller ? (
+        <>
+          <p>Mon Joli Bola est une marque exploitée par <strong>{seller.name}</strong>, {seller.form}, immatriculée auprès de la {seller.authority}, {seller.registration}{seller.capital ? `, capital ${seller.capital}` : ""}.</p>
+          <p>Siège : {seller.address}.</p>
+          <p>Directeur de la publication : {seller.director}.</p>
+          <p>Contact : {seller.email ?? TODO("e-mail et téléphone de contact")}</p>
+        </>
+      ) : <p>{TODO("dénomination sociale, forme, siège, n° d’immatriculation, directeur de la publication, e-mail, téléphone")}</p>}
       <h2>Hébergement</h2>
       <p>{hosting.name}, {hosting.address}.</p>
       <h2>Médiation de la consommation</h2>
@@ -48,7 +55,8 @@ export function Cgv() {
   return (
     <LegalPage eyebrow="Informations légales" title="Conditions générales de vente">
       <h2>Vendeur</h2>
-      <p>{seller ? `${seller.name}, ${seller.address}.` : TODO("identité complète du vendeur")}</p>
+      <p>{seller ? `${seller.name}, ${seller.form}, ${seller.registration}, ${seller.address}. Le vendeur est établi hors de l’Union européenne.` : TODO("identité complète du vendeur")}</p>
+      {seller && !seller.email && <p>Contact : {TODO("e-mail et téléphone du service client")}</p>}
       <h2>Produits et prix</h2>
       <p>Les prix sont indiqués en euros, toutes taxes comprises, hors frais de livraison éventuels annoncés avant paiement.</p>
       <h2>Commande et paiement</h2>
@@ -68,9 +76,10 @@ export function Confidentialite() {
     <LegalPage eyebrow="Informations légales" title="Confidentialité">
       <p>Nous collectons les données nécessaires à la commande, à la livraison et au service client (nom, adresse, e-mail, téléphone facultatif) et, avec votre accord, votre e-mail pour la newsletter. Elles ne sont jamais revendues.</p>
       <h2>Responsable du traitement</h2>
-      <p>{seller ? seller.name : TODO("identité du responsable de traitement et contact données personnelles")}</p>
+      <p>{seller ? `${seller.name}, ${seller.address}.` : TODO("identité du responsable de traitement et contact données personnelles")}</p>
+      {seller && !seller.email && <p>Contact données personnelles : {TODO("adresse e-mail dédiée")}</p>}
       <h2>Vos droits</h2>
-      <p>Accès, rectification, suppression, opposition : écrivez-nous à l’adresse indiquée dans les mentions légales.</p>
+      <p>Accès, rectification, suppression, opposition : écrivez-nous à l’adresse indiquée dans les mentions légales. Vous pouvez aussi saisir la CNIL.</p>
       <h2>Prestataires</h2>
       <p>Hébergement : {hosting.name}. Paiement : Stripe. Envoi d’e-mails : Resend.</p>
       <h2>Cookies</h2>
@@ -83,6 +92,7 @@ export async function Retractation() {
   return (
     <LegalPage eyebrow="Service client" title="Rétractation et retours">
       <p>Vous disposez de 14 jours après réception pour vous rétracter. Remplissez ce formulaire, ou écrivez-nous.</p>
+      {seller && <p>Vendeur : {seller.name}, {seller.address}.</p>}
       <RetourForm />
     </LegalPage>
   );
