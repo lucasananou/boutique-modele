@@ -3,7 +3,7 @@ import { AC, BandeFinale, Rituel } from "../blocs";
 import { BoutonSon } from "../client";
 
 const A = "/stores/monjolibola/img";
-const TRAME = [["Qui", "Le prénom de la personne derrière la marque, et une vraie photo."], ["Pourquoi", "Ce qui a réellement donné envie de lancer Mon Joli Bola."], ["Quand", "La vraie date de lancement. Le domaine existe depuis 2019."], ["D’où", "Le fournisseur ou l’atelier réel, et ce qui est contrôlé avant l’envoi."]];
+const TRAME = [["Qui", "Le prénom de la personne derrière la marque, et une vraie photo."], ["Pourquoi", "Ce qui a réellement donné envie de lancer Mon Joli Bola."], ["Quand", "La vraie date de lancement. Le domaine existe depuis 2019."], ["D’où", "Le fournisseur réel, et ce qui est contrôlé avant l’envoi."]];
 
 export function Concept() {
   return (
