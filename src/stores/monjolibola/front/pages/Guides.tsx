@@ -12,7 +12,7 @@ import { BandeFinale, Carte } from "../blocs";
 const ORIGIN = `https://${store.domains.primary}`;
 const NAME = "Mon Joli Bola";
 const robots: Metadata["robots"] = process.env.INDEXER === "1" ? { index: true, follow: true } : { index: false, follow: false, nocache: true };
-const CSS = "/stores/monjolibola/guides.css?v=1";
+const CSS = "/stores/monjolibola/guides.css?v=2";
 export const GUIDES_INDEX_META: Metadata = {
   title: "Guides sur le bola de grossesse · Mon Joli Bola",
   description: "Toutes nos réponses sur le bola de grossesse : sens, port, sécurité, matières, longueur de chaîne, cadeau et après la naissance.",

@@ -17,29 +17,29 @@ ordre: 1
 ---
 ## Qu'est-ce qu'un bola de grossesse ?
 
-Un bola de grossesse est un pendentif en forme de boule, porté sur une chaîne longue pour qu'il descende à hauteur du ventre. À l'intérieur, une bille ou un petit mécanisme bouge à chaque mouvement et produit un tintement léger. Il n'y a ni pile ni électronique.
+Un bola de grossesse est un pendentif en forme de boule, porté sur une chaîne longue pour qu'il descende à hauteur du ventre. À l'intérieur, **une bille ou un petit mécanisme bouge à chaque mouvement** et produit un tintement léger. Il n'y a ni pile ni électronique.
 
 Le mot vient de l'espagnol : *bola* veut simplement dire « boule ». On rencontre aussi le nom de « llamador de ángeles », littéralement « l'appel des anges », pour un pendentif du même type associé au Mexique. Les récits sur son origine varient, et nous les détaillons dans notre guide sur [la signification et l'origine du bola](/guide/signification-origine-bola-de-grossesse).
 
-Ce qui compte pour choisir : c'est d'abord un bijou. Il n'a aucune fonction médicale et ne remplace aucun suivi. Pour comprendre le principe en détail, lisez [qu'est-ce qu'un bola de grossesse](/guide/qu-est-ce-qu-un-bola-de-grossesse).
+Ce qui compte pour choisir : c'est d'abord un bijou. **Il n'a aucune fonction médicale et ne remplace aucun suivi**. Pour comprendre le principe en détail, lisez [qu'est-ce qu'un bola de grossesse](/guide/qu-est-ce-qu-un-bola-de-grossesse).
 
 ## Collier de grossesse, bola : est-ce la même chose ?
 
-Oui, dans la grande majorité des cas. « Collier de grossesse » et « bola de grossesse » désignent le même type de bijou : un pendentif sonore sur une chaîne longue. Certains vendeurs parlent aussi de « bijou de grossesse » de manière plus large, pour des pièces qui ne tintent pas. Si le son compte pour vous, vérifiez que la fiche parle bien d'un pendentif sonore, avec une bille ou un grelot à l'intérieur.
+Oui, dans la grande majorité des cas. « Collier de grossesse » et « bola de grossesse » **désignent le même type de bijou** : un pendentif sonore sur une chaîne longue. Certains vendeurs parlent aussi de « bijou de grossesse » de manière plus large, pour des pièces qui ne tintent pas. Si le son compte pour vous, vérifiez que la fiche parle bien d'un pendentif sonore, avec une bille ou un grelot à l'intérieur.
 
-Autre différence utile à connaître : un bola se reconnaît à sa longueur. Un collier ordinaire tombe sur le buste, alors qu'un bola est prévu pour descendre plus bas. Si vous portez déjà de longs colliers, le geste ne vous changera pas beaucoup.
+Autre différence utile à connaître : **un bola se reconnaît à sa longueur**. Un collier ordinaire tombe sur le buste, alors qu'un bola est prévu pour descendre plus bas. Si vous portez déjà de longs colliers, le geste ne vous changera pas beaucoup.
 
 ## Comment le porter
 
-Le plus courant est de le porter sur une chaîne longue, par-dessus ou sous les vêtements. Par-dessus, le tintement s'entend mieux et le pendentif se voit. Dessous, il est plus discret et risque moins de s'accrocher.
+Le plus courant est de le porter sur une chaîne longue, **par-dessus ou sous les vêtements**. Par-dessus, le tintement s'entend mieux et le pendentif se voit. Dessous, il est plus discret et risque moins de s'accrocher.
 
-À quelle hauteur ? En général à hauteur du ventre, mais c'est une habitude et non une règle. Réglez la longueur selon votre confort, surtout quand le ventre s'arrondit. Notre guide sur [la longueur de chaîne](/guide/longueur-chaine-bola-de-grossesse) explique comment mesurer à la maison, avec une simple ficelle, avant de choisir.
+À quelle hauteur ? En général à hauteur du ventre, mais **c'est une habitude et non une règle**. Réglez la longueur selon votre confort, surtout quand le ventre s'arrondit. Notre guide sur [la longueur de chaîne](/guide/longueur-chaine-bola-de-grossesse) explique comment mesurer à la maison, avec une simple ficelle, avant de choisir.
 
-Au quotidien, il se porte avec à peu près tout : une robe, un pull, une chemise ouverte. La seule contrainte concerne les endroits où la chaîne pourrait se prendre, comme une ceinture de sécurité, le coin d'un tiroir ou la poignée d'un sac. Dans ces cas-là, passez-le sous un vêtement ou enlevez-le.
+Au quotidien, il se porte avec à peu près tout : une robe, un pull, une chemise ouverte. La seule contrainte concerne les endroits où la chaîne pourrait se prendre, comme une ceinture de sécurité, le coin d'un tiroir ou la poignée d'un sac. Dans ces cas-là, **passez-le sous un vêtement ou enlevez-le**.
 
 ## Quand commencer à le porter
 
-Quand vous en avez envie. Aucune date n'est imposée, et nous n'avons trouvé aucune source médicale qui en fixe une. Le 4e ou le 5e mois est souvent cité, généralement parce que les repères sur l'audition du fœtus tournent autour de cette période. Ce n'est pas une règle, et le lien avec le bola n'est pas établi.
+**Quand vous en avez envie.** Aucune date n'est imposée, et nous n'avons trouvé aucune source médicale qui en fixe une. Le 4e ou le 5e mois est souvent cité, généralement parce que les repères sur l'audition du fœtus tournent autour de cette période. **Ce n'est pas une règle, et le lien avec le bola n'est pas établi**.
 
 Vous pouvez donc le mettre dès l'annonce de la grossesse ou plus tard, et le garder après la naissance si vous le souhaitez. Le détail mois par mois est dans [quand porter un bola de grossesse](/guide/quand-porter-un-bola-de-grossesse).
 
@@ -47,7 +47,7 @@ Vous pouvez donc le mettre dès l'annonce de la grossesse ou plus tard, et le ga
 
 Trois critères comptent plus que l'apparence.
 
-**La matière.** Le mot qui compte est celui écrit sur la fiche. « Argent » ou « or » désignent des métaux précieux ; « argenté », « couleur argent », « doré » ou « couleur or » décrivent une apparence. Nos bolas sont en **métal, avec une finition couleur argent ou dorée** : ce sont des couleurs, qui n'indiquent pas un métal précieux. La différence est expliquée dans nos guides [bola argent ou couleur argent](/guide/bola-argent-ou-couleur-argent) et [bola or ou couleur or](/guide/bola-or-ou-couleur-or).
+**La matière.** Le mot qui compte est celui écrit sur la fiche. « Argent » ou « or » désignent des métaux précieux ; « argenté », « couleur argent », « doré » ou « couleur or » décrivent une apparence. Nos bolas sont en métal, avec une finition couleur argent ou dorée : ce sont des couleurs, qui n'indiquent pas un métal précieux. La différence est expliquée dans nos guides [bola argent ou couleur argent](/guide/bola-argent-ou-couleur-argent) et [bola or ou couleur or](/guide/bola-or-ou-couleur-or).
 
 **La longueur de chaîne.** Elle doit rester confortable au fil des mois. Les longueurs les plus citées tournent autour de 110 à 120 cm, mais votre morphologie décide.
 
@@ -71,33 +71,33 @@ Les affirmations que l'on trouve en ligne vont parfois dans les deux sens : « c
 
 ## Offrir un bola de grossesse
 
-Il n'y a pas de règle sur qui l'offre : le ou la partenaire, la famille, les amies, ou la future mère elle-même. Le moment est libre aussi, de l'annonce à la baby shower, sachant que plus il est offert tôt, plus il sera porté longtemps.
+**Il n'y a pas de règle sur qui l'offre** : le ou la partenaire, la famille, les amies, ou la future mère elle-même. Le moment est libre aussi, de l'annonce à la baby shower, sachant que plus il est offert tôt, plus il sera porté longtemps.
 
-Si vous hésitez, un modèle sobre dans une couleur qu'elle porte déjà reste le choix le plus sûr. Nos conseils sont réunis dans [offrir un bola de grossesse](/guide/offrir-un-bola-de-grossesse).
+Si vous hésitez, **un modèle sobre dans une couleur qu'elle porte déjà** reste le choix le plus sûr. Nos conseils sont réunis dans [offrir un bola de grossesse](/guide/offrir-un-bola-de-grossesse).
 
-Évitez seulement de présenter le bola comme bon pour le bébé : c'est une promesse que personne ne peut tenir, et elle peut culpabiliser celle qui n'en porte pas. Dites plutôt que vous avez pensé à elle. Un mot écrit à la main accompagne très bien ce cadeau. Et si vous hésitez sur le modèle, une possibilité d'échange reste le meilleur des filets de sécurité.
+**Évitez seulement de présenter le bola comme bon pour le bébé** : c'est une promesse que personne ne peut tenir, et elle peut culpabiliser celle qui n'en porte pas. Dites plutôt que vous avez pensé à elle. Un mot écrit à la main accompagne très bien ce cadeau. Et si vous hésitez sur le modèle, une possibilité d'échange reste le meilleur des filets de sécurité.
 
 ## Après la naissance
 
-Vous pouvez le garder comme collier, le ranger en souvenir ou le transmettre à une proche enceinte, en vérifiant alors la chaîne et le fermoir. Dans tous les cas, il reste hors de portée du bébé. Lisez [que faire de son bola après la naissance](/guide/bola-apres-la-naissance), et pour le garder en bon état, nos conseils d'[entretien](/guide/entretien-bola-de-grossesse).
+Vous pouvez **le garder comme collier, le ranger en souvenir ou le transmettre** à une proche enceinte, en vérifiant alors la chaîne et le fermoir. Dans tous les cas, **il reste hors de portée du bébé**. Lisez [que faire de son bola après la naissance](/guide/bola-apres-la-naissance), et pour le garder en bon état, nos conseils d'[entretien](/guide/entretien-bola-de-grossesse).
 
 ## Nos collections
 
-Vous cherchez une couleur ou un motif précis ? Parcourez nos [bolas argentés](/bola-de-grossesse/argente), nos [bolas dorés](/bola-de-grossesse/dore), le [bola Arbre de vie](/bola-de-grossesse/arbre-de-vie), le [bola Jumeaux](/bola-de-grossesse/jumeaux) ou la page sur le [bola personnalisé](/bola-de-grossesse/personnalise). Toutes nos questions et réponses sont réunies dans [nos guides](/guide).
+**Vous cherchez une couleur ou un motif précis ?** Parcourez nos [bolas argentés](/bola-de-grossesse/argente), nos [bolas dorés](/bola-de-grossesse/dore), le [bola Arbre de vie](/bola-de-grossesse/arbre-de-vie), le [bola Jumeaux](/bola-de-grossesse/jumeaux) ou la page sur le [bola personnalisé](/bola-de-grossesse/personnalise). Toutes nos questions et réponses sont réunies dans [nos guides](/guide).
 
 ## À savoir avant de choisir
 
-Mon Joli Bola ne fabrique pas ses bijoux. Nous annonçons ce que nous savons : métal, finition couleur argent ou dorée, et la composition exacte sera indiquée modèle par modèle dès qu'elle sera confirmée. Pour celles et ceux qui se posent ces questions, [nos guides](/guide) disent aussi ce que personne n'a démontré : aucune étude ne montre d'effet du tintement sur un bébé.
+Mon Joli Bola ne fabrique pas ses bijoux. Nous annonçons ce que nous savons : **métal, finition couleur argent ou dorée**, et la composition exacte sera indiquée modèle par modèle dès qu'elle sera confirmée. Pour celles et ceux qui se posent ces questions, [nos guides](/guide) disent aussi ce que personne n'a démontré : **aucune étude ne montre d'effet du tintement sur un bébé**.
 
 [FAQ]
 ? Qu'est-ce qu'un bola de grossesse ?
-Un pendentif rond contenant une petite bille qui tinte quand on bouge. Porté sur une chaîne longue, il descend à hauteur du ventre. C'est un bijou, pas un dispositif médical.
+**Un pendentif rond contenant une petite bille** qui tinte quand on bouge. Porté sur une chaîne longue, il descend à hauteur du ventre. C'est un bijou, pas un dispositif médical.
 ? À partir de quand porter un bola ?
-Quand vous en avez envie. Aucune date n'est imposée et aucune source médicale, à notre connaissance, n'en fixe une.
+**Quand vous en avez envie.** Aucune date n'est imposée et aucune source médicale, à notre connaissance, n'en fixe une.
 ? Un bola est-il dangereux pendant la grossesse ?
 Nous n'avons trouvé aucune étude décrivant un risque lié à son port. Les points d'attention concernent la matière, le confort de la chaîne et surtout la sécurité du bébé après la naissance. En cas de doute, demandez à votre sage-femme.
 ? Le bébé entend-il le bola ?
-On ne sait pas. Personne, à notre connaissance, n'a testé le tintement d'un bola, et nous ne promettons aucun effet sur le bébé.
+**On ne sait pas.** Personne, à notre connaissance, n'a testé le tintement d'un bola, et nous ne promettons aucun effet sur le bébé.
 ? En quelle matière sont vos bolas ?
 Métal, avec une finition couleur argent ou dorée selon le modèle. La composition exacte sera indiquée sur la fiche dès qu'elle sera confirmée pour ce modèle.
 ? Quel est le prix d'un bola ?

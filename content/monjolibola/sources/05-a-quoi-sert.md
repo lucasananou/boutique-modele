@@ -13,9 +13,9 @@ ordre: 5
 ---
 ## À quoi ça sert, en une phrase
 
-Un bola de grossesse sert à porter un symbole. Il tinte quand vous bougez, il marque un moment de votre vie, et il peut devenir un souvenir. C'est déjà beaucoup, et il n'est pas nécessaire de lui prêter d'autres pouvoirs.
+Un bola de grossesse **sert à porter un symbole**. Il tinte quand vous bougez, il marque un moment de votre vie, et il peut devenir un souvenir. C'est déjà beaucoup, et il n'est pas nécessaire de lui prêter d'autres pouvoirs.
 
-Une recherche dans Europe PMC, une grande base d'articles scientifiques, n'a trouvé aucune étude sur ce bijou. Autrement dit, personne n'a mesuré d'effet sur la mère ou sur le bébé.
+Une recherche dans Europe PMC, une grande base d'articles scientifiques, n'a trouvé aucune étude sur ce bijou. Autrement dit, **personne n'a mesuré d'effet sur la mère ou sur le bébé**.
 
 ## Un rituel, un souvenir, un cadeau
 
@@ -31,19 +31,19 @@ Ce que décrivent les femmes qui en portent relève du ressenti. Ce ressenti est
 
 Vous lirez beaucoup d'affirmations sur le bola. Voici ce qu'on peut en dire.
 
-**« Il apaise le bébé. »** Aucune étude ne le montre. Le tintement n'a jamais été testé sur des bébés, à notre connaissance. Nous ne le prétendons pas.
+« Il apaise le bébé. » **Aucune étude ne le montre**. Le tintement n'a jamais été testé sur des bébés, à notre connaissance. Nous ne le prétendons pas.
 
-**« Il crée un lien avec le bébé avant la naissance. »** Le lien est une chose intime, qui ne se mesure pas et ne dépend d'aucun objet. Un bola peut vous y faire penser, mais il n'y a aucune preuve qu'il le crée.
+« Il crée un lien avec le bébé avant la naissance. » Le lien est une chose intime, qui ne se mesure pas et ne dépend d'aucun objet. Un bola peut vous y faire penser, mais il n'y a aucune preuve qu'il le crée.
 
-**« Le bébé reconnaît le son après la naissance. »** Ce n'est pas démontré pour le bola. Les travaux connus sur la mémoire auditive du fœtus portent sur la voix ou des sons de parole, pas sur des bijoux. Détails dans [le bébé entend-il le bola ?](/guide/le-bebe-entend-il-le-bola)
+« Le bébé reconnaît le son après la naissance. » **Ce n'est pas démontré pour le bola**. Les travaux connus sur la mémoire auditive du fœtus portent sur la voix ou des sons de parole, pas sur des bijoux. Détails dans [le bébé entend-il le bola ?](/guide/le-bebe-entend-il-le-bola)
 
-**« Il a des vertus selon sa pierre ou sa couleur. »** Les vertus attribuées aux pierres et aux couleurs ne sont pas démontrées. Choisissez ce qui vous plaît.
+« Il a des vertus selon sa pierre ou sa couleur. » Les vertus attribuées aux pierres et aux couleurs ne sont pas démontrées. Choisissez ce qui vous plaît.
 
-**« Il réduit le stress. »** Rien ne permet de l'affirmer pour un bola. Si un rituel vous fait du bien, tant mieux. Si vous vous sentez dépassée, parlez-en à votre sage-femme ou à votre médecin : c'est eux qui peuvent vous aider.
+« Il réduit le stress. » Rien ne permet de l'affirmer pour un bola. Si un rituel vous fait du bien, tant mieux. Si vous vous sentez dépassée, parlez-en à votre sage-femme ou à votre médecin : c'est eux qui peuvent vous aider.
 
-**« Il aide à mieux dormir. »** Nous n'avons rien trouvé qui le montre. Nous vous conseillons d'ailleurs de retirer votre bola la nuit, pour des raisons de confort et de sécurité. Si le sommeil est un sujet pour vous, votre sage-femme ou votre médecin saura vous conseiller.
+« Il aide à mieux dormir. » Nous n'avons rien trouvé qui le montre. Nous vous conseillons d'ailleurs de retirer votre bola la nuit, pour des raisons de confort et de sécurité. Si le sommeil est un sujet pour vous, votre sage-femme ou votre médecin saura vous conseiller.
 
-Une règle pratique : quand un vendeur promet un effet sur le bébé, demandez-lui sa source. S'il n'en a pas, méfiez-vous du reste de ce qu'il vous dit.
+Une règle pratique : quand un vendeur promet un effet sur le bébé, **demandez-lui sa source**. S'il n'en a pas, méfiez-vous du reste de ce qu'il vous dit.
 
 ## Pour ou contre
 
@@ -55,15 +55,15 @@ Dans la pratique, le pour et le contre tiennent surtout à vos attentes. Une fut
 
 ## Si vous hésitez
 
-Posez-vous une seule question : ce bijou vous fait-il envie pour ce qu'il est ? Si oui, il vous apportera ce que l'on peut attendre d'un bijou. Si vous l'envisagez seulement parce qu'on vous a dit que c'était bon pour le bébé, vous pouvez vous en passer sans le moindre scrupule.
+Posez-vous une seule question : **ce bijou vous fait-il envie pour ce qu'il est ?** Si oui, il vous apportera ce que l'on peut attendre d'un bijou. Si vous l'envisagez seulement parce qu'on vous a dit que c'était bon pour le bébé, **vous pouvez vous en passer sans le moindre scrupule**.
 
 Pour en savoir plus sur le symbole, lisez [la signification et l'origine du bola](/guide/signification-origine-bola-de-grossesse). Et pour voir les modèles, rendez-vous sur [la page bola de grossesse](/bola-de-grossesse).
 
 [FAQ]
 ? À quoi sert un bola de grossesse ?
-À marquer cette période par un objet symbolique : un rituel, un cadeau, un souvenir. Il n'a pas d'usage médical et ne remplace aucun suivi.
+À marquer cette période par un objet symbolique : un rituel, un cadeau, un souvenir. **Il n'a pas d'usage médical** et ne remplace aucun suivi.
 ? Quels sont ses bienfaits ?
-Aucun bienfait physique pour la mère ou le bébé n'est établi à notre connaissance : une recherche dans la base scientifique Europe PMC n'a trouvé aucune étude sur ce bijou. Ce que décrivent les femmes qui en portent relève du ressenti : un moment à soi, un souvenir.
+**Aucun bienfait physique pour la mère ou le bébé n'est établi** à notre connaissance : une recherche dans la base scientifique Europe PMC n'a trouvé aucune étude sur ce bijou. Ce que décrivent les femmes qui en portent relève du ressenti : un moment à soi, un souvenir.
 ? Est-ce utile ? Est-ce que ça fonctionne vraiment ?
 Cela dépend de ce qu'on en attend. Comme bijou et souvenir, oui ; comme moyen d'agir sur le bébé, rien ne le montre.
 ? Pour ou contre ?

@@ -17,7 +17,8 @@
 .guide__corps p { margin-top: 1.05rem; } .guide__corps > p:first-child { margin-top: 0; }
 .guide__corps ul, .guide__corps ol { margin: 1rem 0 0; padding-left: 1.25rem; } .guide__corps li { margin-top: .5rem; }
 .guide__corps a, .guide__faq a, .guide__pilier a, .guide__lies a { color: var(--bordeaux); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
-.guide__corps strong { font-weight: 500; }
+.guide strong { font-weight: 500; color: var(--encre); }
+.guide__note strong { font-weight: 500; }
 .guide__note { margin-top: 1.5rem !important; padding: 1rem 1.15rem; background: var(--creme); border-left: 2px solid var(--bordeaux); font-size: 1rem; }
 .guide__grille { margin-top: 2.5rem; text-align: center; } .guide__grille h2 { margin-top: 0; }
 .guide__note-grille { margin: .25rem auto 0; max-width: 62ch; font-size: .9rem; color: var(--muted); }

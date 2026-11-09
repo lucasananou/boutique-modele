@@ -13,7 +13,7 @@ ordre: 6
 ---
 ## Réponse courte : on ne sait pas
 
-Vous verrez souvent écrit que le bébé entend le bola, le reconnaît et en est calmé. Rien de tout cela n'est démontré. Une recherche dans la base scientifique Europe PMC n'a trouvé aucune étude sur ce bijou, et nous n'avons trouvé aucune mesure publiée de son niveau sonore. Ce que l'on peut dire avec honnêteté, c'est que le fœtus entend des sons, et que nous ignorons si le tintement d'un bola en fait partie.
+Vous verrez souvent écrit que le bébé entend le bola, le reconnaît et en est calmé. **Rien de tout cela n'est démontré**. Une recherche dans la base scientifique Europe PMC n'a trouvé aucune étude sur ce bijou, et nous n'avons trouvé aucune mesure publiée de son niveau sonore. Ce que l'on peut dire avec honnêteté, c'est que le fœtus entend des sons, et que **nous ignorons si le tintement d'un bola en fait partie**.
 
 Si la question de l'audition de votre bébé vous préoccupe, parlez-en à votre sage-femme ou à votre médecin.
 
@@ -29,28 +29,28 @@ Autrement dit, les réponses ne concordent pas exactement, parce qu'elles ne mes
 
 ## Pourquoi cela ne s'applique pas directement au bola
 
-Ces travaux utilisent des sons contrôlés, parfois diffusés au contact du ventre, avec une intensité connue. Un bola, lui, tinte à distance du ventre ou sur un vêtement, à un niveau faible et variable selon vos mouvements. On ne peut pas transposer.
+Ces travaux utilisent des sons contrôlés, parfois diffusés au contact du ventre, avec une intensité connue. Un bola, lui, tinte à distance du ventre ou sur un vêtement, à un niveau faible et variable selon vos mouvements. **On ne peut pas transposer**.
 
 Un tintement de métal paraît plutôt aigu à l'oreille, alors que les études montrent une réponse plus tardive aux fréquences aiguës. Sans mesure, cependant, on ne peut pas tirer de conclusion : nous ne savons pas quelles fréquences produit un bola une fois le son passé à travers le corps.
 
-Les expériences qui montrent une forme de mémoire avant la naissance ne parlent pas non plus de bijoux. DeCasper et Spence, en 1986, ont fait réciter chaque jour un texte à des femmes enceintes pendant les six dernières semaines de grossesse. Leurs nouveau-nés semblaient ensuite préférer ce texte. Partanen et ses collègues, en 2013, ont trouvé des traces cérébrales de sons de parole répétés pendant la grossesse. Ces résultats concernent la voix. Rien ne permet d'en déduire la même chose pour un tintement.
+Les expériences qui montrent une forme de mémoire avant la naissance ne parlent pas non plus de bijoux. DeCasper et Spence, en 1986, ont fait réciter chaque jour un texte à des femmes enceintes pendant les six dernières semaines de grossesse. Leurs nouveau-nés semblaient ensuite préférer ce texte. Partanen et ses collègues, en 2013, ont trouvé des traces cérébrales de sons de parole répétés pendant la grossesse. **Ces résultats concernent la voix**. Rien ne permet d'en déduire la même chose pour un tintement.
 
 ## Niveau sonore : ce que nous avons mesuré
 
-À ce jour, nous n'avons pas réalisé de mesure du niveau sonore de nos bolas, et nous n'en avons pas trouvé de publiée. Nous préférons le dire plutôt que de donner un chiffre sans valeur. Si nous réalisons un jour cette mesure, nous en publierons le protocole et les résultats, sans en tirer de conclusion sur le bébé.
+À ce jour, **nous n'avons pas réalisé de mesure du niveau sonore de nos bolas**, et nous n'en avons pas trouvé de publiée. Nous préférons le dire plutôt que de donner un chiffre sans valeur. Si nous réalisons un jour cette mesure, nous en publierons le protocole et les résultats, sans en tirer de conclusion sur le bébé.
 
-Cela ne doit pas vous alarmer. Il n'y a, à notre connaissance, aucune raison de penser que ce petit tintement pose problème. Mais si vous avez le moindre doute, retirez votre bola et parlez-en à votre sage-femme.
+Cela ne doit pas vous alarmer. Il n'y a, à notre connaissance, aucune raison de penser que ce petit tintement pose problème. Mais si vous avez le moindre doute, **retirez votre bola et parlez-en à votre sage-femme**.
 
 ## Ce que nous ne promettons pas
 
-Pour que ce soit parfaitement clair, nous ne promettons pas que :
+Pour que ce soit parfaitement clair, **nous ne promettons pas que** :
 
 - votre bébé entend le bola ;
 - le tintement calme ou stimule votre bébé ;
 - votre bébé reconnaîtra le son après la naissance ;
 - le bola favorise le lien, le sommeil ou le développement de l'enfant.
 
-Si vous aimez ce bijou, vous l'aimerez pour lui-même. Vous, vous l'entendrez, et c'est une raison suffisante. Pour la sécurité du bola en général, lisez [le bola de grossesse est-il dangereux ?](/guide/bola-de-grossesse-dangereux), pour le moment de le porter [quand porter un bola de grossesse](/guide/quand-porter-un-bola-de-grossesse), et retrouvez nos modèles sur [la page bola de grossesse](/bola-de-grossesse).
+Si vous aimez ce bijou, vous l'aimerez pour lui-même. **Vous, vous l'entendrez**, et c'est une raison suffisante. Pour la sécurité du bola en général, lisez [le bola de grossesse est-il dangereux ?](/guide/bola-de-grossesse-dangereux), pour le moment de le porter [quand porter un bola de grossesse](/guide/quand-porter-un-bola-de-grossesse), et retrouvez nos modèles sur [la page bola de grossesse](/bola-de-grossesse).
 
 ## Sources
 
@@ -62,13 +62,13 @@ Si vous aimez ce bijou, vous l'aimerez pour lui-même. Vous, vous l'entendrez, e
 
 [FAQ]
 ? Le bébé entend-il le bola ?
-On ne sait pas. Une étude de 1994 a observé des réactions du fœtus à des sons diffusés par un haut-parleur sur le ventre, mais personne, à notre connaissance, n'a testé le tintement d'un bola. On ne peut donc pas l'affirmer.
+**On ne sait pas.** Une étude de 1994 a observé des réactions du fœtus à des sons diffusés par un haut-parleur sur le ventre, mais personne, à notre connaissance, n'a testé le tintement d'un bola. On ne peut donc pas l'affirmer.
 ? À partir de quand le bébé entend-il ?
 Les repères varient selon les sources : premières réactions à 19 semaines dans l'étude de Hepper et Shahidullah (1994), « 5 ou 6 mois » pour Naître et grandir, 28 à 30 semaines d'aménorrhée selon un médecin cité par Parents. Ces repères concernent l'audition en général, pas le bola.
 ? Le tintement apaise-t-il le bébé ?
-Rien ne permet de le dire, et nous ne le prétendons pas.
+**Rien ne permet de le dire**, et nous ne le prétendons pas.
 ? Le bébé reconnaîtra-t-il le son après la naissance ?
-Ce n'est pas démontré pour le bola. Les travaux sur la mémoire auditive prénatale portent sur la voix ou des sons de parole : on ne peut pas les transposer.
+**Ce n'est pas démontré pour le bola.** Les travaux sur la mémoire auditive prénatale portent sur la voix ou des sons de parole : on ne peut pas les transposer.
 ? Le bruit est-il trop fort pour le bébé ?
 Nous n'avons trouvé aucune mesure publiée du niveau sonore d'un bola. Nous publierons nos mesures quand elles seront faites. En cas de doute, retirez-le et parlez-en à votre sage-femme.
 ? Existe-t-il un bola sans bruit ?

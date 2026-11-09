@@ -13,9 +13,9 @@ ordre: 2
 ---
 ## La réponse courte
 
-Porter un bola n'est pas, à notre connaissance, dangereux en soi. Une recherche dans Europe PMC, une grande base d'articles scientifiques, n'a rien donné sur ce bijou : il n'existe ni étude montrant un risque, ni étude montrant un bénéfice. L'absence de preuve n'est pas une preuve d'absence, alors nous nous en tenons à ce qui est connu pour les bijoux en général.
+**Porter un bola n'est pas, à notre connaissance, dangereux en soi**. Une recherche dans Europe PMC, une grande base d'articles scientifiques, n'a rien donné sur ce bijou : il n'existe ni étude montrant un risque, ni étude montrant un bénéfice. L'absence de preuve n'est pas une preuve d'absence, alors nous nous en tenons à ce qui est connu pour les bijoux en général.
 
-En pratique, trois sujets méritent votre attention : la matière au contact de la peau, la chaîne longue, et ce qui se passe une fois le bébé né. Cet article donne des informations générales et ne remplace pas l'avis de votre sage-femme ou de votre médecin.
+En pratique, trois sujets méritent votre attention : **la matière au contact de la peau, la chaîne longue, et ce qui se passe une fois le bébé né**. Cet article donne des informations générales et ne remplace pas l'avis de votre sage-femme ou de votre médecin.
 
 > Pour toute question sur votre grossesse, votre sage-femme ou votre médecin reste la bonne personne. N'hésitez pas à lui montrer votre bijou.
 
@@ -29,9 +29,9 @@ En pratique, trois sujets méritent votre attention : la matière au contact de 
 
 Le règlement européen REACH, en son annexe XVII, fixe des limites précises pour les bijoux :
 
-- **Nickel (entrée 27).** Les articles en contact direct et prolongé avec la peau, dont les colliers et les chaînes, ne doivent pas libérer plus de 0,5 µg de nickel par cm² et par semaine. Pour les pièces recouvertes d'une autre matière, le revêtement doit assurer ce résultat pendant au moins deux ans d'utilisation normale.
-- **Plomb (entrée 63).** La concentration de plomb dans chaque partie d'un bijou doit rester inférieure à 0,05 % en poids.
-- **Cadmium (entrée 23).** La concentration doit rester inférieure à 0,01 % en poids dans les parties métalliques des bijoux.
+- Nickel (entrée 27). Les articles en contact direct et prolongé avec la peau, dont les colliers et les chaînes, ne doivent pas libérer plus de **0,5 µg de nickel par cm² et par semaine**. Pour les pièces recouvertes d'une autre matière, le revêtement doit assurer ce résultat pendant au moins deux ans d'utilisation normale.
+- Plomb (entrée 63). La concentration de plomb dans chaque partie d'un bijou doit rester inférieure à 0,05 % en poids.
+- Cadmium (entrée 23). La concentration doit rester inférieure à 0,01 % en poids dans les parties métalliques des bijoux.
 
 La DGCCRF, le service français de la répression des fraudes, rappelle que les bijoux fantaisie sont soumis à une réglementation spécifique à cause de la toxicité de ces trois métaux, et elle a enquêté sur ce secteur. Un bijou peut donc être non conforme : c'est pour cela qu'il vaut la peine de poser la question au vendeur.
 
@@ -39,37 +39,37 @@ La DGCCRF, le service français de la répression des fraudes, rappelle que les 
 
 **Et nos bolas ?** Ils sont en métal, avec une finition couleur argent ou dorée. Nous ne les présentons ni comme hypoallergéniques ni comme sans nickel, car nous n'avons pas les éléments pour l'affirmer. La composition exacte et les justificatifs sont demandés au fournisseur, modèle par modèle, et nos commandes restent fermées tant que ce n'est pas réglé.
 
-**Les questions à poser à un vendeur.** Pour n'importe quel bola, demandez la composition de la boule, de la chaîne et du fermoir, et si un rapport de test de libération de nickel existe pour ce modèle. Une mention « nickel free » sur une annonce ne prouve rien à elle seule. Le prix non plus : un bijou bon marché peut respecter les limites, et un bijou cher peut ne pas les respecter. Seul un justificatif dit quelque chose.
+Les questions à poser à un vendeur. Pour n'importe quel bola, demandez la composition de la boule, de la chaîne et du fermoir, et si un rapport de test de libération de nickel existe pour ce modèle. Une mention « nickel free » sur une annonce ne prouve rien à elle seule. Le prix non plus : un bijou bon marché peut respecter les limites, et un bijou cher peut ne pas les respecter. Seul un justificatif dit quelque chose.
 
-**Le contact avec la peau.** Une chaîne longue touche le cou et la nuque, et le pendentif repose parfois sur la peau, surtout l'été. C'est un contact durable : c'est précisément le cas que vise la limite sur le nickel. Si vous portez le bola sous un vêtement, la peau est moins exposée, mais le fermoir et la chaîne restent au contact.
+Le contact avec la peau. Une chaîne longue touche le cou et la nuque, et le pendentif repose parfois sur la peau, surtout l'été. C'est un contact durable : c'est précisément le cas que vise la limite sur le nickel. Si vous portez le bola sous un vêtement, la peau est moins exposée, mais le fermoir et la chaîne restent au contact.
 
 ## Le son : ce qu'on peut dire
 
-C'est la question qui revient le plus : le tintement peut-il gêner le bébé ? Nous n'avons trouvé aucune mesure publiée du niveau sonore d'un bola, ni aucune étude sur l'effet de ce son. Nous ne pouvons donc affirmer ni qu'il est sans effet, ni qu'il a un effet.
+C'est la question qui revient le plus : le tintement peut-il gêner le bébé ? Nous n'avons trouvé **aucune mesure publiée du niveau sonore d'un bola, ni aucune étude sur l'effet de ce son**. Nous ne pouvons donc affirmer ni qu'il est sans effet, ni qu'il a un effet.
 
-Ce qui existe, ce sont des travaux sur l'audition du fœtus en général, à partir de sons contrôlés. Ils ne parlent pas du bola. Nous détaillons ce qu'ils disent et ce qu'ils ne disent pas dans [le bébé entend-il le bola ?](/guide/le-bebe-entend-il-le-bola). En cas de doute, retirez-le et parlez-en à votre sage-femme.
+Ce qui existe, ce sont des travaux sur l'audition du fœtus en général, à partir de sons contrôlés. Ils ne parlent pas du bola. Nous détaillons ce qu'ils disent et ce qu'ils ne disent pas dans [le bébé entend-il le bola ?](/guide/le-bebe-entend-il-le-bola). **En cas de doute, retirez-le et parlez-en à votre sage-femme**.
 
 ## La chaîne : confort et accrochage
 
 Une chaîne longue peut se prendre dans une poignée, une ceinture de sécurité, un tiroir. Quelques habitudes simples évitent la plupart des soucis :
 
-- Enlevez votre bola pour dormir, faire du sport ou bricoler.
+- **Enlevez votre bola pour dormir, faire du sport ou bricoler**.
 - Portez-le sous un vêtement dans les endroits où il pourrait s'accrocher.
-- Vérifiez régulièrement le fermoir et l'anneau du pendentif : une chaîne usée peut casser.
+- **Vérifiez régulièrement le fermoir et l'anneau** du pendentif : une chaîne usée peut casser.
 
 Ce sont des précautions de bon sens, valables pour tout long collier. Si la chaîne vous gêne quand le ventre s'arrondit, changez de longueur : notre guide sur [la longueur de chaîne](/guide/longueur-chaine-bola-de-grossesse) vous y aide.
 
 ## Après la naissance : le vrai point de vigilance
 
-Une fois le bébé né, le risque est différent, et il est bien réel. Un bola, c'est une chaîne et un petit objet.
+Une fois le bébé né, le risque est différent, et il est bien réel. **Un bola, c'est une chaîne et un petit objet**.
 
 La brochure du ministère de la Santé sur les accidents domestiques rappelle que les cordons et écharpes peuvent provoquer des étranglements, et qu'il faut coucher le nourrisson seul, sans encombrer son lit d'objets. La DGCCRF a par ailleurs relevé un risque de strangulation avec des colliers et bracelets destinés aux jeunes enfants.
 
 Nos consignes sont donc nettes :
 
-- Ne laissez jamais un bola dans le lit d'un bébé, ni à portée de main.
+- **Ne laissez jamais un bola dans le lit d'un bébé, ni à portée de main**.
 - Ne l'accrochez pas à un berceau, un lit ou une poussette.
-- Ne le donnez pas à un bébé et ne le glissez pas dans un doudou : un bijou n'est pas un jouet.
+- Ne le donnez pas à un bébé et ne le glissez pas dans un doudou : **un bijou n'est pas un jouet**.
 - Quand vous portez votre bébé, veillez à ce qu'il ne puisse pas attraper la chaîne.
 
 Vous pouvez tout à fait continuer à le porter, avec ces précautions. Plus d'idées dans [que faire de son bola après la naissance](/guide/bola-apres-la-naissance).
@@ -80,27 +80,27 @@ Vous pouvez tout à fait continuer à porter votre bola auprès d'un bébé, à 
 
 ## Examens médicaux et accouchement
 
-Pour une IRM, tout bijou métallique doit être retiré : le champ magnétique peut l'attirer, le faire chauffer ou brouiller l'image. C'est une consigne habituelle des centres d'imagerie. Pour une échographie ou une autre consultation, suivez simplement ce que l'on vous demande.
+**Pour une IRM, tout bijou métallique doit être retiré** : le champ magnétique peut l'attirer, le faire chauffer ou brouiller l'image. C'est une consigne habituelle des centres d'imagerie. Pour une échographie ou une autre consultation, suivez simplement ce que l'on vous demande.
 
-Pour l'accouchement, ce sont les consignes de votre maternité qui comptent. Vous pouvez laisser vos bijoux à la maison ou les confier à un proche. Prévoyez de l'enlever ou de le faire enlever facilement, et parlez-en à l'équipe si cela vous tient à cœur.
+Pour l'accouchement, **ce sont les consignes de votre maternité qui comptent**. Vous pouvez laisser vos bijoux à la maison ou les confier à un proche. Prévoyez de l'enlever ou de le faire enlever facilement, et parlez-en à l'équipe si cela vous tient à cœur.
 
 ## Un bola d'occasion ou reçu en héritage
 
-Un bola transmis par une proche, ou acheté d'occasion, n'est pas dangereux pour autant. Il faut simplement rester plus attentive à son état : la chaîne, le fermoir, l'anneau et la surface du pendentif. Une finition usée laisse apparaître le métal qui se trouve dessous, et on ne sait pas toujours de quoi il s'agit, surtout sans fiche. Si votre peau réagit, retirez-le. Pour les règles de composition, souvenez-vous que les limites européennes visent les bijoux mis sur le marché : un bijou ancien n'a pas forcément été soumis aux mêmes contrôles.
+Un bola transmis par une proche, ou acheté d'occasion, n'est pas dangereux pour autant. Il faut simplement **rester plus attentive à son état** : la chaîne, le fermoir, l'anneau et la surface du pendentif. Une finition usée laisse apparaître le métal qui se trouve dessous, et on ne sait pas toujours de quoi il s'agit, surtout sans fiche. Si votre peau réagit, retirez-le. Pour les règles de composition, souvenez-vous que les limites européennes visent les bijoux mis sur le marché : **un bijou ancien n'a pas forcément été soumis aux mêmes contrôles**.
 
 ## Si vous avez un doute
 
-Trois réflexes valent mieux que toutes les recherches en ligne. Retirez le bijou si quelque chose vous gêne. Montrez-le à votre sage-femme ou à votre médecin si vous avez une question, en disant ce que vous savez de sa composition. Écrivez au vendeur si vous voulez savoir de quoi il est fait : un vendeur sérieux répond. Et rappelez-vous qu'il est tout à fait possible de vivre une très belle grossesse sans porter de bola.
+Trois réflexes valent mieux que toutes les recherches en ligne. **Retirez le bijou si quelque chose vous gêne**. **Montrez-le à votre sage-femme ou à votre médecin** si vous avez une question, en disant ce que vous savez de sa composition. **Écrivez au vendeur** si vous voulez savoir de quoi il est fait : un vendeur sérieux répond. Et rappelez-vous qu'il est tout à fait possible de vivre une très belle grossesse sans porter de bola.
 
 ## Quand retirer son bola
 
-- À la moindre rougeur ou démangeaison.
+- **À la moindre rougeur ou démangeaison**.
 - Pour dormir, faire du sport ou bricoler.
 - Avant une IRM ou si l'équipe soignante vous le demande.
 - Si la chaîne ou le fermoir semblent abîmés.
 - Si son tintement vous dérange, tout simplement.
 
-Aucune de ces situations n'a de gravité particulière : c'est un bijou, on l'enlève quand il gêne.
+Aucune de ces situations n'a de gravité particulière : c'est un bijou, **on l'enlève quand il gêne**.
 
 ## Sources
 
@@ -119,11 +119,11 @@ Le règlement REACH (annexe XVII) encadre le nickel, le plomb et le cadmium dans
 ? Un bola pas cher est-il dangereux ?
 Le prix ne dit rien à lui seul. Demandez la composition et la conformité au vendeur. S'il ne sait pas répondre, passez votre chemin.
 ? Peut-on dormir avec ?
-Mieux vaut l'enlever : une chaîne longue peut s'accrocher et gêner. C'est une précaution de confort, valable pour tout long collier.
+**Mieux vaut l'enlever** : une chaîne longue peut s'accrocher et gêner. C'est une précaution de confort, valable pour tout long collier.
 ? Peut-on le porter toute la journée ?
 Oui, si c'est confortable. Retirez-le en cas de gêne ou de rougeur.
 ? Faut-il le retirer pour une IRM, un examen, l'accouchement ?
-Pour une IRM, tout bijou métallique doit être retiré. Pour le reste, suivez les consignes de la maternité ou du centre d'examen.
+Pour une IRM, **tout bijou métallique doit être retiré**. Pour le reste, suivez les consignes de la maternité ou du centre d'examen.
 ? Peut-on le laisser dans le lit du bébé ?
 Non. Colliers et cordons doivent rester hors de portée d'un enfant. Un bola est en plus un petit objet, potentiellement dangereux s'il s'ouvre.
 ? Peut-on le donner à un bébé, le mettre dans un doudou ?
@@ -131,4 +131,4 @@ Non, nous le déconseillons : un bijou n'est pas un jouet. Un objet destiné aux
 ? FIV, stérilet : y a-t-il une contre-indication ?
 C'est un bijou porté à l'extérieur du corps, sans rapport avec ces situations. Pour toute question médicale, voyez votre équipe soignante.
 ? Vos bolas sont-ils hypoallergéniques ou sans nickel ?
-Nous ne l'affirmons pas. Si vous êtes allergique au nickel ou avez la peau sensible, demandez conseil avant de porter un bijou et retirez-le à la moindre rougeur.
+**Nous ne l'affirmons pas.** Si vous êtes allergique au nickel ou avez la peau sensible, demandez conseil avant de porter un bijou et retirez-le à la moindre rougeur.

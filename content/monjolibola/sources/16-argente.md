@@ -17,7 +17,7 @@ ordre: 30
 ---
 ## Ce que veut dire « finition couleur »
 
-« Finition couleur argent » décrit l'apparence du bijou, pas sa composition. Nos modèles sont en métal, et leur couleur argent est obtenue par une finition de surface. Ils ne sont pas vendus sous l'appellation « argent » ou 925.
+« Finition couleur argent » **décrit l'apparence du bijou, pas sa composition**. **Nos modèles sont en métal**, et leur couleur argent est obtenue par une finition de surface. Ils ne sont pas vendus sous l'appellation « argent » ou 925.
 
 La composition exacte de chaque modèle sera indiquée sur sa fiche dès qu'elle sera confirmée. Pour tout comprendre sur ces mentions, lisez notre guide [bola argent ou couleur argent](/guide/bola-argent-ou-couleur-argent).
 
@@ -27,12 +27,12 @@ Avant de choisir, sachez ce que nous pouvons vous dire aujourd'hui : la finition
 
 ## Comment les porter
 
-Une couleur argent s'accorde bien avec des tons froids, ou si vous portez déjà des bijoux de cette couleur. Vous pouvez porter votre bola sur ou sous les vêtements, selon vos préférences. Choisissez une longueur qui reste confortable : notre guide sur [la longueur de chaîne](/guide/longueur-chaine-bola-de-grossesse) vous y aide.
+Une couleur argent s'accorde bien avec des tons froids, ou si vous portez déjà des bijoux de cette couleur. Vous pouvez porter votre bola **sur ou sous les vêtements**, selon vos préférences. Choisissez une longueur qui reste confortable : notre guide sur [la longueur de chaîne](/guide/longueur-chaine-bola-de-grossesse) vous y aide.
 
-Pensez à l'enlever pour dormir et faire du sport, et à le garder hors de portée d'un bébé après la naissance. Pour découvrir l'ensemble des modèles et des couleurs, rendez-vous sur [la page bola de grossesse](/bola-de-grossesse), et pour comparer tous les critères, lisez [comment choisir son bola](/guide/comment-choisir-son-bola-de-grossesse).
+**Pensez à l'enlever pour dormir et faire du sport**, et à le garder **hors de portée d'un bébé** après la naissance. Pour découvrir l'ensemble des modèles et des couleurs, rendez-vous sur [la page bola de grossesse](/bola-de-grossesse), et pour comparer tous les critères, lisez [comment choisir son bola](/guide/comment-choisir-son-bola-de-grossesse).
 
 [FAQ]
 ? Ces bolas sont-ils en métal précieux ?
-Nous ne les vendons pas comme tels. Ils sont annoncés en métal, avec une finition couleur argent. C'est une couleur, qui n'indique pas un métal précieux.
+**Nous ne les vendons pas comme tels.** Ils sont annoncés en métal, avec une finition couleur argent. C'est une couleur, qui n'indique pas un métal précieux.
 ? Comment reconnaître la finition de ces bolas ?
-Elle est annoncée sur chaque fiche : métal, finition couleur argent. La composition exacte sera ajoutée dès qu'elle sera confirmée pour ce modèle.
+Elle est **annoncée sur chaque fiche** : métal, finition couleur argent. La composition exacte sera ajoutée dès qu'elle sera confirmée pour ce modèle.
