@@ -92,3 +92,21 @@ details { border-top: 1px solid var(--filet); padding: .75rem 0; } .fiche detail
   .trame { grid-template-columns: 1fr 1fr; } .trame > p { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) { .leve, .hero__img { animation: none; } .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+/* Accueil e-commerce et collections */
+.rayon { width: 100%; max-width: 1160px; margin: 0 auto; padding: 2.75rem 1.25rem; }
+.rayon--creme { max-width: none; background: var(--creme); } .rayon__in { max-width: 1120px; margin: 0 auto; }
+.rayon__tete { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .4rem 1.5rem; } .rayon__tete h2 { font-size: 2.3rem; } .rayon__tete a { font-size: .92rem; font-weight: 400; color: var(--bordeaux); text-decoration: underline; text-underline-offset: 4px; }
+.rayon .grille { margin-top: 1.75rem; } .grille--serree { margin-top: 1.25rem; }
+.carte__ajout { margin-top: .6rem; padding: .55rem 1rem; }
+.tuiles { margin-top: 1.75rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.tuile { display: block; overflow: hidden; background: var(--sable); } .tuile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .9s cubic-bezier(.16,1,.3,1); } .tuile:hover img { transform: scale(1.04); }
+.tuile__t { display: block; padding: .7rem .9rem .85rem; } .tuile__t b { display: block; font: 400 1.35rem/1.15 var(--serif); color: var(--bordeaux); } .tuile__t small { font-size: .8rem; font-weight: 400; }
+.liste__tous { margin-top: 2.5rem; text-align: center; }
+.liste__fil { margin-bottom: 1.25rem; font-size: .85rem; font-weight: 400; } .liste__fil a { text-decoration: underline; text-underline-offset: 3px; }
+.liste__intro { margin: .9rem auto 0; max-width: 56ch; font-size: 1.05rem; } .liste__n { margin-top: 1.5rem; font-size: .9rem; font-weight: 400; }
+.liste .tuiles { margin-top: 2.5rem; }
+.fiche__ferme { font-size: .875rem; font-weight: 400; text-align: center; }
+.guides-acc { background: var(--creme); padding: 3rem 1.25rem; text-align: center; } .guides-acc h2 { font-size: 2.2rem; margin-top: .4rem; } .guides-acc nav { margin-top: 1.25rem; display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem 2rem; font-weight: 400; } .guides-acc a { text-decoration: underline; text-underline-offset: 4px; color: var(--bordeaux); }
+@media (max-width: 767px) { .hero__img { height: 74vw; } .hero__txt { padding: 1.75rem 1.5rem 2rem; } .hero h1 { font-size: 2.5rem; } .hero__txt p { margin-top: .9rem; } .hero .boutons { margin-top: 1.25rem; } .rayon { padding: 2.25rem 1rem; } .rayon__tete h2 { font-size: 2rem; } .liste__f { margin-inline: -1.25rem; padding-inline: 1.25rem; } }
+@media (min-width: 768px) { .hero__img { height: 34vw; } .rayon { padding: 3.5rem 1.25rem; } .rayon--creme { padding-inline: 1.25rem; } .rayon__tete h2 { font-size: 2.9rem; } .tuiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; } .tuile__t b { font-size: 1.6rem; } .guides-acc h2 { font-size: 2.7rem; } }

@@ -25,12 +25,12 @@ export default async function ProductPage({ slug }: { slug: string }) {
         <section className="fiche"><div className="fiche__in">
           <div className="fiche__gal"><img className="leve" src={item.img} alt={`Bola ${item.nom}, photo produit`} width={900} height={900} fetchPriority="high" />{scene && <figure><img src={scene.src} alt={scene.alt} loading="lazy" />{scene.ill && <figcaption>Image d’illustration</figcaption>}</figure>}</div>
           <div className="fiche__inf">
-            <p className="sur leve"><a href="/boutique">La collection</a> · {item.familleNom}</p>
+            <p className="sur leve"><a href={`/collections/${item.collection}`}>{item.collectionNom}</a> · {item.familleNom}</p>
             <h1 className="leve">Bola <em>{item.nom}</em></h1>
             <p className="fiche__d leve l1">{item.description}</p>
             <p className="fiche__p leve l1">{eur(item.price)}</p>
             {proches.length > 0 && <div className="fiche__v leve l2"><p>Dans les mêmes couleurs</p><div>{proches.map((p) => <a key={p.slug} href={`/produit/${p.slug}`} aria-label={`Bola ${p.nom}`}><img src={p.img} alt="" width={64} height={64} loading="lazy" /></a>)}</div></div>}
-            <div className="fiche__a leve l2"><Ajouter disponible={item.available} ligne={{ productId: item.productId, slug: item.slug, variantId: item.variantId, name: item.name, size: item.variantLabel, unitPrice: item.price, img: item.img }} /><BoutonSon /></div>
+            <div className="fiche__a leve l2"><Ajouter disponible={item.available} ligne={{ productId: item.productId, slug: item.slug, variantId: item.variantId, name: item.name, size: item.variantLabel, unitPrice: item.price, img: item.img }} />{!item.available && <p className="fiche__ferme">Boutique bientôt de retour, commandes fermées.</p>}<BoutonSon /></div>
             <details open><summary>Matière et dimensions<span>+</span></summary><p>{item.matiere}. <AC>Composition exacte, diamètre et longueur de chaîne à confirmer avant publication.</AC></p></details>
             <details><summary>Livraison et retours<span>+</span></summary><p>Droit de rétractation légal de 14 jours. <AC>Délais et frais à confirmer.</AC></p></details>
             <details><summary>Précaution<span>+</span></summary><p>Ce bijou contient de petites pièces. Gardez-le hors de portée d’un bébé. Pour aller plus loin : <a href="/guide/bola-de-grossesse-dangereux">un bola est-il dangereux ?</a></p></details>

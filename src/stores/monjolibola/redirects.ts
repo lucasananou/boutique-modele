@@ -10,7 +10,10 @@ export const redirects: StoreConfig["redirects"] = [
   { source: "/produit/bola-de-grossesse-fleur-argent", destination: "/produit/bola-de-grossesse-fleur-argentee", permanent: true },
   { source: "/products/bola-de-grossesse-fleur-argent", destination: "/produit/bola-de-grossesse-fleur-argentee", permanent: true },
   { source: "/products/:slug", destination: "/produit/:slug", permanent: true },
-  { source: "/collections/:slug", destination: "/boutique", permanent: true },
+  // Anciennes collections ; les autres /collections/* inconnues repartent vers /boutique (pages/Collections.tsx).
+  { source: "/collections/bola-or", destination: "/bola-de-grossesse/dore", permanent: true },
+  { source: "/collections/bola-argent", destination: "/bola-de-grossesse/argente", permanent: true },
+  { source: "/collections/coffrets-cadeaux", destination: "/guide/offrir-un-bola-de-grossesse", permanent: true },
   { source: "/cart", destination: "/panier", permanent: true },
   { source: "/checkout", destination: "/commande", permanent: true },
   { source: "/login", destination: "/compte/connexion", permanent: true },

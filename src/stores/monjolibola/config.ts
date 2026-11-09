@@ -110,7 +110,7 @@ export const config: StoreConfig = {
       manageSubscription: "/compte",
     },
     passthrough: ["/robots.txt", "/sitemap.xml"],
-    sitemap: ["/", "/boutique", "/guide", "/concept", "/histoire", "/faq", "/mentions-legales", "/cgv", "/confidentialite", "/retractation"],
+    sitemap: ["/", "/boutique", "/collections", "/collections/fleurs", "/collections/rosaces", "/collections/soleils-et-etoiles", "/collections/motifs-graphiques", "/guide", "/concept", "/histoire", "/faq", "/mentions-legales", "/cgv", "/confidentialite", "/retractation"],
   },
 
   promos: { cartRecoveryCode: "", cartRecoveryPercent: 0 },

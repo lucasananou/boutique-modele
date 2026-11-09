@@ -13,6 +13,10 @@ export interface CatalogItem {
   nom: string;
   famille: string;
   familleNom: string;
+  collection: string;
+  collectionNom: string;
+  /** Mis en avant sur l’accueil (admin > Produits, « iconique »). */
+  iconic: boolean;
   description: string;
   /** Matière annoncée sur la fiche (admin > Produits, champ matière). */
   matiere: string;
@@ -47,6 +51,9 @@ function toItem(p: Product): CatalogItem {
     nom,
     famille: p.category,
     familleNom: FAMILLES[p.category] ?? "",
+    collection: p.collection,
+    collectionNom: p.collectionName,
+    iconic: Boolean(p.iconic),
     description: p.shortDescription,
     matiere: p.materialLabel || "Métal, finition à confirmer",
     price,

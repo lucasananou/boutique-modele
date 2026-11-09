@@ -12,6 +12,7 @@ import Boutique from "./pages/Boutique";
 import { Commande, Confirmation, Panier } from "./pages/Shop";
 import { AccountHome, Login, Register, SubscriptionByToken } from "./pages/Account";
 import { Concept, Faq, Histoire } from "./pages/Editorial";
+import { COLLECTIONS_META, CollectionPage, CollectionsIndex, collectionMetadata } from "./pages/Collections";
 import { Cgv, Confidentialite, Mentions, Retractation } from "./pages/Legal";
 import { GUIDES_INDEX_META, GuidePage, GuidesIndex, guideMetadata } from "./pages/Guides";
 
@@ -54,6 +55,7 @@ const ROUTES: Record<string, FrontRoute> = {
     metadata: page("Nos bolas"),
     render: ({ searchParams }) => withCatalog((c) => <Boutique catalog={c} searchParams={searchParams} />),
   },
+  collections: { metadata: COLLECTIONS_META, render: () => <CollectionsIndex /> },
   concept: { metadata: page("L’univers"), render: () => <Concept /> },
   histoire: { metadata: page("Notre histoire"), render: () => <Histoire /> },
   faq: { metadata: page("Questions"), render: () => <Faq /> },
@@ -99,6 +101,9 @@ export const front: StoreFront = {
       };
     }
     const chemin = parts.join("/");
+    if (parts[0] === "collections" && parts.length === 2) {
+      return { metadata: collectionMetadata(parts[1]), render: () => <CollectionPage slug={parts[1]} /> };
+    }
     if ((parts[0] === "guide" && parts.length === 2) || (parts[0] === "bola-de-grossesse" && parts.length <= 2)) {
       return { metadata: guideMetadata(chemin), render: () => <GuidePage slug={chemin} /> };
     }

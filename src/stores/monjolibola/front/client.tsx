@@ -68,6 +68,10 @@ export function Ajouter({ ligne, disponible }: { ligne: LigneAjout; disponible: 
   );
 }
 
+export function AjoutRapide({ ligne }: { ligne: LigneAjout }) {
+  return <button type="button" className="btn btn--ligne btn--wide carte__ajout" onClick={() => { addLine({ handle: ligne.slug, ...ligne }); window.dispatchEvent(new Event(OUVRIR)); }}>Ajouter</button>;
+}
+
 export function BoutonSon() {
   const [joue, setJoue] = useState(false);
   const a = useRef<HTMLAudioElement | null>(null);

@@ -1,5 +1,7 @@
 import type { CatalogItem } from "./catalog";
 import { eur } from "./render";
+import { AjoutRapide } from "./client";
+import type { Tuile } from "./collections";
 
 const A = "/stores/monjolibola/img";
 export const AC = ({ children }: { children: React.ReactNode }) => <span className="ac">{children}</span>;
@@ -10,7 +12,21 @@ export function Carte({ item }: { item: CatalogItem }) {
       <a className="carte__img" href={`/produit/${item.slug}`}><img src={item.img} alt={`Bola ${item.nom}`} width={800} height={800} loading="lazy" decoding="async" /></a>
       <h3><a href={`/produit/${item.slug}`}>{item.nom}</a></h3>
       <p>{eur(item.price)}</p>
+      {item.available && <AjoutRapide ligne={{ productId: item.productId, slug: item.slug, variantId: item.variantId, name: item.name, size: item.variantLabel, unitPrice: item.price, img: item.img }} />}
     </article>
+  );
+}
+
+export function Tuiles({ tuiles }: { tuiles: Tuile[] }) {
+  return (
+    <div className="tuiles">
+      {tuiles.map((t) => (
+        <a key={t.href} className="tuile" href={t.href}>
+          <img src={t.img} alt={t.alt} width={800} height={600} loading="lazy" decoding="async" />
+          <span className="tuile__t"><b>{t.nom}</b><small>{t.nombre} modèle{t.nombre > 1 ? "s" : ""}</small></span>
+        </a>
+      ))}
+    </div>
   );
 }
 
